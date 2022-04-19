@@ -6,6 +6,8 @@
     width: 5%; 
     text-align: center;
     font-weight: bold;
+    margin: 5px;
+    padding: 5px;
 }
 #box2 {
     background-color: lightseagreen;
@@ -13,6 +15,8 @@
     border-radius: 50%;
     width: 20px;
     text-align: center;
+    margin: 5px;
+    padding: 5px;
 }
 #box3 {
     background-color: royalblue;
@@ -21,8 +25,6 @@
     box-shadow: 2px 5px black;
     width: 7%;
     text-align: center;
-}
-#container {
     margin: 5px;
     padding: 5px;
 }
