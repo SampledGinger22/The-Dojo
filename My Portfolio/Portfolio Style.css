@@ -1,5 +1,7 @@
 body {background-color: #d6ecef;}
-h2 {color:brown}
-img {
-    border: 2px solid #555;
-  }
+h1 {font-size: 50px;}
+h2 {color:brown; font-weight: bold;}
+img[src="Headshot.jpg"] {border: 3px solid #555; background-color:#d6ecef}
+table, td, tr {border:1px solid;}
+table {background-color:bisque}
+img[src="code_brackets-512.webp"] {border: 3px solid #5555;} 
