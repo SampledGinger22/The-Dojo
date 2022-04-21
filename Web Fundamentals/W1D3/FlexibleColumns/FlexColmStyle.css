@@ -1,21 +1,55 @@
 body {
-    background-color: white;
-    display: flex;
+    display: inline;
+    align-items: center;
 }
 .row {
-    
+    margin: 20px;
+    width: auto;
     display: flex;
-    border: medium;
-    border-style: 1px;
-    border-color: black;
-    flex:1;
+    flex direction: row;
 }
 .col {
     width: 200px;
-    height: 50px;
+    height: auto;
     background-color: steelblue;
     margin-inline: 20px;
     text-align: left;
     color: white;
-    flex:1;
+    padding: 10px;
+}
+.col-2 {
+    width: 640px;
+    height: auto;
+    background-color: steelblue;
+    margin-inline: 20px;
+    text-align: left;
+    color: white;
+    padding:10px;
+}
+.col-3 {
+    width: 582px;
+    height: auto;
+    background-color: steelblue;
+    margin-inline: 20px;
+    text-align: left;
+    color: white;
+    padding:10px;
+}
+.col-4 {
+    width: 320px;
+    height: auto;
+    background-color: steelblue;
+    margin-inline: 20px;
+    text-align: left;
+    color: white;
+    padding:10px;
+}
+.col-5 {
+    width: 388px;
+    height: auto;
+    background-color: steelblue;
+    margin-inline: 20px;
+    text-align: left;
+    color: white;
+    padding:10px;
 }
