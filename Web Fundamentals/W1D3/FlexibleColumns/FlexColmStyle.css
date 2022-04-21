@@ -1,0 +1,21 @@
+body {
+    background-color: white;
+    display: flex;
+}
+.row {
+    
+    display: flex;
+    border: medium;
+    border-style: 1px;
+    border-color: black;
+    flex:1;
+}
+.col {
+    width: 200px;
+    height: 50px;
+    background-color: steelblue;
+    margin-inline: 20px;
+    text-align: left;
+    color: white;
+    flex:1;
+}
