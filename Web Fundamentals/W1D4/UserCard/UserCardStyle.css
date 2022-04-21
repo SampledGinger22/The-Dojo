@@ -1,0 +1,64 @@
+
+body {
+    display: inline-block;
+}
+.usercard {
+    width: 600px;
+    height: 250px;
+    border: solid black 1px;
+    display: inline-block;
+    align-content: center;
+
+}
+.header{
+    width: 600px;
+    height: 75px;
+    background-color: steelblue;
+}
+.headshot {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    float: inline-start;
+    margin: 0px;
+    position: absolute;
+    top: 60px;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+    border: solid lightgray
+}
+.headshot img {
+    height: 45px;
+    width: 45px;
+}
+.info {
+    display: inline-block;
+    margin-left: 15px;
+}
+h1 {
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+.location {
+    margin-bottom: 5px;
+}
+.location img{
+    width: 10px;
+}
+.desc {
+
+}
+p {
+    margin:0px;
+}
+.editbtn {
+    color: black;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.editbtn img {
+    width: 15px;
+}
