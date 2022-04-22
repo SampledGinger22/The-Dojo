@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="ProfileStyle.css">
+    <link rel="stylesheet" type="text/css" href="FlexNavStyle.css"> 
+</head>
+<body>
+    <div class="nav">
+        <div class="navcontent">
+            <h1 class="nav-title">Profile</h1>
+            <ul class="nav-links">
+                <li class="nav-btn"><a href="#" class="link">Home</a></li>
+                <li class="nav-btn"><a href="#" class="link">My Profile</a></li>
+                <li class="nav-btn"><a href="#" class="link">Find Connections</a></li>
+            </ul>
+            <button class="btn"><a href="#" class="link">Sign Out</a></button>
+        </div>
+    </div> 
+<!--START BODY CONTENT-->
+    <div class="bodycontent">
+        <!--START COLUMN LEFT-->
+        <div class="colmleft">
+
+            <!--START USER CARD-->
+
+            <div class="usercard">
+                <div class="headshot"><img src="jane-m.jpg"></div>
+                <img class="header" src="Sunflower.jpg">
+                <div class="info">
+                    <div>
+                        <h1 class="name">Jane Doe</h1>
+                    </div>
+                    <div class="location">
+                        <img src="map-marker.png">
+                        <a>Seattle</a>
+                    </div>
+                    <div class="desc">
+                        <p class="userdes">Developer | Engineer | Problem Solver</p>
+                        <p class="userdes">Master of shadows and the Internet!</p>
+                    </div>
+                    <div class="editbtn">
+                        <img src="gear.png">
+                        <a href="#" class="btntxt">edit profile</a>
+                    </div> 
+                </div>
+            </div>
+
+            <!--START ED CARD-->
+
+            <div class="educard">
+                <div class="edheadingbar"></div>
+                <div class="edcont">
+                    <h2 class="edtitle">Coding Dojo - Full Stack Bootcamp</h2>
+                    <h3 class="edgray">Dec 2019 - March 2020</h3>
+                    <h3>Triple black belt in Python, MERN, and C#...</h3>
+                </div>
+            </div>
+        </div>
+
+        <!--START COLUMN RIGHT-->
+        <div class="colmright">
+            
+            <!--START CONNECT REQUESTS-->
+            
+            <div class="conreq">
+                <div class="righthead">
+                    <div class="reqtext">
+                        <p class="reqcount">2</p>
+                        <p class="title">Connection Requests</p>
+                    </div>
+                </div>
+
+                <!--START PROFILES-->
+
+                <div class="reqname">
+                    <div class="profile">
+                        <img class="smlheadshot" src="todd-s.jpg">
+                        <a>Todd E</a>
+                    </div>
+                    <div class="acpt-den">
+                        <div class="response">
+                            <img src="accept-circle.png">
+                        </div>
+                        <div class="response">
+                            <img src="close-circle.png"> 
+                        </div>
+                    </div>
+                </div>
+                <div class="reqname">  
+                    <div class="profile">
+                        <img class="smlheadshot" src="phil-s.jpg">
+                        <a>Phil K</a>
+                    </div>
+                    <div class="acpt-den">
+                        <div class="response">
+                            <img src="accept-circle.png">
+                        </div>
+                        <div class="response">
+                            <img src="close-circle.png">
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+            <!--END PROFILES-->
+
+            <div class="yourconnects">
+                <div class="righthead">
+                    <div class="connectcount">
+                        <p class="con-num">500+</p>
+                        <a class="title">Your Connections</a>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img class="smlheadshot" src="adrien-s.jpg">
+                    <a>Adrien D</a>
+                </div>
+                <div class="profile">
+                    <img class="smlheadshot" src="anne-s.jpg">
+                    <a>Anne J</a>
+                </div>
+                <div class="profile">
+                    <img class="smlheadshot" src="alayne-s.jpg">
+                    <a>Alayne T</a>
+                </div>
+                <div class="profile">
+                    <img class="smlheadshot" src="arry-s.jpg">
+                    <a>Arry Y</a>
+                </div>
+                <div class="viewmore">
+                    <a href="#">View More</a>
+                </div>
+            </div>
+        </div>
+        <!--end colmright-->
+    </div>  
+</body>
+</html>
