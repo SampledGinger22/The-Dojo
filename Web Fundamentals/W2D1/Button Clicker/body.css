@@ -1,0 +1,96 @@
+/* LAYOUT DESIGN */
+
+* {
+    border: solid red 0px;
+}
+body {
+    display: flexbox;
+    justify-content: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+.bodycontent {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 75px;
+}
+.colm {
+    display: flex;
+    flex-direction: column;
+    /* border: solid black 1px; */
+}
+
+/* START CONTENT */
+
+.defbox {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px slategray;
+    /* border: black 1px solid; */
+    margin-bottom: 20px;
+    padding: 7px;
+}
+.cardclmleft {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.cardclmright {
+    display: flex;
+    justify-content: center;
+}
+.ital {
+    font-style: italic;
+}
+.description {
+    width: 200px;
+    display: flexbox;
+    font-size: 18px;
+    text-align: left;
+}
+.word, .wordtype, .plural, .likeme {
+    text-align: center;
+    margin: 5px;
+}
+.likeme {
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 75%;
+    height: 25px;
+    box-shadow: 3px 3px 3px 0px slategray;
+}
+/* START RIGHT COLUMN */
+
+.newdefbox {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    height: 160px;
+    width: 65%;
+    box-shadow: 5px 5px 5px 0px slategray;
+    /* border: black 1px solid; */
+    margin-left: 50px;
+    padding: 15px;
+}
+.description-2 {
+    display: flexbox;
+    font-size: 25px;
+}
+.addbtn {
+    background-color: slategray;
+    color: white;
+    height: 25px;
+    box-shadow: 3px 3px 3px 0px black;
+}
+.bold {
+    font-weight: bold;
+}
