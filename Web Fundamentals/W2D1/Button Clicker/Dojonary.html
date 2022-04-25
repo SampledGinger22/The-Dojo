@@ -14,7 +14,7 @@
         <div class="navcontent">
             <h1 class="nav-title">Dojonary</h1>
             <input class="search" type="text" name="search" placeholder="Search">
-            <button class="btn"><a href="#" class="link">Sign Out</a></button>
+            <button class="btn link" onclick="login(this)">Login</button>
         </div>
     </div> 
 
@@ -28,7 +28,7 @@
                     <h1 class="word">ninja</h1>
                     <h3 class="wordtype">noun</h3>
                     <p class="plural">Plural: <a class=ital>ninjas</a></p>
-                    <button class="likeme">likes</button>
+                    <button class="likeme" onclick="like(this)">0</button>
                 </div>
                 <div class="cardclmright">
                     <p class="description">A pactitioner skilled in the <a href=#>Japanese</a> art of <a href=#>ninjitsu</a></p>
@@ -39,7 +39,7 @@
                     <h1 class="word">ninja</h1>
                     <h3 class="wordtype">noun</h3>
                     <p class="plural">Plural: <a class=ital>ninjas</a></p>
-                    <button class="likeme">likes</button>
+                    <button class="likeme" onclick="like(this)">0</button>
                 </div>
                 <div class="cardclmright">
                     <p class="description">A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</p>
@@ -50,9 +50,10 @@
         <div class="colm">
             <div class="newdefbox">
                 <p class="description-2">Dojonary is defined by <a class=bold>YOU</a></p>
-                <button class="addbtn">Add Definition</button>
+                <button class="addbtn" onclick="hide(this)">Add Definition</button>
             </div>
         </div>
     </div>
+    <script src="PushMyButtons.js"></script>
 </body>
 </html>

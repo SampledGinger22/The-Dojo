@@ -65,6 +65,9 @@ body {
     height: 25px;
     box-shadow: 3px 3px 3px 0px slategray;
 }
+.likeme::after {
+    content: " Likes";
+}
 /* START RIGHT COLUMN */
 
 .newdefbox {
