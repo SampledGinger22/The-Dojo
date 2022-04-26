@@ -1,0 +1,252 @@
+* {
+    outline: solid red 0px;
+}
+body {
+    display: flexbox;
+    background-color: blanchedalmond;
+}
+
+.bodycontent {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 75px;
+}
+
+/* COLUMN LEFT START*/
+
+.colmleft {
+    width: 600px;
+    display: inline-block;
+}
+
+/* USER CARD START*/
+
+.usercard {
+    width: 600px;
+    height: 475px;
+    display: inline-flexbox;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px slategray;
+}
+.header{
+    width: inherit;
+    object-fit: cover;
+    height: 125px;
+    background-color: steelblue;
+}
+.headshot {
+    background-color: white;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: inline-flex;
+    float: inline-start;
+    margin: 0px;
+    position: absolute;
+    top: inherit;
+    margin-left: 50px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    border: solid lightgray
+}
+.headshot img {
+    border-radius: 50%;
+    height: 145px;
+    width: 145px;
+    
+}
+.info {
+    display: inline-flexbox;
+    align-content: center;
+    margin-left: 50px;
+}
+.name {
+    margin-top: 75px;
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+.location {
+    margin-bottom: 15px;
+    font-size: 30px;
+    
+}
+.location img{
+    width: 15px;
+    margin-right: 5px;
+}
+.userdes {
+    font-size: 20px;
+    margin:0px;
+    font-size: 22px;
+}
+.editbtn {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    margin-top: 40px
+}
+.editbtn img {
+    width: 18px;
+    margin-right: 7px;
+}
+
+/*EDUCATION START*/
+
+.educard {
+    width: 600px;
+    height: 275px;
+    box-shadow: 5px 5px 5px 0px slategray;
+    display: inline-flexbox;
+    margin-top: 50px;
+    background-color: white;
+}
+.edheadingbar {
+    width: auto;
+    height: 50px;
+    background-color: slategray;
+}
+.edcont {
+    margin-left: 50px;
+}
+.edtitle {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.edgray {
+    font-style: bold;
+    color: slategray;
+    margin-top: 5px;
+}
+
+/*RIGHT COLUMN START*/
+
+.colmright {
+    width: 300px;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+/*CONNECTION REQUEST START*/
+
+.conreq {
+    width: 300px;
+    box-shadow: 5px 5px 5px 0px slategray;
+    display: inline-flexbox;
+    background-color: white;
+}
+.righthead {
+    width: 300px;
+    height: 50px;
+    background-color: slategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reqtext {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reqcount {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    margin-left: 5px;
+    font-weight: bold;
+}
+.reqname {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+.profile {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 7px;
+    margin-bottom: 5px;
+}
+.smlheadshot {
+    background-color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+.smlheadshot img {
+    width: 35px;
+    height: 35px;
+}
+.acpt-den {
+    display: flex;
+    justify-content: right;
+    align-content: center;
+}
+.response {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 5px;
+    
+}
+.response button {
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+.response img{
+    background-color: white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+
+/*YOUR CONNECTIONS START*/
+
+.yourconnects {
+    width: 300px;
+    box-shadow: 5px 5px 5px 0px slategray;
+    display: inline-flexbox;
+    margin-top: 50px;
+    background-color: white;
+}
+.connectcount {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con-num {
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    padding: 3px;
+}
+.viewmore {
+    padding: 10px;
+    margin-top: 5px;
+    border-top: slategrey solid 2px;
+}
+.viewmore a {
+    margin-left: 10px;
+}
