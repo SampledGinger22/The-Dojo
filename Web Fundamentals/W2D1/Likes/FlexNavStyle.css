@@ -1,0 +1,46 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+.nav {
+    background-color: black;
+    width: 850px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 35px;
+}
+.navcontent {
+    display: inline-flex;
+    justify-content: left;
+    align-items: center;
+    width: 90%;
+}
+.nav-title {
+    text-align: left;
+    font-size: 45px;
+    color: white;
+
+}
+.nav-links {
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+.nav-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 10px;
+    text-align: center;
+}
+.btn{
+    background-color: steelblue;
+    color: white;
+    font-size: auto;
+    margin-left: 300px;
+}
+.link {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 20px;
+}
