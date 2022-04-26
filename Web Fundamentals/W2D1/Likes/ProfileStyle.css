@@ -1,0 +1,147 @@
+* {
+    outline: solid red 0px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+}
+
+.bodycontent {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+/* COLUMN LEFT START*/
+
+.colmleft {
+    width: 300px;
+    display: inline-block;
+}
+
+/* USER CARD START*/
+
+.usercard {
+    width: 300px;
+    height: 400px;
+    display: inline-flexbox;
+    background-color: white;
+    box-shadow: 5px 5px 5px 0px slategray;
+}
+.header{
+    width: inherit;
+    object-fit: cover;
+    height: 125px;
+    background-color: steelblue;
+}
+.headshot {
+    background-color: white;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    display: inline-flex;
+    float: inline-start;
+    margin: 0px;
+    position: absolute;
+    top: inherit;
+    margin-left:25px;
+    margin-top: 80px;
+    justify-content: center;
+    align-items: center;
+    border: solid lightgray
+}
+.headshot img {
+    border-radius: 50%;
+    height: 72px;
+    width: 72px;
+    
+}
+.info {
+    display: inline-flexbox;
+    align-content: center;
+    margin-left: 25px;
+}
+.name {
+    margin-top: 75px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+.location {
+    margin-bottom: 15px;
+    font-size: 20px;
+    
+}
+.location img{
+    width: 10px;
+    margin-right: 5px;
+}
+.userdes {
+    font-size: 15px;
+    margin:0px;
+}
+.editbtn {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    margin-top: 40px
+}
+.editbtn img {
+    width: 13px;
+    margin-right: 7px;
+}
+
+/*RIGHT COLUMN START*/
+
+.colmright {
+    margin-left: 30px;
+    display: flexbox;
+    flex-direction: column;
+}
+
+/* Start Feed */
+
+.feedname {
+    margin-left: 75px;
+    text-align: center;
+    font-weight: bold;
+}
+.feed {
+    width: 500px;
+    box-shadow: 5px 5px 5px 0px slategray;
+    display: flexbox;
+    flex-direction: column;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.tophalf {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+.likes {
+    background-color: yellow;
+    box-shadow: 3px 3px 3px 0px;
+    margin-right: 5px;
+    width: 75px;
+    height: 40px;
+    font-size: 90%;
+    font-weight: bold;
+}
+.summ {
+    margin-right: 35px;
+}
+.bottomhalf {
+    display: flex;
+    justify-content: left;
+    padding-bottom: 3%;
+    padding-left: 3%;
+}
+.posting {
+    margin: 0%;
+}
