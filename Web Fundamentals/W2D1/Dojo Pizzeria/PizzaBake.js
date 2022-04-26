@@ -16,10 +16,11 @@ function pizzaOven(crustType= ["deep dish", "hand tossed"], sauceType= ["traditi
 }
 
 // default response
-console.log(pizzaOven());
+var pizzaDef = pizzaOven();
+console.log(pizzaDef);
 
 // assignment request
-console.log(pizzaOven("deep dish,", "traditional,", ["mozzerella"], ["pepperoni", "sausage"]));
+console.log(pizzaOven("deep dish", "traditional", ["mozzerella"], ["pepperoni", "sausage"]));
 
 // assignment request 2
-console.log(pizzaOven("hand tossed,", "marinara,", ["mozzerella", "feta"], ["mushrooms", "olives", "onions"]));
+console.log(pizzaOven("hand tossed", "marinara", ["mozzerella", "feta"], ["mushrooms", "olives", "onions"]));
