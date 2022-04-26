@@ -124,7 +124,7 @@ body {
     padding-right: 3%;
     padding-left: 3%;
 }
-.likes {
+.feed button {
     background-color: yellow;
     box-shadow: 3px 3px 3px 0px;
     margin-right: 5px;
@@ -133,8 +133,11 @@ body {
     font-size: 90%;
     font-weight: bold;
 }
-.summ {
+.feed p {
     margin-right: 35px;
+}
+.feed p::after {
+    content: " Like(s)";
 }
 .bottomhalf {
     display: flex;
@@ -144,4 +147,9 @@ body {
 }
 .posting {
     margin: 0%;
+}
+.likestack {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
