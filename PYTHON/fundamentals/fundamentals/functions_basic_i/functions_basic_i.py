@@ -5,9 +5,10 @@
 #"5" with error undefined function
 
 # #2
-def number_of_military_branches():
-    return 5
-print(number_of_days_in_a_week_silicon_or_triangle_sides() + number_of_military_branches())
+# def number_of_military_branches():
+#     return 5
+# print(number_of_days_in_a_week_silicon_or_triangle_sides() + number_of_military_branches())
+# Return 5, print error
 
 
 # #3
@@ -15,6 +16,7 @@ print(number_of_days_in_a_week_silicon_or_triangle_sides() + number_of_military_
 #     return 5
 #     return 10
 # print(number_of_books_on_hold())
+# 5 (function cuts off after first return)
 
 
 # #4
@@ -130,3 +132,5 @@ print(number_of_days_in_a_week_silicon_or_triangle_sides() + number_of_military_
 #     return 5
 # y = foo()
 # print(y)
+
+#didnt record values but checked my expectations against outcomes
