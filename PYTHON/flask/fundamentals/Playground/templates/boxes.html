@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Test</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 600px;
+        }
+        .header{
+            text-align: center;
+            align-content: center;
+            color: black;
+            justify-content: center;
+        }
+        .lowermain{
+            display: flex;
+            justify-content: left;
+            gap: 30px;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 80vw;
+        }
+        .box {
+            background-color: var(--color);
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1 class="header">Welcome!</h1>
+        <div class="lowermain">
+            {% for x in range(0,times): %}
+                <div class="box" style="--color: {{ color }}"></div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
