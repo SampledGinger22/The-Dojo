@@ -7,9 +7,12 @@ def hello_world():
 def success():
     return "Dojo"
 @app.route("/say/<name>")
-def success(name):
+def sayname(name):
     print(name)
-    return "Dojo"
+    return "Hello, " + name
+@app.route("/<num>/<name>")
+def repeat(num, name):
+    print(name)
+    return ("Hello, " + name," ") * int(num) 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)    # Run the app in debug mode.
-
