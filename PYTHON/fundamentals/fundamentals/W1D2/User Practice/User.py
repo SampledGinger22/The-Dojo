@@ -16,4 +16,7 @@ class User:
 
 Guido = User("Guido", "Guido@python.com")
 
-Guido.display_user_balance()
+
+
+Guido.make_withdrawl(20).display_user_balance()
+

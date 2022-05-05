@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 80vw; */
+    border: 1px black solid;
+}
+.boardrow{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+}
+.sqr, .sqr1{
+    width: 50px;
+    height: 50px;
+}
+.sqr:nth-child(odd){
+    background-color: black;
+}
+.sqr:nth-child(even){
+    background-color: red;
+}
+.sqr1:nth-child(even){
+    background-color: black;
+}
+.sqr1:nth-child(odd){
+    background-color: red;
+}
