@@ -1,12 +1,11 @@
-
 from flask import Flask, render_template, request, redirect
 app = Flask(__name__)  
 
-@app.route('/')         
+@app.route('/')
 def index():
     return render_template("index.html")
 
-@app.route('/checkout', methods=['POST'])         
+@app.route('/checkout', methods=['POST'])
 def checkout():
     print(request.form)
     return render_template("checkout.html")
