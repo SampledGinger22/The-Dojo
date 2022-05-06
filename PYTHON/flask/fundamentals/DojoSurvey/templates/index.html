@@ -8,29 +8,31 @@
     <title>Dojo Survey</title>
 </head>
 <body>
-    <div class="container border-dark">
-        <form class="container d-flex justify-content-center">
-            <h1>Dojo Survey</h1>
-            <label class="h4">Name:</label>
-            <input type="text">
-            <label class="h4">Dojo Location</label>
-            <select type="dropdown" id="dropdown" name="location">
+    <div class="container border border-dark mt-5 p-3 w-25 bg-dark">
+        <form method="POST" action="/process" class="container d-flex justify-content-center flex-column">
+            <h1 class="text-center font-weight-bold mb-4 text-warning">Dojo Survey</h1>
+            <label class="text-white" for="full_name">Name:</label>
+            <input type="text" placeholder="enter text" class="mb-3" name="full_name" id="full_name">
+            <label class="text-white" for="dojo_location">Dojo Location</label>
+            <select type="dropdown" id="dojo_location" name="dojo_location" class="mb-3">
+                <option value="" selected disabled hidden>- Choose Location -</option>
                 <option value="Seattle">Seattle</option>
                 <option value="Boise">Boise</option>
                 <option value="Las Vegas">Las Vegas</option>
                 <option value="Parker">Parker</option>
                 <option value="Gilbert">Gilbert</option>
             </select>
-            <label class="h4">Favorite Language:</label>
-            <select type="dropdown" id="dropdown" name="language">
+            <label class="text-white" for="fav_language">Favorite Language:</label>
+            <select type="dropdown" id="fav_location" name="fav_language" class="mb-3">
+                <option value="" selected disabled hidden>- Choose Language -</option>
                 <option value="Python">Python</option>
                 <option value="MERN">MERN</option>
                 <option value="JavaScript">JavaScript(nope)</option>
                 <option value="English">English</option>
             </select>
-            <label class="h4">Comment</label>
-            <textarea name="comments" rows="10" cols="30"></textarea>
-            <button class="btn btn-success" onclick="">Submit</button>
+            <label class="text-white" for="comments">Comment</label>
+            <textarea name="comments" id="comments" rows="10" cols="30" class="text-white" type="text"></textarea>
+            <button type="submit" class="btn btn-light mt-3">Submit</button>
         </form>
     </div>
 </body>
