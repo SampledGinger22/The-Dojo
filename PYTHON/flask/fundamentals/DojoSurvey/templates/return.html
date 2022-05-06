@@ -8,20 +8,13 @@
     <title>Return</title>
 </head>
 <body>
-    <div class="container border border-dark mt-5 p-3 w-25">
-        <div class="container">
-            <p>{{ "full_name" }}</p>
-            <p>{{ "dojo_location" }}</p>
-            <p>{{ "fav_language" }}</p>
-            <p>{{ "comments" }}</p>
-        </div>
-        <div class="container">
-            {% for full_name in name %}
-                <p>{{full_name[name]}}</p>
-            {% endfor %}
-            {% for fav_location in location %}
-                <p>{{fav_location[location]</p>
-            {% endfor %}
+    <div class="container d-flex flex-column border border-dark mt-5 p-3 w-25 bg-dark">
+        <h1 class="text-center text-white">RESULTS</h1>
+        <div class="container text-white">
+            <p>Name: {{session["name"]}}</p>
+            <p>Location: {{session["location"]}}</p>
+            <p>Language: {{session["language"]}}</p>
+            <p>Comment: {{session["comment"]}}</p>
         </div>
     </div>
 </body>

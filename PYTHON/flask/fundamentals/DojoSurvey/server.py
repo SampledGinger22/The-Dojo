@@ -9,12 +9,11 @@ def displayform():
 
 @app.route('/process', methods=["POST"])
 def process():
-    session["name"] = "full_name"
-    session["location"] = "fav_location"
-    session["language"] = "fav_language"
-    session["comment"] = "comments"
-    print(request.form["full_name"])
-    return redirect("/")
+    session["name"] = request.form["full_name"]
+    session["location"] = request.form["dojo_location"]
+    session["language"] = request.form["fav_language"]
+    session["comment"] = request.form["comments"]
+    return redirect("/results")
 
 @app.route("/results")
 def results():
