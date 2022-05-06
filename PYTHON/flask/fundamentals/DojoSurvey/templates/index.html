@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Dojo Survey</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Your Name: <input</h1>
+    <div class="container border-dark">
+        <form class="container d-flex justify-content-center">
+            <h1>Dojo Survey</h1>
+            <label class="h4">Name:</label>
+            <input type="text">
+            <label class="h4">Dojo Location</label>
+            <select type="dropdown" id="dropdown" name="location">
+                <option value="Seattle">Seattle</option>
+                <option value="Boise">Boise</option>
+                <option value="Las Vegas">Las Vegas</option>
+                <option value="Parker">Parker</option>
+                <option value="Gilbert">Gilbert</option>
+            </select>
+            <label class="h4">Favorite Language:</label>
+            <select type="dropdown" id="dropdown" name="language">
+                <option value="Python">Python</option>
+                <option value="MERN">MERN</option>
+                <option value="JavaScript">JavaScript(nope)</option>
+                <option value="English">English</option>
+            </select>
+            <label class="h4">Comment</label>
+            <textarea name="comments" rows="10" cols="30"></textarea>
+            <button class="btn btn-success" onclick="">Submit</button>
+        </form>
     </div>
 </body>
 </html>
