@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Return</title>
+</head>
+<body>
+    <div class="container border border-dark mt-5 p-3 w-25">
+        <div class="container">
+            <p>{{ "full_name" }}</p>
+            <p>{{ "dojo_location" }}</p>
+            <p>{{ "fav_language" }}</p>
+            <p>{{ "comments" }}</p>
+        </div>
+        <div class="container">
+            {% for full_name in name %}
+                <p>{{full_name[name]}}</p>
+            {% endfor %}
+            {% for fav_location in location %}
+                <p>{{fav_location[location]</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
