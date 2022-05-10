@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def form():
-    return render_template(form.html)
+    return render_template("form.html")
 
 @app.route('/create_user', methods=["POST"])
 def create_user():

@@ -9,7 +9,6 @@
 </head>
 <body>
     <h1>All Users</h1>
-    <a url="/tableresults">Home</a>
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -21,17 +20,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
         {% for one_user in all_users %}
+        <tr>
             <td>{{one_user.id}}</td>
             <td>{{one_user.first_name}}</td>
             <td>{{one_user.last_name}}</td>
             <td>{{one_user.email}}</td>
             <td>{{one_user.created_at}}</td>
-        {% endfor %}
         </tr>
+        {% endfor %}
     </tbody>
-    <a url="/">Add a New User</a>
+    <a href="/">Add a New User</a>
 </table>
 </body>
 </html>
