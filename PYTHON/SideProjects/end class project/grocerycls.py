@@ -24,7 +24,7 @@ class grocery:
         return(self.cost)
 
     def addmarkup(self, percent):
-        self.profit += self.cost*percent
+        self.profit += self.cost * percent
         self.resaleprice += self.cost + self.profit
         print(self.resaleprice)
         return(self.resaleprice, self.profit)
@@ -43,11 +43,13 @@ class beverages(grocery):
 
     def __init__(self, name="newProduct", producttype="product"):
         super().__init__(name, producttype)
+        self.sizeOz = 12
 
 class alcohol(beverages):
 
     def __init__(self, name="newProduct", producttype="product"):
         super().__init__(name, producttype)
+        self.alcperc = .075
 
 class nonalcholic(beverages):
 
