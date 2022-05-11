@@ -27,12 +27,17 @@
                     <td>{{one_user.first_name}}</td>
                     <td>{{one_user.last_name}}</td>
                     <td>{{one_user.email}}</td>
-                    <td>{{one_user.created_at}}</td>
+                    <td>{{one_user.created_at.strftime("%b %d %Y")}}</td>
+                    <td>
+                        <a href="/users/{{one_user.id}}/show">Show</a>
+                        <a href="/users/edit">Edit</a>
+                        <a href="/users/{{one_user.id}}/destroy">Delete</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <a href="/">Add a New User</a>
+        <a href="/users/new">Add a New User</a>
     </div>
 </body>
 </html>
