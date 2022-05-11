@@ -3,7 +3,7 @@ from user import User
 app = Flask(__name__)
 
 @app.route('/')
-def form():
+def default():
     return redirect ("/users/new")
 
 @app.route('/users/new')
@@ -29,9 +29,11 @@ def index():
 @app.route('/users/<int:id>/show')
 def show(id):
     data = {
-        'id' : id
-            }
-    return render_template('show_user.html', user = User.get_one(data))
+        'id':id
+    }
+    users = User.get_one(data)
+    print(users)
+    return render_template('show_user.html', user = users)
 
 @app.route('/users/<int:id>/edit')
 def edit(id):

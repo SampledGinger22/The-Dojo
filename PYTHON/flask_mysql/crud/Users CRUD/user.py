@@ -9,6 +9,9 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
     @classmethod
     def get_all(cls):
         query = "SELECT * FROM users;"
@@ -26,8 +29,11 @@ class User:
     @classmethod
     def get_one(cls, data):
         query = "SELECT * FROM users WHERE id = %(id)s";
-        result = connectToMySQL('users_schema').query_db(query,data)
-        return cls(result[0])
+        result = connectToMySQL('users_schema').query_db(query, data)
+        users = []
+        for user in result:
+            users.append( cls(user) )
+        return users
 
     @classmethod
     def update(cls,data):
