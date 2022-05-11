@@ -9,7 +9,7 @@
     <title>Edit User</title>
 </head>
 <body>
-    <form action="/user/update" method="post" class="col-6 mx-auto">
+    <form class="col-6 mx-auto" action="/usersupdate/{{user.id}}" method="POST">
         <h2 class="text-center">Edit {{user.first_name}}</h2>
         <input type="hidden" name="id" value={{user.id}}>
         <div class="form-group">

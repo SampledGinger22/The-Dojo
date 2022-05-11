@@ -8,12 +8,18 @@
     <title>User</title>
 </head>
 <body>
-    <h2 class="text-center">User {{user.id}}</h2>
-    <p>Full Name: {{user.first_name}} {{user.last_name}}</p>
-    <p>Email: {{user.email}}</p>
+    <div class="container d-flex flex-column w-25 justify-content-center border border-dark border-1">
+        <h2 class="text-left">User {{user.id}}</h2>
+        <p>Full Name: {{user.first_name}} {{user.last_name}}</p>
+        <p>Email: {{user.email}}</p>
 
-    <p>Created ON: {{user.created_at.strftime("%b %d %Y")}}</p>
-    <p>Last Updated: {{user.updated_at.strftime("%b %d %Y")}}</p>
+        <p>Created ON: {{user.created_at.strftime("%b %d %Y")}}</p>
+        <p>Last Updated: {{user.updated_at.strftime("%b %d %Y")}}</p>
 
+        <div>
+            <a href="/users/{{user.id}}/edit">Edit</a>
+            <a href="/users/{{user.id}}/destroy">Delete</a>
+        </div>
+    </div>
 </body>
 </html>
