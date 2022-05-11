@@ -31,7 +31,7 @@
                     <td>{{one_user.created_at.strftime("%b %d %Y")}}</td>
                     <td>
                         <a href="/users/{{one_user.id}}/show">Show</a>
-                        <a href="/users/edit">Edit</a>
+                        <a href="/users/{{one_user.id}}/edit">Edit</a>
                         <a href="/users/{{one_user.id}}/destroy">Delete</a>
                     </td>
                 </tr>
