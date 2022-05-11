@@ -28,12 +28,9 @@ class User:
 
     @classmethod
     def get_one(cls, data):
-        query = "SELECT * FROM users WHERE id = %(id)s";
+        query = "SELECT * FROM users WHERE id = %(id)s;"
         result = connectToMySQL('users_schema').query_db(query, data)
-        users = []
-        for user in result:
-            users.append( cls(user) )
-        return users
+        return cls(result[0])
 
     @classmethod
     def update(cls,data):
@@ -42,5 +39,5 @@ class User:
 
     @classmethod
     def delete(cls, data):
-        query = "DELETE FROM users WHERE id is = %(id)s;"
+        query = "DELETE FROM users WHERE id = %(id)s;"
         return connectToMySQL('users_schema').query_db( query, data)
