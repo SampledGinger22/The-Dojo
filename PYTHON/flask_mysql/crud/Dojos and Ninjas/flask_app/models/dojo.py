@@ -17,7 +17,7 @@ class Dojo:
         return dojos
 
     @classmethod
-    def save(cls, data ):
+    def save_dojo(cls, data ):
         query = "INSERT INTO dojos ( name , created_at, updated_at ) VALUES ( %(name)s , NOW() , NOW() );"
         return connectToMySQL('dojos_and_ninjas_schema').query_db( query, data )
 
@@ -26,3 +26,8 @@ class Dojo:
         query = "SELECT * FROM dojos WHERE id = %(id)s;"
         result = connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)
         return cls(result[0])
+
+    @classmethod
+    def save_ninja(cls, data):
+        query = "INSERT INTO ninjas (dojo_id , first_name , last_name, age, created_at, updated_at) VALUES (%(id)s , %(first_name)s , %(last_name)s , %(age)s , NOW() , NOW() );"
+        return connectToMySQL('dojos_and_ninjas_schema').query_db( query, data )
