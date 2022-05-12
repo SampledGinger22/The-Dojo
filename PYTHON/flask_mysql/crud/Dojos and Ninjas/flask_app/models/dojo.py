@@ -8,7 +8,7 @@ class Dojo:
         self.updated_at = data['updated_at']
 
     @classmethod
-    def get_all(cls):
+    def get_all_dojos(cls):
         query = "SELECT * FROM dojos;"
         results = connectToMySQL('dojos_and_ninjas_schema').query_db(query)
         dojos = []
@@ -22,12 +22,7 @@ class Dojo:
         return connectToMySQL('dojos_and_ninjas_schema').query_db( query, data )
 
     @classmethod
-    def get_one(cls, data):
+    def get_one_dojo(cls, data):
         query = "SELECT * FROM dojos WHERE id = %(id)s;"
         result = connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)
         return cls(result[0])
-
-    @classmethod
-    def save_ninja(cls, data):
-        query = "INSERT INTO ninjas (dojo_id , first_name , last_name, age, created_at, updated_at) VALUES (%(id)s , %(first_name)s , %(last_name)s , %(age)s , NOW() , NOW() );"
-        return connectToMySQL('dojos_and_ninjas_schema').query_db( query, data )

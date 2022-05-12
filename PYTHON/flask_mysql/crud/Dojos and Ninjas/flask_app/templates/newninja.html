@@ -8,32 +8,32 @@
     <title>New Ninja</title>
 </head>
 <body>
-    <h1 class="h1">New Ninja</h1>
-    <form action="/ninjapost" method="POST" class="container d-flex flex-column">
-        <div class="container d-flex flex-row">
+    <form class="container d-flex flex-column justify-content-left" action="/ninjapost" method="POST">
+        <h1 class="h1">New Ninja</h1>
+        <input hidden disabled name="id" id="id" value="{{dojo.id}}" >
+        <div>
             <label for="dojo">Dojo:</label>
-            <select name="dojo" type="dropdown">
+            <select class="form-control" name="dojo" type="dropdown">
                 <option selected disabled hidden>-- Select Dojo --</option>
-                {% for dojo in dojos %}
-                <option name="id" value="{{dojo.id}}">{{dojo.name}}</option>
+                {% for dojo in dojo %}
+                <option name="dojo_id" value="{{dojo.id}}">{{dojo.name}}</option>
                 {% endfor %}
             </select>
         </div>
-        <form class="container d-flex flex-column justify-content-left" action="/ninjapost" method="POST">
-            <div>
-                <label for="first_name">First Name:</label>
-                <input type="text" name="first_name">
-            </div>
-            <div>
-                <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name">
-            </div>
-            <div>
-                <label for="age">Age:</label>
-                <input type="text" name="age">
-            </div>
-            <button class="btn" type="submit">Submit</button>
-        </form>
-    <a href="/dojos">Home</a>
+        <div>
+            <label for="first_name">First Name:</label>
+            <input class="form-control" type="text" id="first_name" name="first_name">
+        </div>
+        <div>
+            <label for="last_name">Last Name:</label>
+            <input class="form-control" id="last_name" type="text" name="last_name">
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <input class="form-control" id="age" type="text" name="age">
+        </div>
+        <button class="btn" type="submit">Submit</button>
+        <a href="/dojos">Home</a>
+    </form>
 </body>
 </html>

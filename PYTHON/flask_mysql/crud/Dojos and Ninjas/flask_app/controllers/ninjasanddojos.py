@@ -9,7 +9,7 @@ def default():
 
 @app.route('/dojos')
 def form_newdojo():
-    dojo = Dojo.get_all()
+    dojo = Dojo.get_all_dojos()
     return render_template("dojos.html", dojos = dojo)
 
 @app.route('/dojospost', methods=["POST"])
@@ -25,22 +25,22 @@ def dojoroster(id):
     data = {
         "id":id
     }
-    dojo = Dojo.get_one(data)
-    ninja = Ninja.get_all_ninjas(data)
-    return render_template ("dojoroster.html", dojo = dojo, ninja = ninja)
+    dojo = Dojo.get_one_dojo(data)
+    ninja = Ninja.get_select_ninjas(data)
+    return render_template ("dojoroster.html", dojo = dojo, ninjas = ninja)
 
 @app.route('/newninja')
 def form_newninja():
-    dojo = Dojo.get_all()
-    return render_template("newninja.html", dojos = dojo)
+    dojo = Dojo.get_all_dojos()
+    ninja = Ninja.get_all_ninjas()
+    return render_template("newninja.html", dojo = dojo, ninja = ninja)
 
 @app.route('/ninjapost', methods=["POST"])
 def ninjapost():
     data = {
-        "id":id,
         "first_name": request.form["first_name"],
         "last_name" : request.form["last_name"],
         "age" : request.form["age"]
     }
-    Dojo.save_ninja(data)
+    Ninja.save_ninja(data)
     return redirect('/dojos')
