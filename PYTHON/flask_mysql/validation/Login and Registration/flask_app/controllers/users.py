@@ -36,7 +36,7 @@ def register():
 @app.route('/login', methods=['POST'])
 def login():
     data = {
-        'email':request.form['email']
+        'email':request.form['email'],
     }
     user_in_db = User.get_by_email(data)
     if not user_in_db:
