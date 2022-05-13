@@ -32,7 +32,7 @@ def register():
     return redirect('/reg_login')
 
 
-# LOOK FOR SHIT HERE
+
 @app.route('/login', methods=['POST'])
 def login():
     data = {
