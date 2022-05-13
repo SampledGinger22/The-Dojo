@@ -8,16 +8,18 @@
     <title>Dojos</title>
 </head>
 <body>
-    <div class="container">
-        <div class="container d-flex flex-column justify-content-center">
-            <h1 class="h1">New Dojo</h1>
-            <form class="form" action="/dojospost" method="POST">
-                <label for="name">Name:</label>
-                <input class="form-control" type="text" name="name" placeholder="name" action="/dojopost" method="POST">
-                <button class="btn" type="submit" value="add dojo">Create</button>
+    <div class="d-flex flex-column justify-content-center">
+        <div class="container d-flex flex-column justify-content-center mb-5 border border-dark w-25">
+            <form class="form-group" action="/dojospost" method="POST">
+                <h1 class="h1">New Dojo</h1>
+                <div class="d-flex flex-row align-items-center w-75">
+                    <label class="mr-2 h5" for="name">Name:</label>
+                    <input class="form-control" type="text" name="name" action="/dojopost" method="POST">
+                </div>
+                <button class="btn btn-dark mt-3" type="submit" value="add dojo">Create</button>
             </form>
         </div>
-        <div class="container d-flex flex-column justify-content-center">
+        <div class="container d-flex flex-column justify-content-center border border-dark w-25">
             <h1 class="h1">All Dojos</h1>
             <div class="container d-flex flex-column justify-content-left">
                 <ul>

@@ -10,13 +10,13 @@
 <body>
     <form class="container d-flex flex-column justify-content-left" action="/ninjapost" method="POST">
         <h1 class="h1">New Ninja</h1>
-        <input hidden disabled name="id" id="id" value="{{dojo.id}}" >
+        <input hidden disabled name="dojo_id" id="dojo_id" value="{{dojo.id}}" >
         <div>
             <label for="dojo">Dojo:</label>
-            <select class="form-control" name="dojo" type="dropdown">
+            <select class="form-control" name="dojo_id" type="dropdown">
                 <option selected disabled hidden>-- Select Dojo --</option>
                 {% for dojo in dojo %}
-                <option name="dojo_id" value="{{dojo.id}}">{{dojo.name}}</option>
+                <option name="dojo.id" value="{{dojo.id}}">{{dojo.name}}</option>
                 {% endfor %}
             </select>
         </div>
