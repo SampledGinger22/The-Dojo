@@ -3,6 +3,7 @@ from flask_app import app
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 from flask_app.models.user import User
+from flask_app.models.recipe import Recipe
 
 @app.route('/')
 def landing():
@@ -10,6 +11,8 @@ def landing():
 
 @app.route('/reg_login')
 def reg_login():
+    if "user_id" in session:
+        return redirect('/user_dash')
     return render_template('login.html')
 
 @app.route('/register', methods=['POST'])
