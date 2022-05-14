@@ -42,9 +42,9 @@ def login():
         flash('Incorrect email or password')
         return redirect('/reg_login')
     session['user_id'] = user_in_db.id
-    return redirect('/success')
+    return redirect('/user_dash')
 
-@app.route('/success')
+@app.route('/user_dash')
 def success():
     if "user_id" not in session:
         return redirect('/reg_login')
@@ -54,7 +54,7 @@ def success():
     context = {
         "user": User.get_one(data)
     }
-    return render_template('success.html', **context)
+    return render_template('user_dash.html', **context)
 
 @app.route('/logout')
 def logout():
