@@ -14,9 +14,9 @@ class Recipe:
         self.user_id = data['user_id']
 
     @classmethod
-    def get_all_recipies(cls, data):
+    def get_all_recipies(cls):
         query = "SELECT * FROM recipies"
-        return connectToMySQL('recipe').query_db( query, data)
+        return connectToMySQL('recipe').query_db(query)
 
     @classmethod
     def save_recipe(cls, data):
