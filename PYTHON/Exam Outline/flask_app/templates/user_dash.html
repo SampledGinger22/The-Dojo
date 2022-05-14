@@ -8,35 +8,37 @@
     <title>User Terminal</title>
 </head>
 <body>
-    <div class="container d-flex flex-row justify-content-between">
-        <div class="d-flex flex-column justify-content-center">
-            <h1 class="text-primary p-1 ml-2" style="width:fit-content;">Welcome {{user.first_name}}</h1>
-            <p class="text-dark m-3" style="width:fit-content">These are the recipies</p>
+    <div class="container d-flex flex-column justify-content-center">
+        <div class="container d-flex flex-row justify-content-between w-75">
+            <div class="d-flex flex-column justify-content-center">
+                <h1 class="text-primary p-1 ml-2" style="width:fit-content;">Welcome {{user.first_name}}</h1>
+                <h4 class="text-dark m-1 p-1" style="width:fit-content">These are the recipies</h4>
+            </div>
+            <div>
+                <a href="/newrecipe" class="mr-3">Create</a>
+                <a href="/logout">Logout</a>
+            </div>
         </div>
-        <div>
-            <a href="/newrecipe">Create</a>
-            <a href="/logout">Logout</a>
-        </div>
+        <table class="table table-striped w-75">
+            <thead class="thead-dark">
+                <th>Name</th>
+                <th>Under 30 Minutes?</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                {% for recipe in recipies %}
+                <tr>
+                    <td>{{recipe.name}}</td>
+                    <td>{{recipe.thirty_minutes}}</td>
+                    <td>
+                        <a href="/view/{{recipe.id}}" class="mr-2">view instructions</a> 
+                        <a href="/edit/{{recipe.id}}" class="mr-2">edit</a> 
+                        <a href="/delete">delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-    <table class="table table-striped">
-        <thead class="thead-dark">
-            <th>Name</th>
-            <th>Under 30 Minutes?</th>
-            <th>Actions</th>
-        </thead>
-        <tbody>
-            {% for recipe in recipies %}
-            <tr>
-                <td>{{recipe.name}}</td>
-                <td>{{recipe.thirty_minutes}}</td>
-                <td>
-                    <a href="/view/{{recipe.id}}">view instructions</a> 
-                    <a href="/edit/{{recipe.id}}">edit</a> 
-                    <a href="/delete">delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 </body>
 </html>

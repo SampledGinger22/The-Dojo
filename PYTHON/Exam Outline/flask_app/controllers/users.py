@@ -20,10 +20,8 @@ def register():
 
     if not User.validate_user_info(request.form):
         return redirect('/reg_login')
-
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
     print(pw_hash)
-
     data = {
         **request.form,
         'password': pw_hash
@@ -43,6 +41,8 @@ def login():
         return redirect('/reg_login')
     if not bcrypt.check_password_hash(user_in_db.password, request.form['password']):
         flash('Incorrect email or password')
+        return redirect('/reg_login')
+    if not User.email_exist(request.form):
         return redirect('/reg_login')
     session['user_id'] = user_in_db.id
     return redirect('/user_dash')
