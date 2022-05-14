@@ -22,16 +22,12 @@ def register():
     print(pw_hash)
 
     data = {
-        'first_name' : request.form['first_name'],
-        'last_name': request.form['last_name'],
-        'email': request.form['email'],
+        **request.form,
         'password': pw_hash
     }
     user_id = User.save(data)
     session['user_id'] = user_id
     return redirect('/reg_login')
-
-
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -50,11 +46,15 @@ def login():
 
 @app.route('/success')
 def success():
+    if "user_id" not in session:
+        return redirect('/reg_login')
     data = {
         'id': session['user_id']
     }
-    user = User.get_one(data)
-    return render_template('success.html', user = user)
+    context = {
+        "user": User.get_one(data)
+    }
+    return render_template('success.html', **context)
 
 @app.route('/logout')
 def logout():

@@ -13,6 +13,7 @@ class User:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
     
+    @property
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
@@ -34,6 +35,8 @@ class User:
         if not EMAIL_REGEX.match(user['email']):
             flash('Invalid email address')
             is_valid = False
+        else:
+            pass
         if not (user['conf_password'] == user['password']):
             flash('Passwords do not match!')
             is_valid = False
@@ -51,7 +54,7 @@ class User:
     def get_by_email(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
         result = connectToMySQL('users_login').query_db( query , data )
-        if len(result) < 1:
+        if not result:
             return False
         return cls(result[0])
 
