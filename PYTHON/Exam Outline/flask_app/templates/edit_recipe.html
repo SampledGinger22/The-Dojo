@@ -16,7 +16,8 @@
                 <a href="/logout"><u>Logout</u></a>
             </div>
         </div>
-        <form class="d-flex flex-row justify-content-center mt-5" action="/submitrecipe" methods="POST">
+        {% for recipe in recipies %}
+        <form class="d-flex flex-row justify-content-center mt-5" action="/updaterecipe/{{recipe.id}}" methods="POST">
             <div class="leftcol container w-25 mr-3">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" value={{recipe.name}} class="form-control">
@@ -38,6 +39,7 @@
                 </div>
             </div>
         </form>
+        {% endfor %}
     </div>
 </body>
 </html>
