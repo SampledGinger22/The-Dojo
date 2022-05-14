@@ -17,6 +17,25 @@ class User:
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
+    @classmethod
+    def save(cls, data):
+        query = "INSERT INTO users ( first_name , last_name , email , password , created_at, updated_at ) VALUES ( %(first_name)s , %(last_name)s , %(email)s , %(password)s , NOW() , NOW() );"
+        return connectToMySQL('recipe').query_db( query, data )
+
+    @classmethod
+    def get_by_email(cls, data):
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        result = connectToMySQL('recipe').query_db( query , data )
+        if not result:
+            return False
+        return cls(result[0])
+
+    @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        result = connectToMySQL('recipe').query_db(query, data)
+        return cls(result[0])
+
     @staticmethod
     def validate_user_info(user):
         is_valid = True
@@ -51,23 +70,3 @@ class User:
             flash('This email is already in use')
             return False
         return True
-
-
-    @classmethod
-    def save(cls, data):
-        query = "INSERT INTO users ( first_name , last_name , email , password , created_at, updated_at ) VALUES ( %(first_name)s , %(last_name)s , %(email)s , %(password)s , NOW() , NOW() );"
-        return connectToMySQL('DATABASE').query_db( query, data )
-
-    @classmethod
-    def get_by_email(cls, data):
-        query = "SELECT * FROM users WHERE email = %(email)s;"
-        result = connectToMySQL('DATBASE').query_db( query , data )
-        if not result:
-            return False
-        return cls(result[0])
-
-    @classmethod
-    def get_one(cls, data):
-        query = "SELECT * FROM users WHERE id = %(id)s;"
-        result = connectToMySQL('DATABASE').query_db(query, data)
-        return cls(result[0])

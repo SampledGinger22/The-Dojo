@@ -8,6 +8,36 @@
     <title>Edit Recipe</title>
 </head>
 <body>
-    
+    <div class="main d-flex flex-column justify-content-column">
+        <div class="container d-flex flex-row justify-content-between w-50">
+            <h1>Edit Recipe</h1>
+            <div>
+                <a href="/user_dash" class="mr-3"><u>Dashboard</u></a>
+                <a href="/logout"><u>Logout</u></a>
+            </div>
+        </div>
+        <form class="d-flex flex-row justify-content-center mt-5" action="/submitrecipe" methods="POST">
+            <div class="leftcol container w-25 mr-3">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" value={{recipe.name}} class="form-control">
+                <label for="description">Description:</label>
+                <textarea type="text" name="description" id="description" class="form-control" value={{recipe.description}}></textarea>
+                <label for="instructions">Instructions:</label>
+                <textarea type="text" name="instructions" id="instructions" class="form-control" value={{recipe.instructions}}></textarea>
+                <button class="btn btn-success btn-md mt-3">Create</button>
+            </div>
+            <div class="rightcol container w-25 ml-3">
+                <label for="date_made">Date Made On:</label>
+                <input type="date" name="date_made" id="date_made" class="form-control">
+                <div>
+                    <p>Under 30 Minutes?</p>
+                    <label for="thirty_minutes_true">Yes</label>
+                    <input type="radio" name="thirty_minutes_true" id="thirty_minutes_true" value="true">
+                    <label for="thirty_minutes_false">No</label>
+                    <input type="radio" name="thirty_minutes_false" id="thirty_minutes_false" value="false">
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
