@@ -42,11 +42,11 @@ CREATE TABLE IF NOT EXISTS `recipe`.`recipes` (
   `thirty_minutes` VARCHAR(45) NULL,
   `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `users_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_recipes_users_idx` (`users_id` ASC) VISIBLE,
+  INDEX `fk_recipes_users_idx` (`user_id` ASC) VISIBLE,
   CONSTRAINT `fk_recipes_users`
-    FOREIGN KEY (`users_id`)
+    FOREIGN KEY (`user_id`)
     REFERENCES `recipe`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
