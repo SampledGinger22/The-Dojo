@@ -16,6 +16,13 @@
                 <a href="/logout"><u>Logout</u></a>
             </div>
         </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-white">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         <form class="form-group d-flex flex-row justify-content-center mt-5" action="/saverecipe" method="POST">
             <div class="leftcol container w-25 mr-3">
                 <label for="name">Name:</label>
