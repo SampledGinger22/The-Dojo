@@ -43,9 +43,9 @@ def update(id):
         **request.form
     }
     if not Recipe.recipe_length_val(request.form):
-        return redirect('/newrecipe')
+        return redirect('/recipe/<int:id>/edit')
     if not Recipe.recipe_entry_val(request.form):
-        return redirect('/newrecipe')
+        return redirect('/recipe/<int:id>/edit')
     Recipe.update_recipe(data)
     return redirect('/user_dash')
 
