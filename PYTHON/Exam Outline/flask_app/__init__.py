@@ -1,6 +1,3 @@
-from flask import Flask
-app=Flask(__name__)
-
-app.secret.key="recipies"
-
-DATABASE = "recipe"
+from flask import Flask, flash
+app = Flask(__name__)
+app.secret_key="recipies"

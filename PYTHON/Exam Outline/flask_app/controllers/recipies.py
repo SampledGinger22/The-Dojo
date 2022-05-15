@@ -1,9 +1,9 @@
 from flask_app import app
-from flask import render_template,redirect,request,session
+from flask import render_template,redirect,request,session,flash
 from flask_app.models.user import User
 from flask_app.models.recipe import Recipe
 
-app.route('/newrecipe')
+@app.route('/newrecipe')
 def new_recipe():
     return render_template("new_recipe.html")
 
@@ -13,6 +13,10 @@ def save_recipe():
         'user_id': session['user_id']
         **request.form
     }
+    if not Recipe.recipe_length_val(request.form):
+        return redirect('/newrecipe')
+    if not Recipe.recipe_entry_val(request.form):
+        return redirect('/newrecipe')
     Recipe.save_recipe(data)
     return redirect('/user_dash')
 
@@ -35,9 +39,13 @@ def edit(id):
 @app.route('/updaterecipe/<int:id>', methods = ["POST"])
 def update(id):
     data = {
-        "id":id,
+        'id':id,
         **request.form
     }
+    if not Recipe.recipe_length_val(request.form):
+        return redirect('/newrecipe')
+    if not Recipe.recipe_entry_val(request.form):
+        return redirect('/newrecipe')
     Recipe.update_recipe(data)
     return redirect('/user_dash')
 

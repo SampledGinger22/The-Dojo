@@ -9,15 +9,22 @@
 </head>
 <body>
     <div class="main d-flex flex-column justify-content-column">
-        <div class="container d-flex flex-row justify-content-between w-50">
+        <div class="container d-flex flex-row justify-content-between w-50 p-0">
             <h1>Edit Recipe</h1>
             <div>
                 <a href="/user_dash" class="mr-3"><u>Dashboard</u></a>
                 <a href="/logout"><u>Logout</u></a>
             </div>
         </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-white">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         {% for recipe in recipies %}
-        <form class="d-flex flex-row justify-content-center mt-5" action="/updaterecipe/{{recipe.id}}" methods="POST">
+        <form class="d-flex flex-row justify-content-center mt-5" action="/updaterecipe/{{recipe.id}}" method="POST">
             <div class="leftcol container w-25 mr-3">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" value={{recipe.name}} class="form-control">
@@ -31,11 +38,9 @@
                 <label for="date_made">Date Made On:</label>
                 <input type="date" name="date_made" id="date_made" class="form-control">
                 <div>
-                    <p>Under 30 Minutes?</p>
-                    <label for="thirty_minutes_true">Yes</label>
-                    <input type="radio" name="thirty_minutes_true" id="thirty_minutes_true" value="true">
-                    <label for="thirty_minutes_false">No</label>
-                    <input type="radio" name="thirty_minutes_false" id="thirty_minutes_false" value="false">
+                    <label for="under_thirty" class="mt-3">Under 30 Minutes?</label><br>
+                    <input type="radio" name="under_thirty" id="no" value="yes">Yes
+                    <input type="radio" name="under_thirty" id="no" value="no">No
                 </div>
             </div>
         </form>

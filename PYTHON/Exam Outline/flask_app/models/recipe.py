@@ -38,3 +38,37 @@ class Recipe:
     def delete_recipe(cls, data):
         query = "DELETE FROM recipies WHERE id = %(id)s;"
         return connectToMySQL('recipe').query_db( query, data)
+
+    @staticmethod
+    def recipe_entry_val(recipe):
+        is_valid = True
+        if len(recipe['name']) > 0:
+            flash("Recipe must have a name!")
+            is_valid = False
+        if len(recipe['description']) > 0:
+            flash("Recipe must have a description!")
+            is_valid = False
+        if not (recipe['instructions']) > 0:
+            flash('Recipe must have instructions!')
+            is_valid = False
+        if not (recipe['date_made']):
+            flash('You must enter a date made on!')
+            is_valid = False
+        if not (recipe['under_thirty']):
+            flash('you must select if this takes less than thirty minutes!')
+            is_valid = False
+        return is_valid
+
+    @staticmethod
+    def recipe_length_val(recipe):
+        is_valid = True
+        if len(recipe['name']) <= 3:
+            flash("Recipe name must be at least 3 characters long.")
+            is_valid = False
+        if len(recipe['description']) <= 3:
+            flash("Recipe name must be at least 3 characters long.")
+            is_valid = False
+        if not (recipe['instructions']) <= 3:
+            flash('Recipe name must be at least 3 characters long.')
+            is_valid = False
+        return is_valid
