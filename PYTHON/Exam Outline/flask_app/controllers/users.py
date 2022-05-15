@@ -57,7 +57,9 @@ def success():
     context = {
         "user": User.get_one(data)
     }
-    return render_template('user_dash.html', **context)
+    recipies = Recipe.get_all_recipies()
+    user_id = session['user_id']
+    return render_template('user_dash.html', **context, recipies = recipies, user_id = user_id)
 
 @app.route('/logout')
 def logout():

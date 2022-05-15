@@ -31,9 +31,11 @@
                     <td>{{recipe.name}}</td>
                     <td>{{recipe.thirty_minutes}}</td>
                     <td>
-                        <a href="/view/{{recipe.id}}" class="mr-2">view instructions</a> 
-                        <a href="/edit/{{recipe.id}}" class="mr-2">edit</a> 
-                        <a href="/delete">delete</a>
+                        <a href="/viewrecipe/{{recipe.id}}" class="mr-2">view instructions</a> 
+                        {% if recipe.user_id == user_id %}
+                        <a href="/recipe/{{recipe.id}}/edit" class="mr-2">edit</a> 
+                        <a href="/recipe/{{recipe.id}}/destroy">delete</a>
+                        {% endif %}
                     </td>
                 </tr>
                 {% endfor %}

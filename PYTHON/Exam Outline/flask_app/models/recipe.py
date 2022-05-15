@@ -6,7 +6,7 @@ class Recipe:
         self.id = data['id']
         self.name = data['name']
         self.description = data['description']
-        self.instructions = data['instruction']
+        self.instructions = data['instructions']
         self.date_made = data['date_made']
         self.thirty_minutes = data['thirty_minutes']
         self.created_at = data['created_at']
@@ -20,7 +20,7 @@ class Recipe:
 
     @classmethod
     def save_recipe(cls, data):
-        query = "INSERT INTO recipies ( name , description , instructions , date_made , thirty_minutes , created_at, updated_at, user_id) VALUES ( %(name)s , %(description)s , %(instructions)s , %(date_made)s , %(thirty_minutes)s , NOW() , NOW() ) , %(user_id)s;"
+        query = "INSERT INTO recipies (name , description , instructions , date_made , thirty_minutes , created_at, updated_at, user_id) VALUES ( %(name)s , %(description)s , %(instructions)s , %(date_made)s , %(thirty_minutes)s , NOW() , NOW() , %(user_id)s);"
         return connectToMySQL('recipe').query_db( query, data )
 
     @classmethod
@@ -42,19 +42,19 @@ class Recipe:
     @staticmethod
     def recipe_entry_val(recipe):
         is_valid = True
-        if len(recipe['name']) > 0:
+        if not len(recipe['name']) > 0:
             flash("Recipe must have a name!")
             is_valid = False
-        if len(recipe['description']) > 0:
+        if not len(recipe['description']) > 0:
             flash("Recipe must have a description!")
             is_valid = False
-        if not (recipe['instructions']) > 0:
+        if not len(recipe['instructions']) > 0:
             flash('Recipe must have instructions!')
             is_valid = False
         if not (recipe['date_made']):
             flash('You must enter a date made on!')
             is_valid = False
-        if not (recipe['under_thirty']):
+        if not (recipe['thirty_minutes']):
             flash('you must select if this takes less than thirty minutes!')
             is_valid = False
         return is_valid
@@ -62,13 +62,13 @@ class Recipe:
     @staticmethod
     def recipe_length_val(recipe):
         is_valid = True
-        if len(recipe['name']) <= 3:
+        if not len(recipe['name']) > 3:
             flash("Recipe name must be at least 3 characters long.")
             is_valid = False
-        if len(recipe['description']) <= 3:
+        if not len(recipe['description']) > 3:
             flash("Recipe name must be at least 3 characters long.")
             is_valid = False
-        if not (recipe['instructions']) <= 3:
+        if not len(recipe['instructions']) > 3:
             flash('Recipe name must be at least 3 characters long.')
             is_valid = False
         return is_valid

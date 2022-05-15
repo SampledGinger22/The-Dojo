@@ -16,35 +16,40 @@
                 <a href="/logout"><u>Logout</u></a>
             </div>
         </div>
+        <form class="d-flex flex-row justify-content-center mt-5" action="/updaterecipe/{{recipe.id}}" method="POST">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
-                        <p class="text-white">{{message}}</p>
+                        <p class="text-wrap">{{message}}</p>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-        {% for recipe in recipies %}
-        <form class="d-flex flex-row justify-content-center mt-5" action="/updaterecipe/{{recipe.id}}" method="POST">
             <div class="leftcol container w-25 mr-3">
+                <input hidden name="user_id" value={{user_id}}>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" value={{recipe.name}} class="form-control">
                 <label for="description">Description:</label>
-                <textarea type="text" name="description" id="description" class="form-control" value={{recipe.description}}></textarea>
+                <textarea type="text" name="description" id="description" class="form-control">{{recipe.description}}</textarea>
                 <label for="instructions">Instructions:</label>
-                <textarea type="text" name="instructions" id="instructions" class="form-control" value={{recipe.instructions}}></textarea>
+                <textarea type="text" name="instructions" id="instructions" class="form-control">{{recipe.instructions}}</textarea>
                 <button class="btn btn-success btn-md mt-3">Update</button>
             </div>
             <div class="rightcol container w-25 ml-3">
                 <label for="date_made">Date Made On:</label>
-                <input type="date" name="date_made" id="date_made" class="form-control">
+                <input type="date" name="date_made" id="date_made" class="form-control" value={{recipe.date_made}}>
                 <div>
-                    <label for="under_thirty" class="mt-3">Under 30 Minutes?</label><br>
-                    <input type="radio" name="under_thirty" id="no" value="yes">Yes
-                    <input type="radio" name="under_thirty" id="no" value="no">No
+                    <label for="thirty_minutes" class="mt-3">Under 30 Minutes?</label><br>
+                    {% if recipe.thirty_minutes == 'yes' %}
+                        <input type="radio" name="thirty_minutes" id="no" checked value="yes">Yes
+                        <input type="radio" name="thirty_minutes" id="no" value="no">No
+                    {% endif %}
+                    {% if recipe.thirty_minutes == 'no' %}
+                        <input type="radio" name="thirty_minutes" id="no" value="yes">Yes
+                        <input type="radio" name="thirty_minutes" id="no" checked value="no">No
+                    {% endif %}
                 </div>
             </div>
         </form>
-        {% endfor %}
     </div>
 </body>
 </html>
