@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login Page</title>
+</head>
+<style>
+    body {
+        background: url("../static/construction_background.png") no-repeat center center fixed;
+    }
+</style>
+<body>
+    <div class="container d-flex flex-column justify-content-center w-25">
+        <form class="form-group bg-dark p-3" action="/submit_user" style="margin-top: 300px" method="POST">
+            <label class="text-white" for="email">Email:</label>
+            <input class="form-control" type="text" name="email" id="email">
+            <label class="text-white" for="password">Password:</label>
+            <input class="form-control" type="text" name="password" id="password">
+            <button class="btn btn-primary mt-3 btn-md">Login</button>
+        </form>
+        <div class="bg-dark pl-3 pr-3 pt-1 pb-1" style="width:fit-content;">
+            <p class="mb-0 text-white">Dont Have An Account? <a class="text-white" href="/register"><u>Register</u></a></p>
+        </div>
+    </div>
+</body>
+</html>
