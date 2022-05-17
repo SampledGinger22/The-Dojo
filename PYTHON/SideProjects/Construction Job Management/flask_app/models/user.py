@@ -1,3 +1,4 @@
+from sqlite3 import connect
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import re
@@ -35,6 +36,11 @@ class User:
         query = "SELECT * FROM users WHERE id = %(id)s;"
         result = connectToMySQL('projects_schema').query_db(query, data)
         return cls(result[0])
+
+    @classmethod
+    def update(cls, data):
+        query = "UPDATE users Set first_name=%(first_name)s, last_name==%(last_name)s, email==%(email)s, updated_at=NOW();"
+        return connectToMySQL('projects_schema').query_db(cls, data)
 
     @staticmethod
     def validate(user):

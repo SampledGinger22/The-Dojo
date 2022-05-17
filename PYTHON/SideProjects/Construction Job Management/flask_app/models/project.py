@@ -1,3 +1,5 @@
+from types import ClassMethodDescriptorType
+from winreg import QueryInfoKey
 from flask_app.config.mysqlconnection import connectToMySQL
 
 class Project:
@@ -21,10 +23,14 @@ class Project:
         return cls(result[0])
 
     @classmethod
-    def get_all(cls, data):
+    def get_all(cls):
         query = "SELECT * FROM projects;"
         # JOIN addresses ON addresses.project_id = projects.id JOIN contacts ON contacts.project_id = projects.id
-        return connectToMySQL('projects_schema').query_db(cls, data)
+        return connectToMySQL('projects_schema').query_db(cls)
+
+    @classmethod
+    def get_by_customer(cls, data):
+        query = "SELECT * FROM projects WHERE customer_id = %(customer_id)s"
 
     @classmethod
     def update(cls, data):

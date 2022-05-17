@@ -26,7 +26,7 @@ def commit_login():
     if not bcrypt.check_password_hash(user_in_db.password, request.form['password']):
         flash('Incorrect email or password')
         return redirect('/reg_login')
-    if not User.validate_user_info(request.form):
+    if not User.validate(request.form):
         return redirect('/login')
     session['user_id'] = user_in_db.id
     return redirect('/dashboard')
@@ -38,7 +38,7 @@ def register():
 @app.route('/register/commit', methods=['POST'])
 def submit_registration():
 
-    if not User.validate_user_info(request.form):
+    if not User.validate(request.form):
         return redirect('/login')
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
     print(pw_hash)
@@ -52,7 +52,7 @@ def submit_registration():
 @app.route('/dashboard')
 def success():
     if "user_id" not in session:
-        return redirect('/reg_login')
+        return redirect('/login')
     data = {
         'id': session['user_id']
     }
@@ -60,7 +60,7 @@ def success():
         "user": User.get_one(data)
     }
     user_id = session['user_id']
-    return render_template('dashboard.html', **context, user_id = user_id)
+    return render_template('dash_user.html', **context, user_id = user_id)
 
 @app.route('/user/profile/')
 def user_profile(id):
@@ -82,7 +82,16 @@ def edit_user():
     }
     return render_template('edit_profile.html', **context)
 
-@app.route('user/profile/edit/commit')
+@app.route('/user/profile/edit/commit')
+def submit_user_changes():
+    data = {
+        **request.form,
+        'user_id' : session['user_id']
+    }
+    if not User.validate(request.form):
+        return redirect('/user/profile/edit')
+    User.update(data)
+    return redirect('/user/profile')
 
 @app.route('/logout')
 def logout():
