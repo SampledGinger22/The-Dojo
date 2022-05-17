@@ -1,0 +1,42 @@
+/* * {
+    border: solid red 1px;
+} */
+.left_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: whitesmoke;
+    align-items: right;
+    position: fixed;
+    top:10px;
+    bottom:10px;
+    width: 135px;
+    height: 95%;
+    border: solid black 1px;
+    gap: 20px;
+    padding-right: 14px;
+    padding-top: 15px;
+    min-width: 50px;
+}
+.nav_a {
+    font-size: larger;
+    text-decoration: none;
+    text-align: right;
+    color: black;
+    font-weight: bold;
+}
+.left_menu_base {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: whitesmoke;
+    align-items: center;
+    position: fixed;
+    bottom:10px;
+    height: fit-content;
+    border: solid black 1px;
+    gap: 20px;
+    padding: 7px;
+    width:135px;
+    min-width: 50px;
+}
