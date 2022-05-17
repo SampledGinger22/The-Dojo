@@ -57,7 +57,7 @@ def success():
         'id': session['user_id']
     }
     context = {
-        "user": User.get_one_user(data)
+        "user": User.get_one(data)
     }
     user_id = session['user_id']
     return render_template('dashboard.html', **context, user_id = user_id)
@@ -68,7 +68,7 @@ def user_profile(id):
         'user_id': session['user_id']
     }
     context = {
-        "user": User.get_one_user(data)
+        "user": User.get_one(data)
     }
     return render_template('user_profile.html', **context)
 
@@ -78,7 +78,7 @@ def edit_user():
         'user_id': session['user_id']
     }
     context = {
-        "user": User.get_one_user(data)
+        "user": User.get_one(data)
     }
     return render_template('edit_profile.html', **context)
 

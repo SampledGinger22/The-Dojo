@@ -31,13 +31,13 @@ class User:
         return cls(result[0])
 
     @classmethod
-    def get_one_user(cls, data):
+    def get_one(cls, data):
         query = "SELECT * FROM users WHERE id = %(id)s;"
         result = connectToMySQL('projects').query_db(query, data)
         return cls(result[0])
 
     @staticmethod
-    def validate_user_info(user):
+    def validate(user):
         is_valid = True
         if len(user['first_name']) < 2:
             flash("First name must be at least 2 characters.")
