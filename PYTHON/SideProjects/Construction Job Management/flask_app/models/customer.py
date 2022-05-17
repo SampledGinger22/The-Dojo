@@ -14,13 +14,15 @@ class Customer:
 
     @classmethod
     def get_one(cls, data):
-        query = "SELECT * FROM customers JOIN addresses ON addresses.customer_id = customers.id JOIN contacts ON contacts.customer_id = customers.id WHERE id = %(id)s;"
+        query = "SELECT * FROM customers WHERE id = %(id)s;"
+        # JOIN addresses ON addresses.customer_id = customers.id JOIN contacts ON contacts.customer_id = customers.id
         result = connectToMySQL('projects_schema').query_db(query, data)
         return cls(result[0])
 
     @classmethod
     def get_all(cls, data):
-        query = "GET * FROM customers JOIN addresses ON addresses.customer_id = customers.id JOIN contacts ON contacts.customer_id = customers.id"
+        query = "GET * FROM customers"
+        # JOIN addresses ON addresses.customer_id = customers.id JOIN contacts ON contacts.customer_id = customers.id
         return connectToMySQL('projects_schema').query_db(cls, data)
 
     @classmethod
