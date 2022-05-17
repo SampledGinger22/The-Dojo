@@ -70,7 +70,7 @@ def user_profile(id):
     context = {
         "user": User.get_one(data)
     }
-    return render_template('user_profile.html', **context)
+    return render_template('view_profile.html', **context)
 
 @app.route('/user/profile/edit')
 def edit_user():
