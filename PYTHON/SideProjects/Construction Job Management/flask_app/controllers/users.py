@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
 from flask_bcrypt import Bcrypt
@@ -64,6 +65,8 @@ def success():
 
 @app.route('/user/profile/')
 def user_profile(id):
+    if "user_id" not in session:
+        return redirect('/login')
     data = {
         'user_id': session['user_id']
     }
@@ -74,6 +77,8 @@ def user_profile(id):
 
 @app.route('/user/profile/edit')
 def edit_user():
+    if "user_id" not in session:
+        return redirect('/login')
     data = {
         'user_id': session['user_id']
     }
@@ -82,7 +87,7 @@ def edit_user():
     }
     return render_template('edit_profile.html', **context)
 
-@app.route('/user/profile/edit/commit')
+@app.route('/user/profile/edit/commit', methods=('POST'))
 def submit_user_changes():
     data = {
         **request.form,
