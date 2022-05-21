@@ -26,24 +26,20 @@
             <form action="/customers/edit/commit>" method="POST">
                 <div class="flex_row profile_column">
                     <div class="flex_column">
-                        <label class="h4" for="display_name">Customer Display Name</label>
+                        <label class="h4" for="display_name" style="margin-top: 72px">Customer Display Name</label>
                         <input class="h6" type="text" name="display_name" id="display_name" value={{customer.display_name}}>
-                        <label class="h4" for="first_name">First Name: </label>
-                        <input class="h6" name="first_name" id="first_name" value={{customer.first_name}}>
-                        <label class="h4" for="last_name">Last Name: </label>
-                        <input class="h6" name="last_name" id="last_name" value={{customer.last_name}}>
-                        <h4 class="h4">Address:</h4>
+                        <h4 class="h4" style="margin-top: 70px;">Address:</h4>
                         <label for="address">Street Address</label>
                         <input name="address" id="address" value={{customer.address}}>
-                        <label for="city">City</label>
-                        <input name="city" id="city" value={{customer.city}}>
-                        <label for="zip">Zip Code</label>
-                        <input name="zip" id="zip" minlength="5" maxlength="5" value={{customer.zip_code}}>
+                        <label for="state">State</label>
+                        <input name="state" id="state" minlength="2" maxlength="2" value={{customer.state}}>
                     </div>
                     <div class="flex_column">
                         <img class="project_img" src="{{url_for('static/images', filename='user-circle-light.png')}}">
-                        <label class="mt-4" for="state">State</label>
-                        <input name="state" id="state" minlength="2" maxlength="2" value={{customer.state}}>
+                        <label class="mt-4" for="city">City</label>
+                        <input name="city" id="city" value={{customer.city}}>
+                        <label for="zip">Zip Code</label>
+                        <input name="zip" id="zip" minlength="5" maxlength="5" value={{customer.zip_code}}>
                     </div>
                 </div>
                 <div class="lower_profile flex_column">
@@ -72,11 +68,7 @@
                             <td>{{contact.full_name}}</td>
                             <td>{{contact.phone}}</td>
                             <td>{{contact.email}}</td>
-                            <td>
-                                <a href="/contacts/{{contact.id}}">View</a>
-                                <a href="/contacts/edit/{{contact.id}}">Edit</a>
-                                <a href="/contacts/delete/{{contact.id}}">Delete</a>
-                            </td>
+                            <td><a href="/contacts/view/{{contact.id}}">View/Edit</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -97,10 +89,7 @@
                     <tr>
                         <td>{{project.name}}</td>
                         <td>{{project.start_date}}</td>
-                        <td>
-                            <a href="/contacts/{{project.id}}">View</a>
-                            <a href="/contacts/edit/{{project.id}}">Edit</a>
-                        </td>
+                        <td><a href="/contacts/view/{{project.id}}">View/Edit</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

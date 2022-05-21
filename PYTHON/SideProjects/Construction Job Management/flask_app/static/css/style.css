@@ -33,25 +33,11 @@
     font-size: 25px;
 }
 
-.parent{}
-
-.child{}
-
-.header{}
-
-.sub_head{}
-
 .project_img{
     width: 225px;
     height: 225px;
     margin-left: 15px;
 }
-
-.form{}
-
-.user_info{}
-
-.project_info{}
 
 .profile_column {
     width:600px;
@@ -71,4 +57,8 @@
     margin-left: 7%;
     max-height: 300px;
     overflow: scroll;
+}
+
+.new_customer { 
+
 }

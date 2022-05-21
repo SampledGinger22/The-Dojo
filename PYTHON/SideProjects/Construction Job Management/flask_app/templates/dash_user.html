@@ -63,42 +63,8 @@
         <!-- COLUMN RIGHT -->
 
         <div class="col_right flex_column" style="padding: 10px;">
-
-            <!-- CONTACTS -->
-
-            <!-- <div class="flex_column">
-                <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
-                    <h1>Contacts</h1>
-                    <a href="'/contacts/new">Create New Contact</a>
-                </div>
-                <table class="table table-bordered">
-                    <thead class="thead-dark">
-                        <th>Full Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </thead>
-                    <tbody>
-                        {% for contact in contacts %}
-                        <tr>
-                            <td>{{contact.full_name}}</td>
-                            <td>{{contact.phone}}</td>
-                            <td>{{contact.email}}</td>
-                            <td>
-                                <a href="/contacts/{{contact.id}}">View</a>
-                                <a href="/contacts/edit/{{contact.id}}">Edit</a>
-                                <a href="/contacts/delete/{{contact.id}}">Delete</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div> -->
-
-            <!-- PROJECTS -->
-
             <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
-                <h1>Customer Projects</h1>
+                <h1>Projects</h1>
                 <a href="/projects/new" style="margin-left: 100px;">Create New Project</a>
             </div>
             <table class="table table-bordered">
