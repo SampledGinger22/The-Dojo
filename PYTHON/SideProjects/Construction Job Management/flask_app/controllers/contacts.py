@@ -62,3 +62,11 @@ def customer_edit_commit():
     }
     Contact.save(data)
     return redirect('/contacts/<int:id>')
+
+@app.route('/contacts/delete/<int:id>')
+def delete_contact(id):
+    data = {
+        'id': id,
+    }
+    Contact.delete(id)
+    return redirect('/customers/<int:customer_id>')

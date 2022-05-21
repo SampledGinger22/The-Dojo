@@ -45,15 +45,15 @@ def view_customer(id):
     }
     return render_template('view_customer.html', **context)
 
-@app.route('/customers/edit/<int:id>')
-def edit_customer(id):
-    if "user_id" not in session:
-        return redirect('/login')
-    data = {
-        'id': id
-    }
-    Customer.get_one(data)
-    return render_template('edit_customer.html')
+# @app.route('/customers/edit/<int:id>')
+# def edit_customer(id):
+#     if "user_id" not in session:
+#         return redirect('/login')
+#     data = {
+#         'id': id
+#     }
+#     Customer.get_one(data)
+#     return render_template('edit_customer.html')
 
 @app.route('/customers/edit/commit', methods=('POST'))
 def customer_edit_commit():
@@ -61,4 +61,4 @@ def customer_edit_commit():
         **request.form
     }
     Customer.save(data)
-    return redirect('/customers/<int:id>')
+    return redirect('/customers/dash')

@@ -13,16 +13,6 @@ DROP SCHEMA IF EXISTS `projects_schema` ;
 -- Schema projects_schema
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `projects_schema` DEFAULT CHARACTER SET utf8mb3 ;
--- -----------------------------------------------------
--- Schema projects_schema
--- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `projects_schema` ;
-
--- -----------------------------------------------------
--- Schema projects_schema
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `projects_schema` DEFAULT CHARACTER SET utf8mb3 ;
-USE `projects_schema` ;
 USE `projects_schema` ;
 
 -- -----------------------------------------------------
@@ -60,9 +50,9 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
--- Table `projects_schema`.`jobs`
+-- Table `projects_schema`.`projects`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `projects_schema`.`jobs` (
+CREATE TABLE IF NOT EXISTS `projects_schema`.`projects` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL DEFAULT NULL,
   `start_date` DATE NULL DEFAULT NULL,
@@ -90,15 +80,19 @@ CREATE TABLE IF NOT EXISTS `projects_schema`.`addresses` (
   `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `project_id` INT NOT NULL,
   `customer_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `customer_id`),
+  PRIMARY KEY (`id`),
+  INDEX `fk_addresses_customers2_idx` (`customer_id` ASC) VISIBLE,
   INDEX `fk_addresses_projects1_idx` (`project_id` ASC) VISIBLE,
-  INDEX `fk_addresses_customers1_idx` (`customer_id` ASC) VISIBLE,
-  CONSTRAINT `fk_addresses_customers1`
+  CONSTRAINT `fk_addresses_customers2`
     FOREIGN KEY (`customer_id`)
-    REFERENCES `projects_schema`.`customers` (`id`),
+    REFERENCES `projects_schema`.`customers` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_addresses_projects1`
     FOREIGN KEY (`project_id`)
-    REFERENCES `projects_schema`.`jobs` (`id`))
+    REFERENCES `projects_schema`.`projects` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -123,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `projects_schema`.`contacts` (
     REFERENCES `projects_schema`.`customers` (`id`),
   CONSTRAINT `fk_contacts_projects1`
     FOREIGN KEY (`project_id`)
-    REFERENCES `projects_schema`.`jobs` (`id`))
+    REFERENCES `projects_schema`.`projects` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -144,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `projects_schema`.`tasks` (
   INDEX `fk_tasks_projects1_idx` (`project_id` ASC) VISIBLE,
   CONSTRAINT `fk_tasks_projects1`
     FOREIGN KEY (`project_id`)
-    REFERENCES `projects_schema`.`jobs` (`id`))
+    REFERENCES `projects_schema`.`projects` (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 

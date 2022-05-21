@@ -10,18 +10,19 @@
     position: fixed;
     top:10px;
     bottom:10px;
+    left: 10px;
     width: 135px;
     height: 95%;
     border: solid black 1px;
     gap: 20px;
-    padding-right: 14px;
+    padding-left: 7px;
     padding-top: 15px;
     min-width: 50px;
 }
 .nav_a {
     font-size: larger;
     text-decoration: none;
-    text-align: right;
+    text-align: left;
     color: black;
     font-weight: bold;
 }
@@ -32,6 +33,7 @@
     background-color: whitesmoke;
     align-items: center;
     position: fixed;
+    left: 10px;
     bottom:10px;
     height: fit-content;
     border: solid black 1px;

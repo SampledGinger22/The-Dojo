@@ -4,6 +4,8 @@ from flask_app import app
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 from flask_app.models.user import User
+from flask_app.models.customer import Customer
+from flask_app.models.project import Project
 
 @app.route('/')
 def landing():
@@ -58,7 +60,8 @@ def success():
         'id': session['user_id']
     }
     context = {
-        "user": User.get_one(data)
+        "user": User.get_one(data),
+        "customer": Customer.get_all(data)
     }
     user_id = session['user_id']
     return render_template('dash_user.html', **context, user_id = user_id)
