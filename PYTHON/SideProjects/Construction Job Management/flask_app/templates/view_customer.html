@@ -36,54 +36,56 @@
 <!-- UPPER LEFT SIDE -->
 
             <form class="p-4 ml-4" action="/customers/edit/commit>" method="POST">
-                <div class="flex_row profile_column">
+                <div class="flex_column align-items-start">
                     <div class="flex_column">
-                        <label class="h4" for="display_name">Customer Display Name</label>
-                        <input class="h6" type="text" name="display_name" id="display_name" value={{customer.display_name}}>
-                        <h4 class="h4" style="margin-top: 140px;">Address:</h4>
-                        <label for="address">Street Address</label>
-                        <input name="address" id="address" value={{customer.address}}>
-                        <label for="state">State</label>
-                        <input name="state" id="state" minlength="2" maxlength="2" value={{customer.state}}>
+                        <label class="h1" for="display_name">Customer Display Name</label>
+                        <input class="h5 text-center" type="text" name="display_name" id="display_name" value={{customer.display_name}}>
                     </div>
-                    <div class="flex_column ml-4">
-
-                        <!-- UPPER RIGHT SIDE -->
-
+                    <div class="flex_column">
                         <div class="live_contacts">
-                            <h3>Contacts</h3>
+                            <h4><u>Primary Contact(s)</u></h4>
                             <div>
                                 <table class="table table-bordered p-3">
                                     <thead>
                                         <th>Name</th>
-                                        <th>Title</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
                                         <th>Action</th>
                                     </thead>
                                     <tbody>
-                                        {% for contact in contacts %}
+                                        {% for primary in primaries %}
                                         <row>
-                                            <td>{{contact.full_name}}</td>
-                                            <td>{{contact.title}}</td>
-                                            <td><a href="/contact/view/{{contact.id}}">View/Edit</a></td>
+                                            <td>{{primary.first_name}} {{primary.last_name}}</td>
+                                            <td type="tel">{{primary.phone}}</td>
+                                            <td>{{primary.email}}</td>
+                                            <td><a href="/contact/view/{{primary.id}}">View/Edit</a></td>
                                         </row>
                                         {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <label style="margin-top: 50px;" for="city">City</label>
-                        <input name="city" id="city" value={{customer.city}}>
-                        <label for="zip">Zip Code</label>
-                        <input name="zip" id="zip" minlength="5" maxlength="5" value={{customer.zip_code}}>
                     </div>
+                </div>
+                <div class="flex_column justify-content-left">
+                    <h1 class="h4"><u>Address</u></h1>
+                    <label for="address" style="margin-left: 3px">Address:
+                    <input name="address" id="address" value={{customer.address}}></label>
+                    <label for="city" style="margin-left:33px;">City:
+                    <input name="city" id="city" value={{customer.city}}></label>
+                    <label for="state"  style="margin-left:25px;">State:
+                    <input name="state" id="state" minlength="2" maxlength="2" value={{customer.state}}></label>
+                    <label for="zip_code">Zip Code
+                    <input name="zip_code" id="zip_code" minlength="5" maxlength="5" value={{customer.zip_code}}></label>
+                    <label class="h4 mt-4" for="notes"><u>Customer Notes</u></label>
+                    <textarea name="notes" id="notes" class="cust_notes" >{{customer.notes}}</textarea><br>
+                    <button>Save Customer & Return to Dash</button>
                 </div>
 
                 <!-- LOWER DIV -->
 
                 <div class="lower_profile flex_column">
-                    <label class="h4" for="notes">Customer Notes:</label>
-                    <textarea name="notes" id="notes" class="cust_notes" >{{customer.notes}}</textarea><br>
-                    <button>Save Customer & Return to Dash</button>
+
                 </div>
             </form>
         </div>
@@ -96,6 +98,7 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <th>Full Name</th>
+                        <th>Title</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Actions</th>
@@ -103,7 +106,8 @@
                     <tbody>
                         {% for contact in contacts %}
                         <tr>
-                            <td>{{contact.full_name}}</td>
+                            <td>{{contact.first_name}} {{contact.last_name}}</td>
+                            <td>{{contact.title}}</td>
                             <td>{{contact.phone}}</td>
                             <td>{{contact.email}}</td>
                             <td><a href="/contacts/view/{{contact.id}}">View/Edit</a></td>
@@ -120,15 +124,28 @@
                 <thead class="thead-dark">
                     <th>Project Name</th>
                     <th>Start Date</th>
+                    <th>End Date</th>
                     <th>Actions</th>
                 </thead>
                 <tbody>
-                    {% for contact in contacts %}
-                    <tr>
-                        <td>{{project.name}}</td>
-                        <td>{{project.start_date}}</td>
-                        <td><a href="/contacts/view/{{project.id}}">View/Edit</a></td>
-                    </tr>
+                    {% for project in projects %}
+                        {% if project != None %}
+                        <tr>
+                            <td>{{project.name}}</td>
+                            <td>{{project.start_date.strftime('%A - %B %d, %Y')}}</td>
+                            <td>{{project.end_date.strftime('%A - %B %d, %Y')}}</td>
+                            <td>
+                                <a href="/projects/view/{{project.id}}">View/Edit</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        {% endif %}
                     {% endfor %}
                 </tbody>
             </table>

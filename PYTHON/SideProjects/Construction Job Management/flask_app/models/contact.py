@@ -1,4 +1,3 @@
-from sqlite3 import connect
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import re
@@ -22,25 +21,23 @@ class Contact:
 
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO contacts ( first_name , last_name , phone , email , notes , customer_id , project_id , created_at, updated_at ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(notes)s , %(customer_id)s , %(project_id)s , NOW() , NOW() );"
+        query = "INSERT INTO contacts ( first_name , last_name , phone , email , notes , customer_id , project_id , created_at, updated_at , title_id) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(notes)s , %(customer_id)s , %(project_id)s , NOW() , NOW() , %(title_id)s );"
         return connectToMySQL(DATABASE).query_db( query, data )
 
     @classmethod
     def save_with_customer(cls, data):
-        query = "INSERT INTO contacts ( first_name , last_name , phone , email , customer_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(customer_id)s);"
+        query = "INSERT INTO contacts ( first_name , last_name , phone , email , customer_id , title_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(customer_id)s , %(title_id)s);"
         return connectToMySQL(DATABASE).query_db( query, data )
 
     @classmethod
     def get_by_customer(cls, data):
-        query = "SELECT * FROM contacts WHERE customer_id = %(customer_id)s;"
-        result = connectToMySQL(DATABASE).query_db( query , data )
-        if not result:
-            return False
-        return cls(result[0])
+        query = query = "SELECT * FROM contacts JOIN titles ON contacts.title_id = titles.id WHERE contacts.customer_id = %(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db( query , data )
+
 
     @classmethod
     def get_by_project(cls, data):
-        query = "SELECT * FROM contacts WHERE project_id = %(project_id)s;"
+        query = "SELECT * FROM contacts JOIN titles ON titles.id = contacts.title_id WHERE project_id = %(project_id)s;"
         result = connectToMySQL(DATABASE).query_db( query , data )
         if not result:
             return False
@@ -48,13 +45,25 @@ class Contact:
 
     @classmethod
     def get_one(cls, data):
-        query = "SELECT * FROM contacts WHERE id = %(id)s;"
+        query = "SELECT * FROM contacts JOIN titles ON titles.id = contacts.title_id LEFT JOIN customers ON customers.id = contacts.customer_id LEFT JOIN projects ON projects.id = contacts.project_id WHERE contacts.id = %(id)s;"
         result = connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 
     @classmethod
+    def get_primary(cls, data):
+        query = "SELECT * FROM contacts JOIN customers ON contacts.customer_id = customers.id WHERE contacts.title_id = 1 and contacts.customer_id = %(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+        
+
+    @classmethod
+    def get_all(cls, data):
+        query = "SELECT * FROM contacts LEFT JOIN customers ON contacts.customer_id = customers.id LEFT JOIN projects ON contacts.project_id = projects.id JOIN titles ON contacts.title_id = titles.id WHERE customers.user_id = %(user_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+
+    @classmethod
     def update(cls, data):
-        query = "UPDATE contacts SET first_name=%(first_name)s, last_name=%(last_name)s, phone=%(phone)s, email=%(email)s, notes=%(notes)s, updated_at=NOW(), customer_id=%(customer_id)s, project_id=%(project_id)s;"
+        query = "UPDATE contacts SET first_name=%(first_name)s, last_name=%(last_name)s, phone=%(phone)s, email=%(email)s, notes=%(notes)s, updated_at=NOW(), customer_id=%(customer_id)s, project_id=%(project_id)s , title_id=%(title_id)s;"
         return connectToMySQL(DATABASE).query_db(query,data)
 
     @classmethod

@@ -4,6 +4,7 @@ from flask_app.models.customer import Customer
 from flask_app.models.project import Project
 from flask_app.models.contact import Contact
 from flask_app.models.address import Address
+from flask_app.models.title import Title
 
 @app.route('/contacts/dash')
 def contacts_dash():
@@ -12,14 +13,17 @@ def contacts_dash():
     data = {
         'user_id': session['user_id']
     }
-    Contact.get_all(data)
-    return render_template('dash_contacts.html')
+    context = {
+        'contacts': Contact.get_all(data)
+    }
+    return render_template('dash_contacts.html', **context)
 
 @app.route('/contacts/new')
 def new_contact():
     if "user_id" not in session:
         return redirect('/login')
-    return render_template('new_contact.html')
+    titles = Title.get_all
+    return render_template('new_contact.html', title = titles)
 
 @app.route('/contacts/new/commit', methods=['POST'])
 def new_contact_commit():
@@ -29,7 +33,7 @@ def new_contact_commit():
     Contact.save(data)
     return redirect('/contacts/dash')
 
-@app.route('/contacts/<int:id>')
+@app.route('/contacts/view/<int:id>')
 def view_contact(id):
     if "user_id" not in session:
         return redirect('/login')
@@ -37,10 +41,7 @@ def view_contact(id):
         'id':id
     }
     context = {
-        'customer' : Customer.get_one(data),
-        'address' : Address.get_one_by_customer(data),
-        'contact' : Contact.get_by_customer(data),
-        'project' : Project.get_by_customer(data)
+        'contact' : Contact.get_one(data)
     }
     return render_template('view_contact.html', **context)
 

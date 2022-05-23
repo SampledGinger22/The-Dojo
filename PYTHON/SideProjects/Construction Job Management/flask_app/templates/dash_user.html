@@ -17,7 +17,7 @@
     <div class="master_menu">
         <div class="left_menu">
             <a class="nav_a" href="/dashboard">DASHBOARD</a><br>
-            <a class="nav_a" href="/customers">CUSTOMERS</a><br>
+            <a class="nav_a" href="/contacts/dash">CONTACTS</a><br>
             <a class="nav_a" href="/jobs">PROJECTS</a>
         </div>
         <div class="left_menu_base">
@@ -27,14 +27,14 @@
 
     <!-- BODY CONTENT -->
 
-    <div class="main_div flex_row">
+    <div class="main_div flex_column">
 
         <!-- COLUMN LEFT -->
 
-        <div class="col_left">
-            <div class="flex_column profile_column justify-content-between">
+        <div class="row_top" style="max-height: 40%;">
+            <div class="flex_column justify-content-between">
                 <div class="flex_column">
-                    <h1>All Current Clients</h1>
+                    <h1>Current Customers</h1>
                     <div class="flex_row justify-content-between">
                         <label for="search">Search: 
                         <input type="search" name="search"></label>
@@ -44,17 +44,22 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <th>Name</th>
-                        <th>Primary Contact</th>
+                        <th>Primary Contact(s)</th>
                         <th>Added On</th>
                         <th>Actions</th>
                     </thead>
-                    <tbody>
+                    <tbody style="overflow: scroll;">
                         {% for customer in customers %}
                             <tr>
                                 <td>{{customer.display_name}}</td>
-                                <td>{{customer.first_name}} {{customer.last_name}}</td>
+                                <td>
+                                    {% if customer.title_id == 1 %}
+                                        {{customer.first_name}} {{customer.last_name}}<br>
+                                        {{customer.phone}}<br>
+                                    {% endif %}
+                                </td>
                                 <td>{{customer.created_at.strftime('%A - %B %d, %Y')}}</td>
-                                <td><a href="/customers/{{customer.id}}">View/Edit</a></td>
+                                <td><a href="/customers/view/{{customer.customer_id}}">View/Edit</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -64,26 +69,37 @@
 
         <!-- COLUMN RIGHT -->
 
-        <div class="col_right flex_column" style="padding: 10px;">
+        <div class="row_bottom flex_column" style="padding: 10px; margin-top: 25px; max-height: 40%;">
             <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
                 <h1>Projects</h1>
-                <a href="/projects/new" style="margin-left: 100px;">Create New Project</a>
+                <a href="/projects/new">Create New Project</a>
             </div>
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <th>Project Name</th>
                     <th>Start Date</th>
+                    <th>End Date</th>
                     <th>Actions</th>
                 </thead>
-                <tbody>
+                <tbody style="overflow: scroll;">
                     {% for project in projects %}
-                    <tr>
-                        <td>{{project.name}}</td>
-                        <td>{{project.start_date ('%A - %B %d, %Y')}}</td>
-                        <td>
-                            <a href="/contacts/edit/{{project.id}}">View/Edit</a>
-                        </td>
-                    </tr>
+                        {% if project != None %}
+                        <tr>
+                            <td>{{project.name}}</td>
+                            <td>{{project.start_date.strftime('%A - %B %d, %Y')}}</td>
+                            <td>{{project.end_date.strftime('%A - %B %d, %Y')}}</td>
+                            <td>
+                                <a href="/projects/view/{{project.id}}">View/Edit</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        {% endif %}
                     {% endfor %}
                 </tbody>
             </table>

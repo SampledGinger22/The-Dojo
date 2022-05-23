@@ -54,18 +54,18 @@ def new_customer_commit():
     Contact.save_with_customer(contact_data)
     return redirect('/dashboard')
 
-@app.route('/customers/<int:id>')
+@app.route('/customers/view/<int:id>')
 def view_customer(id):
     if "user_id" not in session:
         return redirect('/login')
     data = {
-        'id':id
+        'customer_id': id,
     }
     context = {
         'customer' : Customer.get_one(data),
-        'address' : Address.get_one_by_customer(data),
-        'contact' : Contact.get_by_customer(data),
-        'project' : Project.get_by_customer(data)
+        'primaries': Contact.get_primary(data),
+        'contacts': Contact.get_by_customer(data),
+        'projects': Project.get_by_customer(data)
     }
     return render_template('view_customer.html', **context)
 

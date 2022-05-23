@@ -16,7 +16,7 @@ class Customer:
 
     @classmethod
     def get_one(cls, data):
-        query = "SELECT * FROM customers JOIN addresses ON addresses.customer_id = customers.id JOIN contacts ON contacts.customer_id = customers.id WHERE customers.id = %(id)s;"
+        query = "SELECT * FROM customers LEFT JOIN addresses ON addresses.customer_id = customers.id LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id JOIN titles ON contacts.title_id = titles.id WHERE contacts.customer_id = %(customer_id)s;"
         result = connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 
@@ -36,11 +36,9 @@ class Customer:
             return False
         return cls(result[0])
 
-
     @classmethod
     def get_all(cls, data):
-        query = "SELECT * FROM customers JOIN contacts ON contacts.customer_id = customers.id WHERE user_id = %(user_id)s"
-        # JOIN addresses ON addresses.customer_id = customers.id JOIN contacts ON contacts.customer_id = customers.id
+        query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE user_id = %(user_id)s"
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod

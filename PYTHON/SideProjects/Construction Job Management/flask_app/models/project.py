@@ -13,7 +13,7 @@ class Project:
     @classmethod
     def save(cls, data):
         query = "INSERT INTO projects (name , start_date, end_date, customer_id) VALUES (%(name)s, %(start_date)s, %(end_date)s, %(customer_id)s);"
-        return connectToMySQL(DATABASE).query_db(cls, data)
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def get_one(cls, data):
@@ -22,18 +22,19 @@ class Project:
         return cls(result[0])
 
     @classmethod
-    def get_all(cls, data):
-        query = "SELECT * FROM projects JOIN users ON users.id = projects.user_id JOIN addresses ON addresses.project_id = projects.id JOIN contacts ON contacts.project_id = projects.id WHERE user_id=%(user_id)s;"
-        return connectToMySQL(DATABASE).query_db(cls, data)
+    def get_all(cls):
+        query = "SELECT * FROM projects JOIN addresses ON addresses.project_id = projects.id JOIN contacts ON contacts.project_id = projects.id;"
+        return connectToMySQL(DATABASE).query_db(query)
 
     @classmethod
     def get_by_customer(cls, data):
         query = "SELECT * FROM projects WHERE customer_id = %(customer_id)s"
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def update(cls, data):
         query = "UPDATE projects SET name=%(name)s, start_date=%(start_date)s, end_date=%(end_date)s, customer_id=%(customer_id)s;"
-        return connectToMySQL(DATABASE).query_db(cls, data)
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def delete(cls, data):

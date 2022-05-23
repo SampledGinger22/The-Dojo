@@ -19,13 +19,27 @@
 .col_left {
     align-items: center;
     border: black solid 1px;
-    margin-top: 50px;
 }
 
 .col_right {
     width: fit-content;
     border: 1px solid black;
     margin-left: 25px;
+    height: 70%;
+}
+
+.row_top {
+    width: 100%;
+    min-width: fit-content;
+    align-items: center;
+    border: black solid 1px;
+}
+
+.row_bottom {
+    width: 100%;
+    min-width: fit-content;
+    border: 1px solid black;
+    margin-top: 25px;
     height: 70%;
 }
 
