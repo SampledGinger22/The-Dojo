@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
 from flask_app.models.customer import Customer
@@ -22,13 +21,38 @@ def new_customer():
         return redirect('/login')
     return render_template('new_customer.html')
 
-@app.route('/customers/new/commit', methods=('POST'))
+@app.route('/customers/new/commit', methods=['POST'])
 def new_customer_commit():
-    data = {
-        **request.form
+    disp_data = {
+        'display_name': request.form['display_name']
     }
-    Customer.save(data)
-    return redirect('/customers/dash')
+    if not Customer.validate(disp_data):
+        return redirect('/customers/new')
+    cust_data = {
+        'display_name': request.form['display_name'],
+        'notes': request.form['cust_notes'],
+        'user_id': session['user_id']
+    }
+    Customer.save(cust_data)
+    cust_id = Customer.get_by_disp(cust_data)
+    address_data = {
+        'address': request.form['address'],
+        'city': request.form['city'],
+        'state': request.form['state'],
+        'zip_code': request.form['zip_code'],
+        'customer_id': cust_id.id
+    }
+    Address.save_with_customer(address_data)
+    contact_data = {
+        'first_name': request.form['first_name'],
+        'last_name': request.form['last_name'],
+        'phone': request.form['phone'],
+        'email': request.form['email'],
+        'customer_id': cust_id.id,
+        'title_id': 1
+    }
+    Contact.save_with_customer(contact_data)
+    return redirect('/dashboard')
 
 @app.route('/customers/<int:id>')
 def view_customer(id):
@@ -45,20 +69,10 @@ def view_customer(id):
     }
     return render_template('view_customer.html', **context)
 
-# @app.route('/customers/edit/<int:id>')
-# def edit_customer(id):
-#     if "user_id" not in session:
-#         return redirect('/login')
-#     data = {
-#         'id': id
-#     }
-#     Customer.get_one(data)
-#     return render_template('edit_customer.html')
-
-@app.route('/customers/edit/commit', methods=('POST'))
+@app.route('/customers/edit/commit', methods=["POST"])
 def customer_edit_commit():
     data = {
         **request.form
     }
-    Customer.save(data)
+    Customer.update(data)
     return redirect('/customers/dash')

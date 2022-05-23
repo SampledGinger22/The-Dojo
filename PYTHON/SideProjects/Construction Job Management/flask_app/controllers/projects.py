@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
 from flask_app.models.customer import Customer
@@ -40,7 +39,7 @@ def edit_project(id):
     projects = Project.get_one(data)
     return render_template('view_project.html', project = projects)
 
-@app.route('/projects/edit/commit', methods=('POST'))
+@app.route('/projects/edit/commit', methods=['POST'])
 def commit_project():
     data = {
         **request.form
@@ -54,7 +53,7 @@ def new_project():
         return redirect('/login')
     return render_template('new_project.html')
 
-@app.route('/projects/new/commit', methods=('POST'))
+@app.route('/projects/new/commit', methods=['POST'])
 def new_project_commit():
     data = {
         **request.form

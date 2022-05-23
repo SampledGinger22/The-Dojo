@@ -2,6 +2,7 @@ from sqlite3 import connect
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import re
+from flask_app import DATABASE
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]+$') 
 
 class Contact:
@@ -22,12 +23,17 @@ class Contact:
     @classmethod
     def save(cls, data):
         query = "INSERT INTO contacts ( first_name , last_name , phone , email , notes , customer_id , project_id , created_at, updated_at ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(notes)s , %(customer_id)s , %(project_id)s , NOW() , NOW() );"
-        return connectToMySQL('projects_schema').query_db( query, data )
+        return connectToMySQL(DATABASE).query_db( query, data )
+
+    @classmethod
+    def save_with_customer(cls, data):
+        query = "INSERT INTO contacts ( first_name , last_name , phone , email , customer_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(customer_id)s);"
+        return connectToMySQL(DATABASE).query_db( query, data )
 
     @classmethod
     def get_by_customer(cls, data):
         query = "SELECT * FROM contacts WHERE customer_id = %(customer_id)s;"
-        result = connectToMySQL('projects_schema').query_db( query , data )
+        result = connectToMySQL(DATABASE).query_db( query , data )
         if not result:
             return False
         return cls(result[0])
@@ -35,7 +41,7 @@ class Contact:
     @classmethod
     def get_by_project(cls, data):
         query = "SELECT * FROM contacts WHERE project_id = %(project_id)s;"
-        result = connectToMySQL('projects_schema').query_db( query , data )
+        result = connectToMySQL(DATABASE).query_db( query , data )
         if not result:
             return False
         return cls(result[0])
@@ -43,18 +49,18 @@ class Contact:
     @classmethod
     def get_one(cls, data):
         query = "SELECT * FROM contacts WHERE id = %(id)s;"
-        result = connectToMySQL('projects_schema').query_db(query, data)
+        result = connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 
     @classmethod
     def update(cls, data):
         query = "UPDATE contacts SET first_name=%(first_name)s, last_name=%(last_name)s, phone=%(phone)s, email=%(email)s, notes=%(notes)s, updated_at=NOW(), customer_id=%(customer_id)s, project_id=%(project_id)s;"
-        return connectToMySQL('projects_schema').query_db(query,data)
+        return connectToMySQL(DATABASE).query_db(query,data)
 
     @classmethod
     def delete(cls, data):
         query = "DELETE FROM contacts WHERE id = %(id)s;"
-        return connectToMySQL('projects_schema').query_db( query, data)
+        return connectToMySQL(DATABASE).query_db( query, data)
 
     @staticmethod
     def validate(contact):

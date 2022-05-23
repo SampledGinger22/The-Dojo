@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
 from flask_app.models.customer import Customer
@@ -56,7 +55,7 @@ def edit_contacts(id):
     return render_template('edit_contact.html')
 
 @app.route('/contacts/edit/commit', methods=['POST'])
-def customer_edit_commit():
+def contacts_edit_commit():
     data = {
         **request.form
     }

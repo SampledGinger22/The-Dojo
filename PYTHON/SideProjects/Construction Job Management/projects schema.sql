@@ -98,6 +98,18 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
+-- Table `projects_schema`.`titles`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `projects_schema`.`titles` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NULL,
+  `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `projects_schema`.`contacts`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `projects_schema`.`contacts` (
@@ -109,15 +121,22 @@ CREATE TABLE IF NOT EXISTS `projects_schema`.`contacts` (
   `notes` VARCHAR(255) NULL DEFAULT NULL,
   `customer_id` INT NOT NULL,
   `project_id` INT NOT NULL,
+  `title_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_contacts_customers1_idx` (`customer_id` ASC) VISIBLE,
   INDEX `fk_contacts_projects1_idx` (`project_id` ASC) VISIBLE,
+  INDEX `fk_contacts_titles1_idx` (`title_id` ASC) VISIBLE,
   CONSTRAINT `fk_contacts_customers1`
     FOREIGN KEY (`customer_id`)
     REFERENCES `projects_schema`.`customers` (`id`),
   CONSTRAINT `fk_contacts_projects1`
     FOREIGN KEY (`project_id`)
-    REFERENCES `projects_schema`.`projects` (`id`))
+    REFERENCES `projects_schema`.`projects` (`id`),
+  CONSTRAINT `fk_contacts_titles1`
+    FOREIGN KEY (`title_id`)
+    REFERENCES `projects_schema`.`titles` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 

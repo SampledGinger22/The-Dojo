@@ -1,7 +1,7 @@
 from sqlite3 import connect
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-import re
+from flask_app import DATABASE
 
 class Address:
     def __init__(self, data):
@@ -16,29 +16,34 @@ class Address:
     @classmethod
     def save(cls, data):
         query = 'INSERT INTO addresses ( address, city, state, zip_code, created_at, updated_at, project_id, customer_id) VALUES (%(address)s , %(city)s , %(state)s , %(zip_code)s , %(created_at)s , %(updated_at)s , %(project_id)s , %(customer_id)s);'
-        return connectToMySQL('projects_schema').query_db(query, data)
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def save_with_customer(cls, data):
+        query = 'INSERT INTO addresses ( address, city, state, zip_code, created_at, updated_at , customer_id) VALUES (%(address)s , %(city)s , %(state)s , %(zip_code)s , NOW() , NOW() , %(customer_id)s);'
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def get_one_by_project(cls, data):
         query = "SELECT * FROM addresses WHERE project_id = %(project_id)s"
-        result = connectToMySQL('projects_schema').query_db(query, data)
+        result = connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
     
     @classmethod
     def get_one_by_customer(cls, data):
         query = "SELECT * FROM addresses WHERE customer_id = %(customer_id)s"
-        result = connectToMySQL('projects_schema').query_db(query, data)
+        result = connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 
     @classmethod
     def update(cls, data):
         query = "UPDATE addresses SET address=%(address)s, city=%(city)s, state=%(state)s, zip_code=%(zip_code)s, updated_at=NOW(), project_id=%(project_id)s, customer_id=%(customer_id)s;"
-        return connectToMySQL('projects_schema').query_db(cls, data)
+        return connectToMySQL(DATABASE).query_db(cls, data)
 
     @classmethod
     def delete(cls, data):
         query = "DELETE FROM addresses WHERE id = %(id)s;"
-        return connectToMySQL('projects_schema').query_db( query, data)
+        return connectToMySQL(DATABASE).query_db( query, data)
 
     @staticmethod
     def validate(address):

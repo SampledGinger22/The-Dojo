@@ -23,7 +23,14 @@
     </div>
     <div class="main_div flex_row new_customer">
         <div class="col_left">
-            <form action="/customers/edit/commit>" method="POST">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/customers/new/commit" method="POST">
                 <div class="flex_row profile_column justify-content-around">
                     <div class="flex_column">
                         <label class="h4" for="display_name">Display Name</label>
@@ -48,14 +55,14 @@
                         </div>
                         <label class="mt-5" for="city">City</label>
                         <input name="city" id="city">
-                        <label for="zip">Zip Code</label>
-                        <input name="zip" id="zip" minlength="5" maxlength="5">
+                        <label for="zip_code">Zip Code</label>
+                        <input name="zip_code" id="zip_code" minlength="5" maxlength="5">
                     </div>
                 </div>
                 <div class="lower_profile flex_column">
-                    <label class="h4" for="notes">Customer Notes:</label>
-                    <textarea name="notes" id="notes" class="cust_notes"></textarea><br>
-                    <button>Save Customer & Return to Dash</button>
+                    <label class="h4" for="cust_notes">Customer Notes:</label>
+                    <textarea name="cust_notes" id="cust_notes" class="cust_notes"></textarea><br>
+                    <button>Save Customer <br>& Return to Dash</button>
                 </div>
             </div>
         </div>

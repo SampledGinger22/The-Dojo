@@ -44,6 +44,7 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <th>Name</th>
+                        <th>Primary Contact</th>
                         <th>Added On</th>
                         <th>Actions</th>
                     </thead>
@@ -51,8 +52,9 @@
                         {% for customer in customers %}
                             <tr>
                                 <td>{{customer.display_name}}</td>
-                                <td>{{customer.created_at}}</td>
-                                <td><a href="/customers/{{customer.id}}">view/edit</a></td>
+                                <td>{{customer.first_name}} {{customer.last_name}}</td>
+                                <td>{{customer.created_at.strftime('%A - %B %d, %Y')}}</td>
+                                <td><a href="/customers/{{customer.id}}">View/Edit</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -74,13 +76,12 @@
                     <th>Actions</th>
                 </thead>
                 <tbody>
-                    {% for contact in contacts %}
+                    {% for project in projects %}
                     <tr>
                         <td>{{project.name}}</td>
-                        <td>{{project.start_date}}</td>
+                        <td>{{project.start_date ('%A - %B %d, %Y')}}</td>
                         <td>
-                            <a href="/contacts/{{project.id}}">View</a>
-                            <a href="/contacts/edit/{{project.id}}">Edit</a>
+                            <a href="/contacts/edit/{{project.id}}">View/Edit</a>
                         </td>
                     </tr>
                     {% endfor %}
