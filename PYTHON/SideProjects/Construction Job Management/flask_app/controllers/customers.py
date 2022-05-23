@@ -65,14 +65,29 @@ def view_customer(id):
         'customer' : Customer.get_one(data),
         'primaries': Contact.get_primary(data),
         'contacts': Contact.get_by_customer(data),
-        'projects': Project.get_by_customer(data)
+        'projects': Project.get_by_customer(data),
+        'address': Address.get_one_by_customer(data)
     }
     return render_template('view_customer.html', **context)
 
-@app.route('/customers/edit/commit', methods=["POST"])
-def customer_edit_commit():
+@app.route('/customers/edit/<int:id>/commit', methods=["POST"])
+def customer_edit_commit(id):
+    disp_data = {
+        'display_name': request.form['display_name']
+    }
+    if not Customer.validate_update(disp_data):
+        return redirect('/dashboard')
     data = {
+        'id': id,
         **request.form
     }
     Customer.update(data)
-    return redirect('/customers/dash')
+    address_data = {
+        'address': request.form['address'],
+        'city': request.form['city'],
+        'state': request.form['state'],
+        'zip_code': request.form['zip_code'],
+        'customer_id': id
+    }
+    Address.update_with_cust(address_data)
+    return redirect('/dashboard')

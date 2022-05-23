@@ -32,13 +32,18 @@ class Address:
     @classmethod
     def get_one_by_customer(cls, data):
         query = "SELECT * FROM addresses WHERE customer_id = %(customer_id)s"
-        result = connectToMySQL(DATABASE).query_db(query, data)
+        result =  connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 
     @classmethod
     def update(cls, data):
-        query = "UPDATE addresses SET address=%(address)s, city=%(city)s, state=%(state)s, zip_code=%(zip_code)s, updated_at=NOW(), project_id=%(project_id)s, customer_id=%(customer_id)s;"
-        return connectToMySQL(DATABASE).query_db(cls, data)
+        query = "UPDATE addresses SET address=%(address)s, city=%(city)s, state=%(state)s, zip_code=%(zip_code)s, updated_at=NOW(), project_id=%(project_id)s, customer_id=%(customer_id)s WHERE id=%(id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+    
+    @classmethod
+    def update_with_cust(cls, data):
+        query = "UPDATE addresses SET address=%(address)s, city=%(city)s, state=%(state)s, zip_code=%(zip_code)s, updated_at=NOW() WHERE customer_id=%(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def delete(cls, data):
