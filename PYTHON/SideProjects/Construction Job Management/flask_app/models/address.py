@@ -30,13 +30,15 @@ class Address:
 
     @classmethod
     def get_one_by_project(cls, data):
-        query = "SELECT * FROM addresses WHERE project_id = %(project_id)s"
+        query = "SELECT * FROM addresses WHERE project_id = %(id)s;"
         result = connectToMySQL(DATABASE).query_db(query, data)
+        if not result:
+            return False
         return cls(result[0])
     
     @classmethod
     def get_one_by_customer(cls, data):
-        query = "SELECT * FROM addresses WHERE customer_id = %(id)s"
+        query = "SELECT * FROM addresses WHERE customer_id = %(id)s;"
         result =  connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 
@@ -48,6 +50,11 @@ class Address:
     @classmethod
     def update_with_cust(cls, data):
         query = "UPDATE addresses SET address=%(address)s, city=%(city)s, state=%(state)s, zip_code=%(zip_code)s, updated_at=NOW() WHERE customer_id=%(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def update_with_project(cls, data):
+        query = "UPDATE addresses SET address=%(address)s, city=%(city)s, state=%(state)s, zip_code=%(zip_code)s, updated_at=NOW() WHERE project_id=%(project_id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod

@@ -20,6 +20,8 @@ def project_dash():
     }
     return render_template('dash_projects', **context)
 
+# View / Edit
+
 @app.route('/projects/view/<int:id>')
 def view_project(id):
     if "user_id" not in session:
@@ -29,21 +31,39 @@ def view_project(id):
         'id': id
     }
     context = {
-        'projects': Project.get_one(data),
+        'project': Project.get_one(data),
         'address': Address.get_one_by_project(data),
         'contacts': Contact.get_by_project(data),
-        'customer': Customer.get_all
+        'customer': Customer.get_all(data),
+        'owners': Customer.get_by_project(data)
     }
-    
     return render_template('view_project.html', **context)
 
-@app.route('/projects/edit/commit', methods=['POST'])
-def commit_project():
+@app.route('/projects/edit/<int:id>/commit', methods=["POST"])
+def project_edit_commit(id):
+    disp_data = {
+        'name': request.form['name'],
+        'id': id
+    }
+    if not Project.validate_update(disp_data):
+        return redirect('/dashboard')
     data = {
+        'id': id,
         **request.form
     }
     Project.update(data)
-    return redirect('projects/<int:id>')
+    address_data = {
+        'address': request.form['address'],
+        'city': request.form['city'],
+        'state': request.form['state'],
+        'zip_code': request.form['zip_code'],
+        'project_id': id
+    }
+    print(address_data['project_id'])
+    Address.update_with_project(address_data)
+    return redirect('/dashboard')
+
+# New Projects
 
 @app.route('/projects/new')
 def new_project():
@@ -88,7 +108,8 @@ def new_project_commit():
         'phone': request.form['phone'],
         'email': request.form['email'],
         'project_id': project_id.id,
-        'title_id': request.form['title']
+        'title_id': request.form['title'],
+        'customer_id': request.form['customer']
     }
     Contact.save_with_project(contact_data)
     return redirect('/dashboard')

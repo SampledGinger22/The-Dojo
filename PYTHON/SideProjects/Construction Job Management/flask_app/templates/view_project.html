@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/navbar.css')}}>
     <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/main_div_style.css')}}>
     <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css')}}>
-    <title>Customer</title>
+    <title>{{project.name}}</title>
 </head>
 <body>
 
@@ -35,26 +35,24 @@
 
 <!-- UPPER LEFT SIDE -->
 
-            <form class="p-4 ml-4" action="/customers/edit/{{customer.id}}/commit" method="POST">
-                <div class="flex_column align-items-start">
+            <form class="p-4" action="/projects/edit/{{project.id}}/commit" method="POST">
+                <div class="flex_column">
                     <div class="flex_column">
                         <label class="h1" for="name">Project Name</label>
                         <input type="text" name="name" id="name" value="{{project.name}}">
                     </div>
                     <div class="flex_column">
                         <div class="live_contacts">
-                            <h4><u>Customer</u></h4>
-                            <select name="customer" id="customer" value="{{customer.id}}">
-                                <option hidden>{{customer.display_name}}</option>
-                            {% for customer in customers %}
-                                <option value="{{customer.id}}">{{customer.display_name}}</option>
+                            <label class="h4"><u>Customer</u></label><br>
+                            <select name="customer_id" id="customer_id">
+                            {% for customers in customer %}
+                                <option value="{{customers.id}}">{{customers.display_name}}</option>
                             {% endfor %}
                             </select>
                                 </table>
                             </div>
                         </div>
                     </div>
-                </div>
                 <div class="flex_column justify-content-left">
                     <h1 class="h4"><u>Address</u></h1>
                     <label for="address" style="margin-left: 6px">Address:
@@ -65,15 +63,15 @@
                     <input name="state" id="state" minlength="2" maxlength="2" value="{{address.state}}"></label>
                     <label for="zip_code">Zip Code:
                     <input name="zip_code" id="zip_code" minlength="5" maxlength="5" value="{{address.zip_code}}"></label>
-                    <label class="h4 mt-4" for="notes"><u>Customer Notes</u></label>
-                    <textarea name="notes" id="notes" class="cust_notes" >{{customer.notes}}</textarea><br>
+                    <div class="flex_row mt-3">
+                        <label class="h5" for="start_date">Start Date:
+                        <input type="date" name="start_date" id="start_date" value="{{project.start_date}}"></label>
+                        <label class="ml-5 h5" for="end_date">End Date:
+                        <input type="date" name="end_date" id="end_date" value="{{project.end_date}}"></label>
+                    </div>
+                    <label class="h4 mt-4" for="project_notes"><u>Project Notes</u></label>
+                    <textarea type="text" name="project_notes" id="project_notes" class="cust_notes" style="overflow: scroll;">{{project.project_notes}}</textarea><br>
                     <button>Save Customer & Return to Dash</button>
-                </div>
-
-                <!-- LOWER DIV -->
-
-                <div class="lower_profile flex_column">
-
                 </div>
             </form>
         </div>
@@ -81,14 +79,13 @@
             <div class="flex_column">
                 <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
                     <h1>Contacts</h1>
-                    <a href="'/contacts/new">Create New Contact</a>
+                    <a href="'/contacts/new">Create New Project Contact</a>
                 </div>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <th>Full Name</th>
                         <th>Title</th>
                         <th>Phone</th>
-                        <th>Email</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
@@ -97,7 +94,6 @@
                             <td>{{contact.first_name}} {{contact.last_name}}</td>
                             <td>{{contact.title}}</td>
                             <td>{{contact.phone}}</td>
-                            <td>{{contact.email}}</td>
                             <td><a href="/contacts/view/{{contact.id}}">View/Edit</a></td>
                         </tr>
                         {% endfor %}
@@ -105,35 +101,26 @@
                 </table>
             </div>
             <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
-                <h1>Customer Projects</h1>
-                <a href="/projects/new">Create New Project</a>
+                <h1>Customer</h1>
             </div>
             <table class="table table-bordered">
                 <thead class="thead-dark">
-                    <th>Project Name</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Actions</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Primary Contact(s)</th>
+                    <th class="text-center">Actions</th>
                 </thead>
-                <tbody>
-                    {% for project in projects %}
-                        {% if project != None %}
+                <tbody style="overflow: scroll;">
+                    {% for owner in owners %}
                         <tr>
-                            <td>{{project.name}}</td>
-                            <td>{{project.start_date.strftime('%A - %B %d, %Y')}}</td>
-                            <td>{{project.end_date.strftime('%A - %B %d, %Y')}}</td>
-                            <td>
-                                <a href="/projects/view/{{project.id}}">View/Edit</a>
+                            <td class="text-center">{{owner.display_name}}</td>
+                            <td class="text-center">
+                                {% if owner.title_id == 1 %}
+                                    {{owner.first_name}} {{owner.last_name}}<br>
+                                    {{owner.phone}}<br>
+                                {% endif %}
                             </td>
+                            <td class="text-center"><a href="/customers/view/{{owner.id}}">View/Edit</a></td>
                         </tr>
-                        {% else %}
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
                     {% endfor %}
                 </tbody>
             </table>

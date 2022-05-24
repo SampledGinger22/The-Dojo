@@ -31,7 +31,7 @@ class Contact:
 
     @classmethod
     def save_with_project(cls, data):
-        query = "INSERT INTO contacts ( first_name , last_name , phone , email , project_id , title_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(project_id)s , %(title_id)s);"
+        query = "INSERT INTO contacts ( first_name , last_name , phone , email , customer_id , project_id , title_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(customer_id)s, %(project_id)s , %(title_id)s);"
         return connectToMySQL(DATABASE).query_db( query, data )
 
     @classmethod
@@ -42,11 +42,8 @@ class Contact:
 
     @classmethod
     def get_by_project(cls, data):
-        query = "SELECT * FROM contacts JOIN titles ON titles.id = contacts.title_id WHERE project_id = %(project_id)s;"
-        result = connectToMySQL(DATABASE).query_db( query , data )
-        if not result:
-            return False
-        return cls(result[0])
+        query = "SELECT * FROM contacts JOIN titles ON titles.id = contacts.title_id WHERE project_id = %(id)s;"
+        return connectToMySQL(DATABASE).query_db( query , data )
 
     @classmethod
     def get_one(cls, data):

@@ -60,6 +60,7 @@ def view_customer(id):
         return redirect('/login')
     data = {
         'customer_id': id,
+        'id': id
     }
     context = {
         'customer' : Customer.get_one(data),

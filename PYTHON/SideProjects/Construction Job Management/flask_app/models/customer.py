@@ -46,8 +46,14 @@ class Customer:
 
     @classmethod
     def get_all(cls, data):
-        query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE user_id = %(user_id)s"
+        query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE user_id = %(user_id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def get_by_project(cls, data):
+        query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE projects.id = %(id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+        
 
     @classmethod
     def update(cls, data):
