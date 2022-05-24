@@ -41,7 +41,7 @@ class User:
     @classmethod
     def update(cls, data):
         query = "UPDATE users Set first_name=%(first_name)s, last_name==%(last_name)s, email==%(email)s, updated_at=NOW();"
-        return connectToMySQL(DATABASE).query_db(cls, data)
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @staticmethod
     def validate(user):

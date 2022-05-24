@@ -30,8 +30,13 @@ class Contact:
         return connectToMySQL(DATABASE).query_db( query, data )
 
     @classmethod
+    def save_with_project(cls, data):
+        query = "INSERT INTO contacts ( first_name , last_name , phone , email , project_id , title_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(project_id)s , %(title_id)s);"
+        return connectToMySQL(DATABASE).query_db( query, data )
+
+    @classmethod
     def get_by_customer(cls, data):
-        query = query = "SELECT * FROM contacts JOIN titles ON contacts.title_id = titles.id WHERE contacts.customer_id = %(customer_id)s;"
+        query = query = "SELECT * FROM contacts JOIN titles ON contacts.title_id = titles.id WHERE contacts.customer_id = %(id)s;"
         return connectToMySQL(DATABASE).query_db( query , data )
 
 

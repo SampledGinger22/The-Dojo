@@ -24,6 +24,11 @@ class Address:
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
+    def save_with_project(cls, data):
+        query = 'INSERT INTO addresses ( address, city, state, zip_code, project_id) VALUES (%(address)s, %(city)s , %(state)s , %(zip_code)s, %(project_id)s);'
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
     def get_one_by_project(cls, data):
         query = "SELECT * FROM addresses WHERE project_id = %(project_id)s"
         result = connectToMySQL(DATABASE).query_db(query, data)
@@ -31,7 +36,7 @@ class Address:
     
     @classmethod
     def get_one_by_customer(cls, data):
-        query = "SELECT * FROM addresses WHERE customer_id = %(customer_id)s"
+        query = "SELECT * FROM addresses WHERE customer_id = %(id)s"
         result =  connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 
