@@ -18,20 +18,51 @@ def contacts_dash():
     }
     return render_template('dash_contacts.html', **context)
 
-@app.route('/contacts/new')
-def new_contact():
+@app.route('/contacts/projects/<int:id>/<int:customer_id>/new')
+def new_proj_contact(id, customer_id):
     if "user_id" not in session:
         return redirect('/login')
-    titles = Title.get_all
-    return render_template('new_contact.html', title = titles)
-
-@app.route('/contacts/new/commit', methods=['POST'])
-def new_contact_commit():
     data = {
+        'project_id': id,
+        'customer_id': customer_id
+    }
+    context = {
+        'data': data,
+        'titles': Title.get_all()
+    }
+    return render_template('new_project_contact.html', **context)
+
+@app.route('/contacts/projects/<int:id>/<int:customer_id>/new/commit', methods=['POST'])
+def new_proj_contact_commit(id, customer_id):
+    data = {
+        'customer_id': customer_id,
+        'project_id': id,
         **request.form
     }
-    Contact.save(data)
-    return redirect('/contacts/dash')
+    Contact.save_proj_cont(data)
+    return redirect('/dashboard')
+
+@app.route('/contacts/customers/<int:id>/new')
+def new_cust_contact(id):
+    if "user_id" not in session:
+        return redirect('/login')
+    data = {
+        'customer_id': id,
+    }
+    context = {
+        'data': data,
+        'titles': Title.get_all()
+    }
+    return render_template('new_cust_contact.html', **context)
+
+@app.route('/contacts/projects/<int:id>/new/commit', methods=['POST'])
+def new_cust_contact_commit(id):
+    data = {
+        'customer_id': id,
+        **request.form
+    }
+    Contact.save_cust_cont(data)
+    return redirect('/dashboard')
 
 @app.route('/contacts/view/<int:id>')
 def view_contact(id):

@@ -27,7 +27,7 @@ class Project:
 
     @classmethod
     def get_all(cls):
-        query = "SELECT * FROM projects JOIN addresses ON addresses.project_id = projects.id JOIN contacts ON contacts.project_id = projects.id;"
+        query = "SELECT * FROM projects;"
         return connectToMySQL(DATABASE).query_db(query)
 
     @classmethod

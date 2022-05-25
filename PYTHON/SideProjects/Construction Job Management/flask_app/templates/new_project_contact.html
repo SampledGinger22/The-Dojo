@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/navbar.css')}}>
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/main_div_style.css')}}>
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css')}}>
+    <title>New Project Contact</title>
+</head>
+<body>
+    <div class="master_menu">
+        <div class="left_menu">
+            <a class="nav_a" href="/dashboard">DASHBOARD</a><br>
+            <a class="nav_a" href="/contacts/dash">CONTACTS</a><br>
+            <a class="nav_a" href="/projects/dash">PROJECTS</a>
+        </div>
+        <div class="left_menu_base">
+            <a class="nav_a" href="/user/profile">PROFILE</a>
+        </div>
+    </div>
+    <div class="main_div flex_row new_customer">
+        <div class="col_left">
+            <form class="p-4" action="/contacts/projects/{{data.project_id}}/{{data.customer_id}}/new/commit" method="POST">
+                    <div class="flex_column">
+                        <div class="flex_column" style="justify-content: space-between; margin-top: 10px;">
+                            <h3>Project Contact Info</h3>
+                            <label for="first_name">First Name:</label>
+                            <input type="text" name="first_name" id="last_name">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" name="last_name" id="last_name">
+                            <label for="title_id">Title</label>
+                            <select name="title_id" id="title_id">
+                            {% for title in titles %}
+                                {% if title.id > 1 %}   
+                                    <option value="{{title.id}}">{{title.title}}</option>
+                                {% endif %}
+                            {% endfor %}
+                            </select>
+                            <label for="phone">Phone Number:</label>
+                            <input onkeydown="phoneNumberFormatter()" type="tel" name="phone" id="phone">
+                            <label class="mt-2" for="email">Email: </label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                    <label class="h5" for="notes">Contact Notes:</label>
+                    <textarea type="text" name="notes" id="notes" class="cust_notes" style="overflow: scroll;"></textarea><br>
+                    <button style="width:80%; margin-left: 60px">Save Contact</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src={{ url_for('static', filename='javascript/phones.js') }}></script>
+</body>
+</html>

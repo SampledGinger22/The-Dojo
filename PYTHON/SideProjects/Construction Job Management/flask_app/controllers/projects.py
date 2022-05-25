@@ -35,7 +35,7 @@ def view_project(id):
         'address': Address.get_one_by_project(data),
         'contacts': Contact.get_by_project(data),
         'customer': Customer.get_all(data),
-        'owners': Customer.get_by_project(data)
+        'owners': Customer.get_all_primary_proj(data)
     }
     return render_template('view_project.html', **context)
 

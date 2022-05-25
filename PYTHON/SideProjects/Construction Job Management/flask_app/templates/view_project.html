@@ -79,7 +79,7 @@
             <div class="flex_column">
                 <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
                     <h1>Contacts</h1>
-                    <a href="'/contacts/new">Create New Project Contact</a>
+                    <a href="/contacts/projects/{{project.id}}/{{project.customer_id}}/new">Create New Project Contact</a>
                 </div>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
@@ -106,7 +106,7 @@
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <th class="text-center">Name</th>
-                    <th class="text-center">Primary Contact(s)</th>
+                    <th class="text-center">Primary Contact</th>
                     <th class="text-center">Actions</th>
                 </thead>
                 <tbody style="overflow: scroll;">

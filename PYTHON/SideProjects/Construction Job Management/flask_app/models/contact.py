@@ -35,6 +35,16 @@ class Contact:
         return connectToMySQL(DATABASE).query_db( query, data )
 
     @classmethod
+    def save_proj_cont(cls, data):
+        query = "INSERT INTO contacts ( first_name , last_name , phone , email , notes , project_id , customer_id , title_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(notes)s, %(project_id)s , %(customer_id)s , %(title_id)s);"
+        return connectToMySQL(DATABASE).query_db( query, data )
+
+    @classmethod
+    def save_cust_cont(cls, data):
+        query = "INSERT INTO contacts ( first_name , last_name , phone , email , notes , customer_id , title_id ) VALUES ( %(first_name)s , %(last_name)s , %(phone)s , %(email)s , %(notes)s, %(customer_id)s , %(title_id)s);"
+        return connectToMySQL(DATABASE).query_db( query, data )
+
+    @classmethod
     def get_by_customer(cls, data):
         query = query = "SELECT * FROM contacts JOIN titles ON contacts.title_id = titles.id WHERE contacts.customer_id = %(id)s;"
         return connectToMySQL(DATABASE).query_db( query , data )
@@ -59,7 +69,7 @@ class Contact:
 
     @classmethod
     def get_all(cls, data):
-        query = "SELECT * FROM contacts LEFT JOIN customers ON contacts.customer_id = customers.id LEFT JOIN projects ON contacts.project_id = projects.id JOIN titles ON contacts.title_id = titles.id WHERE customers.user_id = %(user_id)s;"
+        query = "SELECT * FROM contacts WHERE user_id = %(user_id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
 
 

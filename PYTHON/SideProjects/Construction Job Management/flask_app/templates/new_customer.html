@@ -23,13 +23,6 @@
     </div>
     <div class="main_div flex_row new_customer">
         <div class="col_left">
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <p>{{message}}</p>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
             <form action="/customers/new/commit" method="POST">
                 <div class="flex_row profile_column justify-content-around">
                     <div class="flex_column">

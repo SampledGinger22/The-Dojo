@@ -50,9 +50,19 @@ class Customer:
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
-    def get_by_project(cls, data):
-        query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE projects.id = %(id)s;"
+    def get_all_primary(cls, data):
+        query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id WHERE user_id=%(user_id)s and contacts.title_id=1;"
         return connectToMySQL(DATABASE).query_db(query, data)
+        
+    @classmethod
+    def get_all_primary_proj(cls, data):
+        query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE user_id=%(user_id)s and contacts.title_id=1 and projects.id = %(id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+        
+    # @classmethod
+    # def get_by_project(cls, data):
+    #     query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE projects.id = %(id)s;"
+    #     return connectToMySQL(DATABASE).query_db(query, data)
         
 
     @classmethod

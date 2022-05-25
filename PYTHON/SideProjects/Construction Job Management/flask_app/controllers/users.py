@@ -57,11 +57,13 @@ def success():
     if "user_id" not in session:
         return redirect('/login')
     data = {
-        'user_id': session['user_id']
+        'user_id': session['user_id'],
+        'customer_id': id
     }
     context = {
-        "customers": Customer.get_all(data),
-        "projects": Project.get_all()
+        "customers": Customer.get_all_primary(data),
+        "projects": Project.get_all(),
+        'primaries': Contact.get_primary(data)
     }
     return render_template('dash_user.html', **context)
 
