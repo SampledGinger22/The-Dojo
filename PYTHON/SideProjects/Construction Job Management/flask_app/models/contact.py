@@ -46,9 +46,8 @@ class Contact:
 
     @classmethod
     def get_by_customer(cls, data):
-        query = query = "SELECT * FROM contacts JOIN titles ON contacts.title_id = titles.id WHERE contacts.customer_id = %(id)s;"
+        query = query = "SELECT * FROM contacts LEFT JOIN titles ON contacts.title_id = titles.id WHERE contacts.customer_id = %(id)s;"
         return connectToMySQL(DATABASE).query_db( query , data )
-
 
     @classmethod
     def get_by_project(cls, data):
@@ -62,21 +61,31 @@ class Contact:
         return cls(result[0])
 
     @classmethod
-    def get_primary(cls, data):
-        query = "SELECT * FROM contacts JOIN customers ON contacts.customer_id = customers.id WHERE contacts.title_id = 1 and contacts.customer_id = %(customer_id)s;"
-        return connectToMySQL(DATABASE).query_db(query, data)
-        
+    def get_primary(cls):
+        query = "SELECT * FROM contacts WHERE title_id = 1;"
+        return connectToMySQL(DATABASE).query_db(query)
 
     @classmethod
     def get_all(cls, data):
-        query = "SELECT * FROM contacts WHERE user_id = %(user_id)s;"
+        query = "SELECT * FROM contacts LEFT JOIN titles ON titles.id = contacts.title_id LEFT JOIN customers ON customers.id = contacts.customer_id WHERE user_id = %(user_id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
-
 
     @classmethod
     def update(cls, data):
-        query = "UPDATE contacts SET first_name=%(first_name)s, last_name=%(last_name)s, phone=%(phone)s, email=%(email)s, notes=%(notes)s, updated_at=NOW(), customer_id=%(customer_id)s, project_id=%(project_id)s , title_id=%(title_id)s;"
+        query = "UPDATE contacts SET first_name=%(first_name)s, last_name=%(last_name)s, phone=%(phone)s, email=%(email)s, notes=%(notes)s, title_id=%(title_id)s, updated_at=NOW() WHERE id=%(id)s;"
         return connectToMySQL(DATABASE).query_db(query,data)
+
+# PRIMARY CONTACTS
+
+    @classmethod
+    def remove_primary(cls, data):
+        query = "UPDATE contacts SET title_id=NULL where title_id=1 and customer_id=%(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def add_primary(cls, data):
+        query = "UPDATE contacts SET title_id=1 WHERE id=%(id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def delete(cls, data):

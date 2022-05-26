@@ -75,7 +75,7 @@
                 </div>
             </form>
         </div>
-        <div class="col_right flex_column" style="padding: 10px;">
+        <div class="col_right flex_column" style="padding: 10px; min-width: 500px;">
             <div class="flex_column">
                 <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
                     <h1>Contacts</h1>
@@ -114,10 +114,12 @@
                         <tr>
                             <td class="text-center">{{owner.display_name}}</td>
                             <td class="text-center">
-                                {% if owner.title_id == 1 %}
-                                    {{owner.first_name}} {{owner.last_name}}<br>
-                                    {{owner.phone}}<br>
-                                {% endif %}
+                                {% for primary in primaries %}
+                                    {% if primary.customer_id == owner.id %}
+                                        {{primary.first_name}} {{primary.last_name}}<br>
+                                        {{primary.phone}}<br>
+                                    {% endif %}
+                                {% endfor %}
                             </td>
                             <td class="text-center"><a href="/customers/view/{{owner.id}}">View/Edit</a></td>
                         </tr>

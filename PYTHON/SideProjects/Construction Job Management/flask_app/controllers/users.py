@@ -58,12 +58,11 @@ def success():
         return redirect('/login')
     data = {
         'user_id': session['user_id'],
-        'customer_id': id
     }
     context = {
-        "customers": Customer.get_all_primary(data),
-        "projects": Project.get_all(),
-        'primaries': Contact.get_primary(data)
+        'customers': Customer.get_all(data),
+        'projects': Project.get_all(data),
+        'primaries': Contact.get_primary()
     }
     return render_template('dash_user.html', **context)
 

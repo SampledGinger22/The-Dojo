@@ -11,10 +11,11 @@ def project_dash():
     if "user_id" not in session:
         return redirect('/login')
     data = {
+        'user_id': session['user_id'],
         'project_id': Project.id
     }
     context = {
-    'project' : Project.get_all(),
+    'project' : Project.get_all(data),
     'contact' : Contact.get_by_project(data),
     'address' : Address.get_one_by_project(data)
     }
@@ -35,7 +36,8 @@ def view_project(id):
         'address': Address.get_one_by_project(data),
         'contacts': Contact.get_by_project(data),
         'customer': Customer.get_all(data),
-        'owners': Customer.get_all_primary_proj(data)
+        'primaries': Contact.get_primary(),
+        'owners': Customer.get_all_proj(data)
     }
     return render_template('view_project.html', **context)
 
@@ -61,7 +63,7 @@ def project_edit_commit(id):
     }
     print(address_data['project_id'])
     Address.update_with_project(address_data)
-    return redirect('/dashboard')
+    return redirect(request.referrer)
 
 # New Projects
 
@@ -73,7 +75,7 @@ def new_project():
         "user_id": session['user_id']
     }
     context = {
-        'customers': Customer.get_all(data),
+        'customers': Customer.get_all_primary(data),
         'titles': Title.get_all()
     }
     return render_template('new_project.html', **context)

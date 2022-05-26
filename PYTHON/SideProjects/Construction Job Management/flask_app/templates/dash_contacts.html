@@ -32,10 +32,9 @@
             <div class="flex_column justify-content-between;">
                 <div class="flex_column">
                     <h1>All Contacts</h1>
-                    <div class="flex_row justify-content-between">
+                    <div class="flex_row justify-content-left">
                         <label for="search">Search: 
                         <input type="search" name="search"></label>
-                        <a class="ml-5" href="/contact/new">Create a New Contact</a>
                     </div>
                 </div>
                 <table class="table table-bordered">
@@ -51,7 +50,19 @@
                         {% for contact in contacts %}
                         <tr>
                             <td>{{contact.first_name}} {{contact.last_name}}</td>
-                            <td>{{contact.display_name}}<br>{{contact.name}}</td>
+                            <td>
+                                {% for customer in customers %}
+                                    {% if contact.customer_id == customer.id %}
+                                {{customer.display_name}}
+                                    {% endif %}
+                                {% endfor %}
+                                <br>
+                                {% for project in projects %}
+                                    {% if contact.project_id == project.id %}
+                                {{project.name}}
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
                             <td>{{contact.title}}</td>
                             <td>{{contact.phone}}</td>
                             <td>{{contact.email}}</td>

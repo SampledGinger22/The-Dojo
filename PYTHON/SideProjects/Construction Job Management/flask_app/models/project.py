@@ -26,9 +26,9 @@ class Project:
         return cls(result[0])
 
     @classmethod
-    def get_all(cls):
-        query = "SELECT * FROM projects;"
-        return connectToMySQL(DATABASE).query_db(query)
+    def get_all(cls, data):
+        query = "SELECT * FROM projects JOIN customers ON customers.id = projects.customer_id WHERE customers.user_id = %(user_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def get_by_customer(cls, data):

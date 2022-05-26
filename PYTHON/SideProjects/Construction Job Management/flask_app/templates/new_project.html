@@ -61,6 +61,7 @@
                             <input type="text" name="last_name" id="last_name">
                             <label for="title">Title</label>
                             <select name="title" id="title">
+                                <option hidden>Select Title</option>
                             {% for title in titles %}
                                 {% if title.id > 1 %}   
                                     <option value="{{title.id}}">{{title.title}}</option>

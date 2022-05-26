@@ -53,13 +53,15 @@
                             <tr>
                                 <td class="text-center">{{customer.display_name}}</td>
                                 <td class="text-center">
-                                    {% if customer.title_id == 1 %}
-                                        {{customer.first_name}} {{customer.last_name}}<br>
-                                        {{customer.phone}}<br>
+                                {% for primary in primaries %}
+                                    {% if primary.customer_id == customer.id %}
+                                        {{primary.first_name}} {{primary.last_name}}<br>
+                                        {{primary.phone}}<br>
                                     {% endif %}
+                                {% endfor %}
                                 </td>
                                 <td class="text-center">{{customer.created_at.strftime('%A - %B %d, %Y')}}</td>
-                                <td class="text-center"><a href="/customers/view/{{customer.customer_id}}">View/Edit</a></td>
+                                <td class="text-center"><a href="/customers/view/{{customer.id}}">View/Edit</a></td>
                             </tr>
                         {% endfor %}
                     </tbody>

@@ -14,7 +14,9 @@ def contacts_dash():
         'user_id': session['user_id']
     }
     context = {
-        'contacts': Contact.get_all(data)
+        'contacts': Contact.get_all(data),
+        'projects': Project.get_all(data),
+        'customers': Customer.get_all(data)
     }
     return render_template('dash_contacts.html', **context)
 
@@ -72,27 +74,32 @@ def view_contact(id):
         'id':id
     }
     context = {
-        'contact' : Contact.get_one(data)
+        'contact' : Contact.get_one(data),
+        'titles': Title.get_all()
     }
     return render_template('view_contact.html', **context)
 
-@app.route('/contacts/edit/<int:id>')
-def edit_contacts(id):
+@app.route('/contacts/view/<int:id>/primary')
+def view_primary_contact(id):
     if "user_id" not in session:
         return redirect('/login')
     data = {
-        'id': id
+        'id':id
     }
-    Contact.get_one(data)
-    return render_template('edit_contact.html')
+    context = {
+        'contact' : Contact.get_one(data),
+        'titles': Title.get_all()
+    }
+    return render_template('view_primary_cont.html', **context)
 
-@app.route('/contacts/edit/commit', methods=['POST'])
-def contacts_edit_commit():
+@app.route('/contacts/edit/<int:id>/commit', methods=['POST'])
+def contacts_update_commit(id):
     data = {
+        'id': id,
         **request.form
     }
-    Contact.save(data)
-    return redirect('/contacts/<int:id>')
+    Contact.update(data)
+    return redirect('/dashboard')
 
 @app.route('/contacts/delete/<int:id>')
 def delete_contact(id):

@@ -54,12 +54,14 @@
                                     </thead>
                                     <tbody>
                                         {% for primary in primaries %}
+                                            {% if primary.customer_id == customer.id %}
                                         <row>
                                             <td>{{primary.first_name}} {{primary.last_name}}</td>
                                             <td>{{primary.phone}}</td>
                                             <td>{{primary.email}}</td>
-                                            <td><a href="/contact/view/{{primary.id}}">View/Edit</a></td>
+                                            <td><a href="/contacts/view/{{primary.id}}/primary">View/Edit</a></td>
                                         </row>
+                                            {% endif %}
                                         {% endfor %}
                                     </tbody>
                                 </table>
@@ -110,7 +112,11 @@
                             <td>{{contact.title}}</td>
                             <td>{{contact.phone}}</td>
                             <td>{{contact.email}}</td>
-                            <td><a href="/contacts/view/{{contact.id}}">View/Edit</a></td>
+                            <td style="width: 130px;"><a href="/contacts/view/{{contact.id}}"><u>View/Edit</u></a><br>
+                                {% if contact.title_id != 1 %}
+                                <a href="/customers/view/{{customer.id}}/{{contact.id}}/primaryupdate"><u>Make Primary</u></a>
+                                {% endif %}
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

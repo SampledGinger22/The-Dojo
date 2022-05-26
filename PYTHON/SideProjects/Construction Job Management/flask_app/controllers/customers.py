@@ -64,12 +64,22 @@ def view_customer(id):
     }
     context = {
         'customer' : Customer.get_one(data),
-        'primaries': Contact.get_primary(data),
+        'primaries': Contact.get_primary(),
         'contacts': Contact.get_by_customer(data),
         'projects': Project.get_by_customer(data),
         'address': Address.get_one_by_customer(data)
     }
     return render_template('view_customer.html', **context)
+
+@app.route('/customers/view/<int:customer_id>/<int:id>/primaryupdate')
+def new_primary(customer_id, id):
+    data = {
+        'customer_id': customer_id,
+        'id': id
+    }
+    Contact.remove_primary(data)
+    Contact.add_primary(data)
+    return redirect(request.referrer)
 
 @app.route('/customers/edit/<int:id>/commit', methods=["POST"])
 def customer_edit_commit(id):
