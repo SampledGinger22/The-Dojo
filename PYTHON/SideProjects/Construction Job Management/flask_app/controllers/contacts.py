@@ -99,7 +99,7 @@ def contacts_update_commit(id):
         **request.form
     }
     Contact.update(data)
-    return redirect(request.referrer)
+    return redirect('/dashboard')
 
 @app.route('/contacts/delete/<int:id>')
 def delete_contact(id):

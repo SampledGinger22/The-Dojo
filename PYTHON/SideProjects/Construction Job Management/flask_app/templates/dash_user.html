@@ -21,7 +21,7 @@
 
         </div>
         <div class="left_menu_base">
-            <a class="nav_a" href="/user/profile">PROFILE</a>
+            <a class="nav_a" href="/logout">LOGOUT</a>
         </div>
     </div>
 
@@ -61,7 +61,10 @@
                                 {% endfor %}
                                 </td>
                                 <td class="text-center">{{customer.created_at.strftime('%A - %B %d, %Y')}}</td>
-                                <td class="text-center"><a href="/customers/view/{{customer.id}}">View/Edit</a></td>
+                                <td class="text-center">
+                                    <a href="/customers/view/{{customer.id}}">View/Edit</a><br>
+                                    <a href="/customer/view/{{customer.id}}/delete/all">Delete</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>

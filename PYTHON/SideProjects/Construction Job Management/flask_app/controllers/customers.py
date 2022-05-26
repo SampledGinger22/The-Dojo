@@ -73,6 +73,8 @@ def view_customer(id):
 
 @app.route('/customers/view/<int:customer_id>/<int:id>/primaryupdate')
 def new_primary(customer_id, id):
+    if "user_id" not in session:
+        return redirect('/login')
     data = {
         'customer_id': customer_id,
         'id': id
@@ -102,3 +104,17 @@ def customer_edit_commit(id):
     }
     Address.update_with_cust(address_data)
     return redirect(request.referrer)
+
+@app.route('/customer/view/<int:id>/delete/all')
+def delete_customer(id):
+    if "user_id" not in session:
+            return redirect('/login')
+    data = {
+        'id': id,
+        'customer_id':id
+    }
+    Contact.delete_cust_contacts(data)
+    Project.delete_w_customer(data)
+    Address.delete_cust_address(data)
+    Customer.delete(data)
+    return redirect ('/dashboard')

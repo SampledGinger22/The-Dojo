@@ -77,8 +77,8 @@ class Project:
     #     return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
-    def delete(cls, data):
-        query = "DELETE FROM projects WHERE id = %(id)s;"
+    def delete_w_customer(cls, data):
+        query = "DELETE FROM projects INNER JOIN addresses ON projects.id = addresses.project_id WHERE projects.customer_id = %(customer_id)s;"
         return connectToMySQL(DATABASE).query_db( query, data)
 
     @classmethod

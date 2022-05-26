@@ -68,6 +68,11 @@ class Address:
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
+    def delete_cust_proj_address(cls, data):
+        query = "DELETE FROM addresses LEFT JOIN projects ON projects.id = addresses.project_id WHERE projects.customer_id=%(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
     def delete_proj_address(cls, data):
         query = "DELETE FROM addresses WHERE project_id=%(project_id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
