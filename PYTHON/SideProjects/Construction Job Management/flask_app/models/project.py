@@ -64,10 +64,27 @@ class Project:
         query = "UPDATE projects SET name=%(name)s, start_date=%(start_date)s, end_date=%(end_date)s, customer_id=%(customer_id)s, project_notes=%(project_notes)s WHERE id=%(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
 
+# DELETION PROCESS
+
+    # @classmethod
+    # def delete_proj_contacts(cls, data):
+    #     query = "DELETE FROM contacts WHERE project_id=%(project_id)s;"
+    #     return connectToMySQL(DATABASE).query_db(query, data)
+
+    # @classmethod
+    # def delete_proj_address(cls, data):
+    #     query = "DELETE FROM addresses WHERE project_id=%(project_id)s;"
+    #     return connectToMySQL(DATABASE).query_db(query, data)
+
     @classmethod
     def delete(cls, data):
         query = "DELETE FROM projects WHERE id = %(id)s;"
         return connectToMySQL(DATABASE).query_db( query, data)
+
+    @classmethod
+    def delete_cust_project(cls, data):
+        query = "DELETE FROM projects WHERE customer_id=%(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
 
     
     @staticmethod

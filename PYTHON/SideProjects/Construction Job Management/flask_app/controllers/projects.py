@@ -48,7 +48,7 @@ def project_edit_commit(id):
         'id': id
     }
     if not Project.validate_update(disp_data):
-        return redirect('/dashboard')
+        return redirect(request.referrer)
     data = {
         'id': id,
         **request.form
@@ -86,7 +86,7 @@ def new_project_commit():
         'name': request.form['name']
     }
     if not Project.validate(disp_data):
-        return redirect('/projects/new')
+        return redirect(request.referrer)
     project_data = {
         'name': request.form['name'],
         'customer_id': request.form['customer'],

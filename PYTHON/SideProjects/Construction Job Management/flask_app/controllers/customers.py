@@ -87,7 +87,7 @@ def customer_edit_commit(id):
         'display_name': request.form['display_name']
     }
     if not Customer.validate_update(disp_data):
-        return redirect('/dashboard')
+        return redirect(request.referrer)
     data = {
         'id': id,
         **request.form
@@ -101,4 +101,4 @@ def customer_edit_commit(id):
         'customer_id': id
     }
     Address.update_with_cust(address_data)
-    return redirect('/dashboard')
+    return redirect(request.referrer)

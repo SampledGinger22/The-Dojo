@@ -58,17 +58,33 @@ class Customer:
     def get_all_proj(cls, data):
         query = "SELECT * FROM customers LEFT JOIN projects ON projects.customer_id = customers.id WHERE user_id=%(user_id)s and projects.id = %(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
-        
-    # @classmethod
-    # def get_by_project(cls, data):
-    #     query = "SELECT * FROM customers LEFT JOIN contacts ON contacts.customer_id = customers.id LEFT JOIN projects ON projects.customer_id = customers.id WHERE projects.id = %(id)s;"
-    #     return connectToMySQL(DATABASE).query_db(query, data)
-        
 
     @classmethod
     def update(cls, data):
         query = "UPDATE customers SET display_name=%(display_name)s, notes=%(notes)s, updated_at=NOW() WHERE id = %(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
+
+# DELETION PROCESS
+
+    # @classmethod
+    # def delete_cust_contacts(cls, data):
+    #     query = "DELETE FROM contacts WHERE customer_id=%(customer_id)s;"
+    #     return connectToMySQL(DATABASE).query_db(query, data)
+
+    # @classmethod
+    # def delete_cust_address(cls, data):
+    #     query = "DELETE FROM addresses WHERE customer_id=%(customer_id)s;"
+    #     return connectToMySQL(DATABASE).query_db(query, data)
+
+    # @classmethod
+    # def delete_proj_address(cls, data):
+    #     query = "DELETE FROM addresses WHERE project_id=%(project_id)s;"
+    #     return connectToMySQL(DATABASE).query_db(query, data)
+
+    # @classmethod
+    # def delete_cust_project(cls, data):
+    #     query = "DELETE FROM projects WHERE customer_id=%(customer_id)s;"
+    #     return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
     def delete(cls, data):

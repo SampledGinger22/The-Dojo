@@ -48,6 +48,7 @@
                     </thead>
                     <tbody style="max-height: 800px; overflow: scroll;">
                         {% for contact in contacts %}
+                            {% if contact['first_name']|length > 0 %}
                         <tr>
                             <td>{{contact.first_name}} {{contact.last_name}}</td>
                             <td>
@@ -68,6 +69,7 @@
                             <td>{{contact.email}}</td>
                             <td><a href="/contacts/view/{{contact.contact_id}}">View/Edit</a></td>
                         </tr>
+                            {% endif %}
                         {% endfor %}
                     </tbody>
                 </table>

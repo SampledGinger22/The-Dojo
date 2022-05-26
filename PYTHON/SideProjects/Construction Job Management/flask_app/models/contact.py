@@ -92,6 +92,16 @@ class Contact:
         query = "DELETE FROM contacts WHERE id = %(id)s;"
         return connectToMySQL(DATABASE).query_db( query, data)
 
+    @classmethod
+    def delete_cust_contacts(cls, data):
+        query = "DELETE FROM contacts WHERE customer_id=%(customer_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def delete_proj_contacts(cls, data):
+        query = "DELETE FROM contacts WHERE project_id=%(project_id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
     @staticmethod
     def validate(contact):
         is_valid = True
