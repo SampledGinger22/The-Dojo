@@ -75,7 +75,7 @@ def new_project():
         "user_id": session['user_id']
     }
     context = {
-        'customers': Customer.get_all_primary(data),
+        'customers': Customer.get_all(data),
         'titles': Title.get_all()
     }
     return render_template('new_project.html', **context)

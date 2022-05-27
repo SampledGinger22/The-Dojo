@@ -56,7 +56,7 @@ class Contact:
 
     @classmethod
     def get_one(cls, data):
-        query = "SELECT * FROM contacts JOIN titles ON titles.id = contacts.title_id LEFT JOIN customers ON customers.id = contacts.customer_id LEFT JOIN projects ON projects.id = contacts.project_id WHERE contacts.id = %(id)s;"
+        query = "SELECT * FROM contacts LEFT JOIN titles ON titles.id = contacts.title_id WHERE contacts.id = %(id)s;"
         result = connectToMySQL(DATABASE).query_db(query, data)
         return cls(result[0])
 

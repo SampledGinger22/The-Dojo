@@ -113,6 +113,12 @@ def delete_customer(id):
         'id': id,
         'customer_id':id
     }
+    delete_dict = {}
+    project_id = Project.get_proj_id(data)
+    for one in project_id:
+        for key in one:
+            delete_dict['project_id'] = one[key]
+            Address.delete_proj_address(delete_dict)
     Contact.delete_cust_contacts(data)
     Project.delete_w_customer(data)
     Address.delete_cust_address(data)

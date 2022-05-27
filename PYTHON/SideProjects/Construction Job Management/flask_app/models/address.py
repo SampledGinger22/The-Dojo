@@ -40,6 +40,8 @@ class Address:
     def get_one_by_customer(cls, data):
         query = "SELECT * FROM addresses WHERE customer_id = %(id)s;"
         result =  connectToMySQL(DATABASE).query_db(query, data)
+        if not result:
+            return False
         return cls(result[0])
 
     @classmethod

@@ -52,6 +52,11 @@ class Project:
         return cls(result[0])
 
     @classmethod
+    def get_proj_id(cls, data):
+        query = "SELECT id from projects WHERE customer_id=%(customer_id)s"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
     def update_get_name(cls, data):
         query = "SELECT * FROM projects WHERE name = %(name)s AND NOT id=%(id)s;"
         result = connectToMySQL(DATABASE).query_db( query , data )
@@ -78,7 +83,7 @@ class Project:
 
     @classmethod
     def delete_w_customer(cls, data):
-        query = "DELETE FROM projects INNER JOIN addresses ON projects.id = addresses.project_id WHERE projects.customer_id = %(customer_id)s;"
+        query = "DELETE FROM projects WHERE customer_id = %(customer_id)s;"
         return connectToMySQL(DATABASE).query_db( query, data)
 
     @classmethod
