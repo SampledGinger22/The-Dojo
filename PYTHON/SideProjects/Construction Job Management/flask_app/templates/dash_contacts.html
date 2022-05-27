@@ -32,9 +32,9 @@
             <div class="flex_column justify-content-between;">
                 <div class="flex_column">
                     <h1>All Contacts</h1>
-                    <div class="flex_row justify-content-left">
+                    <div class="flex_row" style="justify-content:left;">
                         <label for="search">Search: 
-                        <input type="search" name="search"></label>
+                        <input type="search" name="search" placeholder="Search Coming Soon..."></label>
                     </div>
                 </div>
                 <table class="table table-bordered">
@@ -67,7 +67,17 @@
                             <td>{{contact.title}}</td>
                             <td>{{contact.phone}}</td>
                             <td>{{contact.email}}</td>
-                            <td><a href="/contacts/view/{{contact.id}}">View/Edit</a></td>
+                            {% if contact.title_id == 1 %}
+                            <td>
+                                <a href="/contacts/view/{{contact.id}}/primary">View/Edit</a><br>
+                                <a href="/contacts/delete/{{contact.id}}" style="color: red;"><u>Delete</u></a>
+                            </td>
+                            {% else %}
+                            <td>
+                                <a href="/contacts/view/{{contact.id}}">View/Edit</a><br>
+                                <a href="/contacts/delete/{{contact.id}}" style="color: red;"><u>Delete</u></a>
+                            </td>
+                            {% endif %}
                         </tr>
                             {% endif %}
                         {% endfor %}

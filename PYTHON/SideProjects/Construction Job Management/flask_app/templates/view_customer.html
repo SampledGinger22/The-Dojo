@@ -35,7 +35,7 @@
 
 <!-- UPPER LEFT SIDE -->
 
-            <form class="p-4 ml-4" action="/customers/edit/{{customer.id}}/commit" method="POST">
+            <form class="p-3" action="/customers/edit/{{customer.id}}/commit" method="POST">
                 <div class="flex_column align-items-start">
                     <div class="flex_column">
                         <label class="h1" for="display_name">Customer Display Name</label>
@@ -45,7 +45,7 @@
                         <div class="live_contacts">
                             <h4><u>Primary Contact</u></h4>
                             <div>
-                                <table class="table table-bordered p-3">
+                                <table class="table table-bordered">
                                     <thead>
                                         <th>Name</th>
                                         <th>Phone</th>
@@ -82,6 +82,7 @@
                     <label class="h4 mt-4" for="notes"><u>Customer Notes</u></label>
                     <textarea type="text" name="notes" id="notes" class="cust_notes">{{customer.notes}}</textarea><br>
                     <button>Save Changes</button>
+                    <a href="/customer/view/{{customer.id}}/delete/all" style="color:red;" class="text-center mt-1">Delete</a>
                 </div>
 
                 <!-- LOWER DIV -->
@@ -107,17 +108,21 @@
                     </thead>
                     <tbody>
                         {% for contact in contacts %}
+                            {% if contact.title_id != 1 %}
                         <tr>
                             <td>{{contact.first_name}} {{contact.last_name}}</td>
                             <td>{{contact.title}}</td>
                             <td>{{contact.phone}}</td>
                             <td>{{contact.email}}</td>
-                            <td style="width: 130px;"><a href="/contacts/view/{{contact.id}}"><u>View/Edit</u></a><br>
+                            <td style="width: 130px;" class="text-center">
+                                <a href="/contacts/view/{{contact.id}}"><u>View/Edit</u></a><br>
                                 {% if contact.title_id != 1 %}
-                                <a href="/customers/view/{{customer.id}}/{{contact.id}}/primaryupdate"><u>Make Primary</u></a>
+                                <a href="/customers/view/{{customer.id}}/{{contact.id}}/primaryupdate"><u>Make Primary</u></a><br>
                                 {% endif %}
+                                <a href="/contacts/delete/{{contact.id}}" style="color: red;"><u>Delete</u></a>
                             </td>
                         </tr>
+                            {% endif %}
                         {% endfor %}
                     </tbody>
                 </table>
@@ -141,7 +146,8 @@
                             <td>{{project.start_date.strftime('%A - %B %d, %Y')}}</td>
                             <td>{{project.end_date.strftime('%A - %B %d, %Y')}}</td>
                             <td>
-                                <a href="/projects/view/{{project.id}}">View/Edit</a>
+                                <a href="/projects/view/{{project.id}}">View/Edit</a><br>
+                                <a href="/projects/delete/{{project.id}}" style="color: red;"><u>Delete</u></a>
                             </td>
                         </tr>
                         {% else %}

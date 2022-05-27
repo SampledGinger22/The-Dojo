@@ -37,7 +37,7 @@
                     <h1>Current Customers</h1>
                     <div class="flex_row justify-content-between">
                         <label for="search">Search: 
-                        <input type="search" name="search"></label>
+                        <input type="search" name="search" placeholder="Search Coming Soon..."></label>
                         <a class="ml-5" href="/customers/new">Create a New Customer</a>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                                 <td class="text-center">{{customer.created_at.strftime('%A - %B %d, %Y')}}</td>
                                 <td class="text-center">
                                     <a href="/customers/view/{{customer.id}}">View/Edit</a><br>
-                                    <a href="/customer/view/{{customer.id}}/delete/all">Delete</a>
+                                    <a href="/customer/view/{{customer.id}}/delete/all" style="color:red;">Delete</a>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -78,6 +78,10 @@
             <div class="flex_row" style="justify-content: space-between; margin-top: 10px;">
                 <h1>Projects</h1>
                 <a href="/projects/new">Create New Project</a>
+            </div>
+            <div class="flex_row" style="justify-content:left;">
+                <label for="search">Search: 
+                <input type="search" name="search" placeholder="Search Coming Soon..."></label>
             </div>
             <table class="table table-bordered">
                 <thead class="thead-dark">
@@ -94,7 +98,8 @@
                             <td>{{project.start_date.strftime('%A - %B %d, %Y')}}</td>
                             <td>{{project.end_date.strftime('%A - %B %d, %Y')}}</td>
                             <td>
-                                <a href="/projects/view/{{project.id}}">View/Edit</a>
+                                <a href="/projects/view/{{project.id}}">View/Edit</a><br>
+                                <a href="/projects/delete/{{project.id}}" style="color: red;"><u>Delete</u></a>
                             </td>
                         </tr>
                         {% else %}

@@ -75,6 +75,12 @@ class Contact:
         query = "UPDATE contacts SET first_name=%(first_name)s, last_name=%(last_name)s, phone=%(phone)s, email=%(email)s, notes=%(notes)s, title_id=%(title_id)s, updated_at=NOW() WHERE id=%(id)s;"
         return connectToMySQL(DATABASE).query_db(query,data)
 
+    @classmethod
+    def update_cust_id(cls, data):
+        query = "UPDATE contacts SET customer_id=%(customer_id)s WHERE project_id = %(id)s;"
+        return connectToMySQL(DATABASE).query_db(query,data)
+
+
 # PRIMARY CONTACTS
 
     @classmethod
@@ -86,6 +92,11 @@ class Contact:
     def add_primary(cls, data):
         query = "UPDATE contacts SET title_id=1 WHERE id=%(id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def null_project_id(cls, data):
+        query = "UPDATE contacts SET project_id=NULL where project_id=%(project_id)s;"
+        return connectToMySQL(DATABASE).query_db( query, data)
 
     @classmethod
     def delete(cls, data):

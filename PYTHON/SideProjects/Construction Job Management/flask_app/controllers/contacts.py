@@ -106,5 +106,5 @@ def delete_contact(id):
     data = {
         'id': id,
     }
-    Contact.delete(id)
-    return redirect('/customers/<int:customer_id>')
+    Contact.delete(data)
+    return redirect(request.referrer)

@@ -2,6 +2,10 @@
     border: red solid 1px;
 } */
 
+a {
+    text-decoration: underline;
+}
+
 .flex_row{
     display: flex;
     flex-direction: row;

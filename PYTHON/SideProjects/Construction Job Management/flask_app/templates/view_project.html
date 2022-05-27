@@ -72,6 +72,7 @@
                     <label class="h4 mt-4" for="project_notes"><u>Project Notes</u></label>
                     <textarea type="text" name="project_notes" id="project_notes" class="cust_notes" style="overflow: scroll;">{{project.project_notes}}</textarea><br>
                     <button>Save Changes</button>
+                    <a href="/projects/delete/{{project.id}}" style="color: red;" class="text-center"><u>Delete</u></a>
                 </div>
             </form>
         </div>
@@ -94,7 +95,10 @@
                             <td>{{contact.first_name}} {{contact.last_name}}</td>
                             <td>{{contact.title}}</td>
                             <td>{{contact.phone}}</td>
-                            <td><a href="/contacts/view/{{contact.id}}">View/Edit</a></td>
+                            <td class="text-center">
+                                <a href="/contacts/view/{{contact.id}}">View/Edit</a><br>
+                                <a href="/contacts/delete/{{contact.id}}" style="color: red;"><u>Delete</u></a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -121,7 +125,9 @@
                                     {% endif %}
                                 {% endfor %}
                             </td>
-                            <td class="text-center"><a href="/customers/view/{{owner.id}}">View/Edit</a></td>
+                            <td class="text-center">
+                                <a href="/customers/view/{{owner.id}}">View/Edit</a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

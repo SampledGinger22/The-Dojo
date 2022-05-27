@@ -91,6 +91,11 @@ class Project:
         query = "DELETE FROM projects WHERE customer_id=%(customer_id)s;"
         return connectToMySQL(DATABASE).query_db(query, data)
 
+    @classmethod
+    def delete(cls, data):
+        query = "DELETE FROM projects WHERE id=%(id)s;"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
     
     @staticmethod
     def validate(name):

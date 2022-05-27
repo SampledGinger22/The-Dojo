@@ -26,7 +26,7 @@
             <form class="p-4" action="/contacts/edit/{{contact.id}}/commit" method="POST">
                     <div class="flex_column">
                         <div class="flex_column" style="justify-content: space-between; margin-top: 10px;">
-                            <h3>Project Contact Info</h3>
+                            <h3>Contact Info</h3>
                             <label for="first_name">First Name:</label>
                             <input type="text" name="first_name" id="first_name" value="{{contact.first_name}}">
                             <label for="last_name">Last Name:</label>
@@ -47,6 +47,7 @@
                     <label class="h5" for="notes">Contact Notes:</label>
                     <textarea type="text" name="notes" id="notes" class="cust_notes" style="overflow: scroll;">{{contact.notes}}</textarea><br>
                     <button style="width:80%; margin-left: 60px">Save Changes</button>
+                    <a href="/contacts/delete/{{contact.id}}" class="text-center mt-3" style="color: red; font-weight: bold;"><u>DELETE</u></a>
                 </div>
             </form>
         </div>

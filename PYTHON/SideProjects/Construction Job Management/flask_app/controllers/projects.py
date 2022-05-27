@@ -54,6 +54,7 @@ def project_edit_commit(id):
         **request.form
     }
     Project.update(data)
+    Contact.update_cust_id(data)
     address_data = {
         'address': request.form['address'],
         'city': request.form['city'],
@@ -61,7 +62,6 @@ def project_edit_commit(id):
         'zip_code': request.form['zip_code'],
         'project_id': id
     }
-    print(address_data['project_id'])
     Address.update_with_project(address_data)
     return redirect(request.referrer)
 
@@ -115,4 +115,18 @@ def new_project_commit():
     }
     Contact.save_with_project(contact_data)
     return redirect('/dashboard')
+
+@app.route('/projects/delete/<int:id>')
+def delete_project(id):
+    if "user_id" not in session:
+        return redirect('/login') 
+    data = {
+        'project_id': id,
+        'id': id
+    }
+    Contact.null_project_id(data)
+    Address.delete_proj_address(data)
+    Project.delete(data)
+    return redirect('/dashboard')
+
 
