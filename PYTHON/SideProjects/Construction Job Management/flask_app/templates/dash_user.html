@@ -63,7 +63,22 @@
                                 <td class="text-center">{{customer.created_at.strftime('%A - %B %d, %Y')}}</td>
                                 <td class="text-center">
                                     <a href="/customers/view/{{customer.id}}">View/Edit</a><br>
-                                    <a href="/customer/view/{{customer.id}}/delete/all" style="color:red;">Delete</a>
+                                    <!-- <a href="/customer/view/{{customer.id}}/delete/all" style="color:red;">Delete</a> -->
+                                    <button class="deletebutton" onclick="popwarning()" style="color:red;">Delete</button>
+
+                                <!-- CUSTOMER DELETION WARNING -->
+                                
+                                <div class="warningheader">
+                                    <div class="warning">
+                                        <h1 style="color: red; font-weight: bolder;">WARNING</h1>
+                                        <p style="font-weight: bolder;">You are about to delete a customer and all of its addresses, contacts, and projects. Are you sure you would like to proceed?</p>
+                                        <p style="font-weight: bolder;">THIS ACTION CANNOT BE UNDONE</p>
+                                        <div class="flex flex-row">
+                                            <button class="deletecommit" name="delete"><a href="/customer/view/{{customer.id}}/delete/all" style="color: red;">DELETE</a></button>
+                                            <button class="cancel" onclick="exit()" name="cancel" style="font-weight: bolder;">CANCEL</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -115,5 +130,6 @@
             </table>
         </div>
     </div>
+    <script src={{ url_for('static', filename='javascript/warning.js') }}></script>
 </body>
 </html>
