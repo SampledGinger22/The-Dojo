@@ -24,7 +24,8 @@ def new_customer():
 @app.route('/customers/new/commit', methods=['POST'])
 def new_customer_commit():
     disp_data = {
-        'display_name': request.form['display_name']
+        'display_name': request.form['display_name'],
+        'user_id': session["user_id"]
     }
     if not Customer.validate(disp_data):
         return redirect('/customers/new')

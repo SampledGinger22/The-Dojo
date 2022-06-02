@@ -114,7 +114,22 @@
                             <td>{{project.end_date.strftime('%A - %B %d, %Y')}}</td>
                             <td>
                                 <a href="/projects/view/{{project.id}}">View/Edit</a><br>
-                                <a href="/projects/delete/{{project.id}}" style="color: red;"><u>Delete</u></a>
+                                <!-- <a href="/projects/delete/{{project.id}}" style="color: red;"><u>Delete</u></a> -->
+                                <button class="deletebutton" onclick="popwarningproj()" style="color:red;">Delete</button>
+
+                                <!-- PROJECT DELETION WARNING -->
+                                
+                                <div class="warningheaderproj">
+                                    <div class="warningproj">
+                                        <h1 style="color: red; font-weight: bolder;">WARNING</h1>
+                                        <p style="font-weight: bolder;">You are about to delete a project. It's contacts will stay assigned to the customer, but all other associated information will be deleted. Are you sure you would like to proceed?</p>
+                                        <p style="font-weight: bolder;">THIS ACTION CANNOT BE UNDONE</p>
+                                        <div class="flex flex-row">
+                                            <button class="deletecommit" name="delete"><a href="/projects/delete/{{project.id}}" style="color: red;">DELETE</a></button>
+                                            <button class="cancel" onclick="exitproj()" name="cancel" style="font-weight: bolder;">CANCEL</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         {% else %}

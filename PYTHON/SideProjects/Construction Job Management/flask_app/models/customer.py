@@ -30,7 +30,7 @@ class Customer:
 
     @classmethod
     def get_disp(cls, data):
-        query = "SELECT * FROM customers WHERE display_name = %(display_name)s;"
+        query = "SELECT * FROM customers WHERE display_name = %(display_name)s and user_id=%(user_id)s;"
         result = connectToMySQL(DATABASE).query_db( query , data )
         if not result:
             return False

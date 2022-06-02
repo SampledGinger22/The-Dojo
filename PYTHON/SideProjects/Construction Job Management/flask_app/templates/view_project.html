@@ -71,8 +71,23 @@
                     </div>
                     <label class="h4 mt-4" for="project_notes"><u>Project Notes</u></label>
                     <textarea type="text" name="project_notes" id="project_notes" class="cust_notes" style="overflow: scroll;">{{project.project_notes}}</textarea><br>
-                    <button>Save Changes</button>
-                    <a href="/projects/delete/{{project.id}}" style="color: red;" class="text-center"><u>Delete</u></a>
+                    <button type="submit">Save Changes</button>
+                    <!-- <a href="/projects/delete/{{project.id}}" style="color: red;" class="text-center"><u>Delete</u></a> -->
+                    <button type="button" class="deletebutton" onclick="popwarningproj()" style="color:red;">Delete</button>
+
+                    <!-- PROJECT DELETION WARNING -->
+                    
+                    <div class="warningheaderproj">
+                        <div class="warningproj">
+                            <h1 style="color: red; font-weight: bolder;">WARNING</h1>
+                            <p style="font-weight: bolder;">You are about to delete a project. It's contacts will stay assigned to the customer, but all other associated information will be deleted. Are you sure you would like to proceed?</p>
+                            <p style="font-weight: bolder;">THIS ACTION CANNOT BE UNDONE</p>
+                            <div class="flex flex-row">
+                                <button class="deletecommit" name="delete"><a href="/projects/delete/{{project.id}}" style="color: red;">DELETE</a></button>
+                                <button class="cancel" onclick="exitproj()" name="cancel" style="font-weight: bolder;">CANCEL</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -135,5 +150,6 @@
         </div>
     </div>
     <script href={{url_for('static', filename='phones.js')}}></script>
+    <script src={{ url_for('static', filename='javascript/warning.js') }}></script>
 </body>
 </html>
