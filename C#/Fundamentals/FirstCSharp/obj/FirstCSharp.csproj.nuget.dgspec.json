@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\FirstCSharp\\FirstCSharp.csproj": {}
+    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\firstcsharp\\FirstCSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\FirstCSharp\\FirstCSharp.csproj": {
+    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\firstcsharp\\FirstCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\FirstCSharp\\FirstCSharp.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\firstcsharp\\FirstCSharp.csproj",
         "projectName": "FirstCSharp",
-        "projectPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\FirstCSharp\\FirstCSharp.csproj",
+        "projectPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\firstcsharp\\FirstCSharp.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\FirstCSharp\\obj\\",
+        "outputPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\firstcsharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
