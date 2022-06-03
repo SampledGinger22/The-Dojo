@@ -1,0 +1,15 @@
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\bin\Debug\net6.0\samplefolder.exe
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\bin\Debug\net6.0\samplefolder.deps.json
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\bin\Debug\net6.0\samplefolder.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\bin\Debug\net6.0\samplefolder.dll
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\bin\Debug\net6.0\samplefolder.pdb
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.dll
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\refint\samplefolder.dll
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.pdb
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\samplefolder.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\firstcsharp\samplefolder\obj\Debug\net6.0\ref\samplefolder.dll
