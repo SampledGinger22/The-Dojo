@@ -1,0 +1,15 @@
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\bin\Debug\net6.0\collectionspractice.exe
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\bin\Debug\net6.0\collectionspractice.deps.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\bin\Debug\net6.0\collectionspractice.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\bin\Debug\net6.0\collectionspractice.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\bin\Debug\net6.0\collectionspractice.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\refint\collectionspractice.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\collectionspractice.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\collectionspractice\obj\Debug\net6.0\ref\collectionspractice.dll
