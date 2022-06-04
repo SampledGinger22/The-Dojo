@@ -1,0 +1,5 @@
+C:\Users\admin\THE DOJO\C#\fundamentals\obj\Debug\net6.0\fundamentals.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\obj\Debug\net6.0\fundamentals.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\fundamentals\obj\Debug\net6.0\fundamentals.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\obj\Debug\net6.0\fundamentals.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\fundamentals\obj\Debug\net6.0\fundamentals.csproj.CoreCompileInputs.cache
