@@ -17,7 +17,7 @@ icecream.Add("Moose Tracks");
 int creamlength = icecream.Count;
 // Console.WriteLine(creamlength.ToString());
 // Console.WriteLine(icecream[2].ToString());
-// icecream.Remove("Rocky Road");
+icecream.Remove("Rocky Road");
 int newcreamlength = icecream.Count;
 // Console.WriteLine(newcreamlength.ToString());
 
