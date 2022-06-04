@@ -1,0 +1,15 @@
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\bin\Debug\net6.0\algosamples.exe
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\bin\Debug\net6.0\algosamples.deps.json
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\bin\Debug\net6.0\algosamples.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\bin\Debug\net6.0\algosamples.dll
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\bin\Debug\net6.0\algosamples.pdb
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.dll
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\refint\algosamples.dll
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.pdb
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\algosamples.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\fundamentals\fundamentals1\algosamples\obj\Debug\net6.0\ref\algosamples.dll
