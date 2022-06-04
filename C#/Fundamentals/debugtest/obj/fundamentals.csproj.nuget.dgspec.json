@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\fundamentals.csproj": {}
+    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\fundamentals.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\fundamentals.csproj": {
+    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\fundamentals.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\fundamentals.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\fundamentals.csproj",
         "projectName": "fundamentals",
-        "projectPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\fundamentals.csproj",
+        "projectPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\fundamentals.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\obj\\",
+        "outputPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
