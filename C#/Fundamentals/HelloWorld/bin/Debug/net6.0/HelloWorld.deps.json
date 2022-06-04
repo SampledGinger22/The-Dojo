@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "debugtest/1.0.0": {
+      "HelloWorld/1.0.0": {
         "runtime": {
-          "debugtest.dll": {}
+          "HelloWorld.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "debugtest/1.0.0": {
+    "HelloWorld/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

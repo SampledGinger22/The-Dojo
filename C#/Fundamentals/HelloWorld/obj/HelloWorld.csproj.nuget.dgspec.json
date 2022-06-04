@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\debugtest.csproj": {}
+    "C:\\Users\\admin\\THE DOJO\\C#\\Fundamentals\\HelloWorld\\HelloWorld.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\debugtest.csproj": {
+    "C:\\Users\\admin\\THE DOJO\\C#\\Fundamentals\\HelloWorld\\HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\debugtest.csproj",
-        "projectName": "debugtest",
-        "projectPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\debugtest.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\THE DOJO\\C#\\Fundamentals\\HelloWorld\\HelloWorld.csproj",
+        "projectName": "HelloWorld",
+        "projectPath": "C:\\Users\\admin\\THE DOJO\\C#\\Fundamentals\\HelloWorld\\HelloWorld.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\THE DOJO\\C#\\fundamentals\\debugtest\\obj\\",
+        "outputPath": "C:\\Users\\admin\\THE DOJO\\C#\\Fundamentals\\HelloWorld\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
