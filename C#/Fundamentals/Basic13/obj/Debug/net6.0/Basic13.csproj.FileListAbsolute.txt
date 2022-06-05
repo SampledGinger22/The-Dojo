@@ -1,0 +1,15 @@
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\bin\Debug\net6.0\Basic13.exe
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\bin\Debug\net6.0\Basic13.deps.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\bin\Debug\net6.0\Basic13.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\bin\Debug\net6.0\Basic13.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\bin\Debug\net6.0\Basic13.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\refint\Basic13.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\Basic13.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Basic13\obj\Debug\net6.0\ref\Basic13.dll
