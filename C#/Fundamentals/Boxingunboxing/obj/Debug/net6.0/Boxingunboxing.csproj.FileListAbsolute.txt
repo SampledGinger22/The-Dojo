@@ -1,0 +1,15 @@
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\bin\Debug\net6.0\Boxingunboxing.exe
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\bin\Debug\net6.0\Boxingunboxing.deps.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\bin\Debug\net6.0\Boxingunboxing.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\bin\Debug\net6.0\Boxingunboxing.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\bin\Debug\net6.0\Boxingunboxing.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\refint\Boxingunboxing.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\Boxingunboxing.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\Boxingunboxing\obj\Debug\net6.0\ref\Boxingunboxing.dll
