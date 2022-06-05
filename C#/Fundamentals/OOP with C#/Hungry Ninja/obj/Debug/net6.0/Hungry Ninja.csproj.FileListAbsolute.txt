@@ -1,0 +1,15 @@
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\bin\Debug\net6.0\Hungry Ninja.exe
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\bin\Debug\net6.0\Hungry Ninja.deps.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\bin\Debug\net6.0\Hungry Ninja.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\bin\Debug\net6.0\Hungry Ninja.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\bin\Debug\net6.0\Hungry Ninja.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\refint\Hungry Ninja.dll
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.pdb
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\Hungry Ninja.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Hungry Ninja\obj\Debug\net6.0\ref\Hungry Ninja.dll
