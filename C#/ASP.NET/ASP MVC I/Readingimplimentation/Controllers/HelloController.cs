@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
-namespace YourNamespace.Controllers;     //be sure to use your own project's namespace!
-    public class HelloController : Controller   //remember inheritance??
+namespace readingimplimentation.Controllers;     //be sure to use your own project's namespace!
+    public class HomeController : Controller   //remember inheritance??
     {
         //for each route this controller is to handle:
-        [HttpGet]       //type of request
-        [Route("")]     //associated route string (exclude the leading /)
-        public string Index()
+        [HttpGet("")]       //type of request
+        public ViewResult HiThere()
         {
-            return "Hello World from HelloController!";
+            //Views/Home/HiThere.cshtml
+            //Views/Shared/HiThere.cshtml
+            return View();
         }
 
         //localhost:5000/hello
