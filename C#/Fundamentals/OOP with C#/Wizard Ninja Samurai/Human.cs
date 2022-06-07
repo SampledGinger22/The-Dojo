@@ -1,15 +1,15 @@
 class Human {
-    public string Name;
-    public int Strength;
-    public int Intelligence;
-    public int Dexterity;
-    public int Health;
+    public string Name { get; set; }
+    public int Strength { get; set; }
+    public int Intelligence { get; set; }
+    public int Dexterity { get; set; }
+    public int Health { get; set; }
 
-    public Human(string newname){
-        Name = newname;
-        Strength = 3;
-        Intelligence = 3;
-        Dexterity = 3;
+    public Human(string name){
+        Name = name;
+        Strength = 10;
+        Intelligence = 10;
+        Dexterity = 10;
         Health = 100;
     }
 
@@ -19,9 +19,15 @@ class Human {
         Intelligence = intel;
         Dexterity = dex;
         Health = heal;
-    }
+    } 
 
-    public virtual void Attack(int enemyhealth){
-        enemyhealth = enemyhealth - (Strength * 5);
+    public virtual int Attack(Human enemy){
+        int dmg = Strength * 3;
+        enemy.Health -= dmg;
+        if(enemy.Health < 0){
+            enemy.Health = 0;
+        }
+        Console.WriteLine($"{Name} attacked {enemy.Name} for {dmg} damage!");
+        return enemy.Health;
     }
 }

@@ -4,11 +4,12 @@ class Samurai : Human {
         Health = 200;
     }
 
-    public override void Attack(int enemyhealth){
-        base.Attack(enemyhealth);
-        if(enemyhealth <= 50){
-            enemyhealth = 0;
+    public override int Attack(Human enemy){
+        base.Attack(enemy);
+        if(enemy.Health <= 50){
+            enemy.Health = 0;
         }
+        return enemy.Health;
     }
 
     public void Meditate(){
