@@ -1,0 +1,5 @@
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Iron Ninja\obj\Debug\net6.0\Iron Ninja.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Iron Ninja\obj\Debug\net6.0\Iron Ninja.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Iron Ninja\obj\Debug\net6.0\Iron Ninja.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Iron Ninja\obj\Debug\net6.0\Iron Ninja.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\Fundamentals\OOP with C#\Iron Ninja\obj\Debug\net6.0\Iron Ninja.csproj.CoreCompileInputs.cache
