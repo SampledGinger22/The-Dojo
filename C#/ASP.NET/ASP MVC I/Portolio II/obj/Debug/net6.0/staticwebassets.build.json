@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "cxkdxgBf34Nug+kIK2aLvdCRe77oOb4OIHitk3qit3Q=",
+  "Source": "Portolio II",
+  "BasePath": "_content/Portolio II",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Portolio II\\wwwroot",
+      "Source": "Portolio II",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Portolio II\\wwwroot\\",
+      "BasePath": "_content/Portolio II",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Portolio II\\wwwroot\\css\\style.css",
+      "SourceId": "Portolio II",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Portolio II\\wwwroot\\",
+      "BasePath": "_content/Portolio II",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Portolio II\\wwwroot\\js\\script.js",
+      "SourceId": "Portolio II",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Portolio II\\wwwroot\\",
+      "BasePath": "_content/Portolio II",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
+    }
+  ]
+}

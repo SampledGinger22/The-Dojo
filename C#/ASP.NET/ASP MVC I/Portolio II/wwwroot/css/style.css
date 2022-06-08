@@ -1,0 +1,81 @@
+.header {
+    text-align: center;
+}
+
+h4 a {
+    color: blue;
+    text-decoration: underline;
+    font-size: large;
+}
+
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-content: center;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+}
+
+.colleft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.largeimgfill {
+    width: 200px;
+    height: 200px;
+    border: black 1px solid;
+}
+
+.medimgfill {
+    width: 100px;
+    height: 100px;
+    border: black 1px solid;
+}
+
+.paragraphs {
+    width: 400px;
+    height: fit-content;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid black 3px;
+    height: 400px;
+    width: 800px;
+    overflow-y: scroll;
+    margin-top: 30px;
+}
+
+.project {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: 5px;
+    border: 2px solid black;
+    margin-left: 3px;
+    padding: 5px;
+    background-color: antiquewhite;
+}

@@ -1,0 +1,24 @@
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\appsettings.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\Portolio II.staticwebassets.runtime.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\Portolio II.exe
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\Portolio II.deps.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\Portolio II.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\Portolio II.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\bin\Debug\net6.0\Portolio II.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.RazorAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.RazorAssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\scopedcss\bundle\Portolio II.styles.css
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\refint\Portolio II.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\Portolio II.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Portolio II\obj\Debug\net6.0\ref\Portolio II.dll

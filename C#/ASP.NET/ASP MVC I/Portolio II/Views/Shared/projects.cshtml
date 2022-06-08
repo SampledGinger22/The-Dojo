@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>My Projects</title>
+</head>
+<body>
+    <div class="main">
+        @* header *@
+        <h4 class="header"><a href="/">Home</a> | <a href="/projects">Projects</a> | <a href="/contact">Contact</a></h4>
+        <h3 class="title">Here are some projects of mine!</h3>
+        <div class="projects">
+            @{
+                var count = 7;
+                for(var i = 1; i < count; i++){
+                    <div class="project">
+                        <img class="medimgfill">
+                        <div class="flexcol" style="margin-left: 5px;">
+                            <h5 style="margin: 0;">Cool Thing!</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>
