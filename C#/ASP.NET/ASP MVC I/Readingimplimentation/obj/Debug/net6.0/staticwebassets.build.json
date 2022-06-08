@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "LlnRRyidwNb5eLSgVjEFxcCX0qkTPzJqmkWrB40Hej4=",
+  "Hash": "jZ0WZOL4ULI5caxZ4u2LkhlOIDzcRmutaL3u/kt6K4c=",
   "Source": "Readingimplimentation",
   "BasePath": "_content/Readingimplimentation",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Readingimplimentation\\wwwroot",
+      "Source": "Readingimplimentation",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Readingimplimentation\\wwwroot\\",
+      "BasePath": "_content/Readingimplimentation",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Readingimplimentation\\wwwroot\\css\\style.css",
+      "SourceId": "Readingimplimentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Readingimplimentation\\wwwroot\\",
+      "BasePath": "_content/Readingimplimentation",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    }
+  ]
 }

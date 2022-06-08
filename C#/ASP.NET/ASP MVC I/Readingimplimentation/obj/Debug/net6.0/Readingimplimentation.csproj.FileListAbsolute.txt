@@ -21,3 +21,4 @@ C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Readingimplimentation\obj\Debug\net
 C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Readingimplimentation\obj\Debug\net6.0\ref\Readingimplimentation.dll
 C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Readingimplimentation\obj\Debug\net6.0\Readingimplimentation.RazorAssemblyInfo.cache
 C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Readingimplimentation\obj\Debug\net6.0\Readingimplimentation.RazorAssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC I\Readingimplimentation\bin\Debug\net6.0\Readingimplimentation.staticwebassets.runtime.json
