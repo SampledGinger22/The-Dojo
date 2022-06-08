@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "9WBKt58fDcEtz5iiwLth/YvdOUejf5DiNbiC+FNJSjg=",
+  "Source": "Dojo Survey",
+  "BasePath": "_content/Dojo Survey",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Dojo Survey\\wwwroot",
+      "Source": "Dojo Survey",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Dojo Survey\\wwwroot\\",
+      "BasePath": "_content/Dojo Survey",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Dojo Survey\\wwwroot\\css\\style.css",
+      "SourceId": "Dojo Survey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Dojo Survey\\wwwroot\\",
+      "BasePath": "_content/Dojo Survey",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Dojo Survey\\wwwroot\\js\\script.js",
+      "SourceId": "Dojo Survey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Dojo Survey\\wwwroot\\",
+      "BasePath": "_content/Dojo Survey",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
+    }
+  ]
+}

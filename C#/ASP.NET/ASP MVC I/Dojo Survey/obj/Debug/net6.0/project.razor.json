@@ -16296,6 +16296,17 @@
     "CSharpLanguageVersion": 1000
   },
   "RootNamespace": "Dojo_Survey",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Dojo Survey\\Views\\Home\\form.cshtml",
+      "TargetPath": "Views\\Home\\form.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC I\\Dojo Survey\\Views\\Shared\\formreturn.cshtml",
+      "TargetPath": "Views\\Shared\\formreturn.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
