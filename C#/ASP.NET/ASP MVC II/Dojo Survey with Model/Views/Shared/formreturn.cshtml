@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>Form Return</title>
+</head>
+<body>
+    <div class="body">
+        <div class="form">
+            <h3><u>Submitted Info</u></h3>
+            <div class="row" style="border: solid 1px black; padding: 10px;">
+                <div class="col">
+                    <p>Name:</p>
+                    <p>Dojo Location:</p>
+                    <p>Favorite Langauage:</p>
+                    <p>Comment:</p>
+                </div>
+                <div class="col">
+                    <p>@ViewBag.name</p>
+                    <p>@ViewBag.location</p>
+                    <p>@ViewBag.language</p>
+                    <p>@ViewBag.comment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
