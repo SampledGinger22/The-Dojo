@@ -1,10 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Dojo_Survey_with_Validation.Models;
 namespace Dojo_Survey_with_Validation.Controllers;
-    public class HomeFormReturn : Controller
+    public class SharedController : Controller
     {
         [HttpPost("result")]
         public IActionResult formreturn(Ninja ninja){
-            return View("formreturn", ninja);
+            
+            if(ModelState.IsValid)
+            {
+                return View("formreturn", ninja);   
+            }
+            else 
+            {
+                return View("form");
+            }
         }
     }

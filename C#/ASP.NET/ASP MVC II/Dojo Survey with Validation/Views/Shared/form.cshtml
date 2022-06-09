@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @using Dojo_Survey_with_Validation.Models 
+    @model Ninja
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +12,29 @@
 </head>
 <body>
     <div class="body">
-        <form class="form-group" action="/result" method="POST">
-            <label for="Name">Your Name</label>
-            <input class="form-control" name="Name">
-            <label for="Location">Dojo Location</label>
-            <select class="form-control" name="Location">
+        <form asp-action="formreturn" asp-controller="Shared" class="form-group" method="POST">
+            <span asp-validation-for="Name" style="color: red;"></span>
+            <label asp-for="Name" for="Name">Your Name</label>
+            <input asp-for="Name" class="form-control" name="Name">
+            <span asp-validation-for="Location" style="color: red;"></span>
+            <label asp-for="Location" for="Location">Dojo Location</label>
+            <select asp-for="Location" class="form-control" name="Location">
                 <option value="" disabled hidden selected>Choose a Location</option>
                 <option value="Des Moines">Des Moines</option>
                 <option value="San Jose">San Jose</option>
                 <option value="Seattle">Seattle</option>
             </select>
-            <label for="Language">Favorite Language</label>
-            <select class="form-control" name="Language">
+            <span asp-validation-for="Language" style="color: red;"></span>
+            <label asp-for="Language" for="Language">Favorite Language</label>
+            <select asp-for="Language" class="form-control" name="Language">
                 <option value="" disabled hidden selected>Choose a Language</option>
                 <option value="C#">C#</option>
                 <option value="JavaScript">JavaScript</option>
                 <option value="Python">Python</option>
             </select>
-            <label for="Comment">Comment (optional)</label>
-            <textarea name="Comment"></textarea>
+            <span asp-validation-for="Comment" style="color: red;"></span>
+            <label asp-for="Comment" for="Comment">Comment (optional)</label>
+            <textarea asp-for="Comment" name="Comment"></textarea>
             <button class="btn btn-success" type="submit">Submit</button>
         </form>
     </div>
