@@ -1,0 +1,24 @@
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\appsettings.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\Dojo Survey with Validation.staticwebassets.runtime.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\Dojo Survey with Validation.exe
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\Dojo Survey with Validation.deps.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\Dojo Survey with Validation.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\Dojo Survey with Validation.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\bin\Debug\net6.0\Dojo Survey with Validation.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.RazorAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.RazorAssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\scopedcss\bundle\Dojo Survey with Validation.styles.css
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\refint\Dojo Survey with Validation.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\Dojo Survey with Validation.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Validation\obj\Debug\net6.0\ref\Dojo Survey with Validation.dll
