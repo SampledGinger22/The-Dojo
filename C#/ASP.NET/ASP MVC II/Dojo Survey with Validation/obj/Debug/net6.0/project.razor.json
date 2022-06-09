@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Dojo Survey with Validation\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Dojo Survey with Validation\\Views\\Home\\form.cshtml",
       "TargetPath": "Views\\Home\\form.cshtml",
       "FileKind": "mvc"
