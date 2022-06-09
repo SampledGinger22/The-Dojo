@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "FbYkvQwHpyF6eS/SNGoeXeoGqIqgTX6a3PYfgP36MWY=",
+  "Source": "Validating From Submission",
+  "BasePath": "_content/Validating From Submission",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Validating From Submission\\wwwroot",
+      "Source": "Validating From Submission",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Validating Form Submission\\wwwroot\\",
+      "BasePath": "_content/Validating From Submission",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Validating Form Submission\\wwwroot\\css\\style.css",
+      "SourceId": "Validating From Submission",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Validating Form Submission\\wwwroot\\",
+      "BasePath": "_content/Validating From Submission",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Validating Form Submission\\wwwroot\\js\\script.js",
+      "SourceId": "Validating From Submission",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Validating Form Submission\\wwwroot\\",
+      "BasePath": "_content/Validating From Submission",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
+    }
+  ]
+}

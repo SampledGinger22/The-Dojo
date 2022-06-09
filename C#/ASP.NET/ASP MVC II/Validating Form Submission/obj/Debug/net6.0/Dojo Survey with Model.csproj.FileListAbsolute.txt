@@ -1,0 +1,24 @@
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\appsettings.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\Dojo Survey with Model.staticwebassets.runtime.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\Dojo Survey with Model.exe
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\Dojo Survey with Model.deps.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\Dojo Survey with Model.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\Dojo Survey with Model.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\bin\Debug\net6.0\Dojo Survey with Model.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.RazorAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.RazorAssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\scopedcss\bundle\Dojo Survey with Model.styles.css
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\refint\Dojo Survey with Model.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\Dojo Survey with Model.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Dojo Survey with Model\obj\Debug\net6.0\ref\Dojo Survey with Model.dll
