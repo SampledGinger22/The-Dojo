@@ -16296,6 +16296,27 @@
     "CSharpLanguageVersion": 1000
   },
   "RootNamespace": "ViewModel_Fun",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\ViewModel Fun\\Views\\Home\\landing.cshtml",
+      "TargetPath": "Views\\Home\\landing.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\ViewModel Fun\\Views\\Shared\\user.cshtml",
+      "TargetPath": "Views\\Shared\\user.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\ViewModel Fun\\Views\\Shared\\users.cshtml",
+      "TargetPath": "Views\\Shared\\users.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\ViewModel Fun\\Views\\Shared\\numbers.cshtml",
+      "TargetPath": "Views\\Shared\\numbers.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }

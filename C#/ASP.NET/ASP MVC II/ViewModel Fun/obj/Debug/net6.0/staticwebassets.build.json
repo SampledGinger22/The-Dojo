@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "h97Edg+Z4JjFOkcr7WjWWO/onJCGqntLH2/lsveKvLs=",
+  "Source": "ViewModel Fun",
+  "BasePath": "_content/ViewModel Fun",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ViewModel Fun\\wwwroot",
+      "Source": "ViewModel Fun",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\ViewModel Fun\\wwwroot\\",
+      "BasePath": "_content/ViewModel Fun",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\ViewModel Fun\\wwwroot\\css\\style.css",
+      "SourceId": "ViewModel Fun",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\ViewModel Fun\\wwwroot\\",
+      "BasePath": "_content/ViewModel Fun",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    }
+  ]
+}
