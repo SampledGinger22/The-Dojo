@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @using Dojo_Survey_With_Model.Models
+    @model Ninja
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +21,10 @@
                     <p>Comment:</p>
                 </div>
                 <div class="col">
-                    <p>@ViewBag.name</p>
-                    <p>@ViewBag.location</p>
-                    <p>@ViewBag.language</p>
-                    <p>@ViewBag.comment</p>
+                    <p>@Model.Name</p>
+                    <p>@Model.Location</p>
+                    <p>@Model.Language</p>
+                    <p>@Model.Comment</p>
                 </div>
             </div>
         </div>
