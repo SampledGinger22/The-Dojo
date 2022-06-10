@@ -24,7 +24,8 @@ public class HomeController : Controller
         int i = 0;
         while(i < 14){
             int temp = rand.Next(0 ,values.Count());
-            password += temp; 
+            password += values[temp]; 
+            i++;
         }
         return View("passwordgen", password);
     }
