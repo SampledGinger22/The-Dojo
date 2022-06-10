@@ -1,0 +1,24 @@
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\appsettings.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\Random Passcode.staticwebassets.runtime.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\Random Passcode.exe
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\Random Passcode.deps.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\Random Passcode.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\Random Passcode.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\bin\Debug\net6.0\Random Passcode.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.RazorAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.RazorAssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\scopedcss\bundle\Random Passcode.styles.css
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\refint\Random Passcode.dll
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.pdb
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\Random Passcode.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\ASP.NET\ASP MVC II\Random Passcode\obj\Debug\net6.0\ref\Random Passcode.dll

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "XymQugqGTFLPSEA4vtXbO9xjeIkO+d9WY72c46lt5KY=",
+  "Source": "Random Passcode",
+  "BasePath": "_content/Random Passcode",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Random Passcode\\wwwroot",
+      "Source": "Random Passcode",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Random Passcode\\wwwroot\\",
+      "BasePath": "_content/Random Passcode",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Random Passcode\\wwwroot\\js\\script.js",
+      "SourceId": "Random Passcode",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\THE DOJO\\C#\\ASP.NET\\ASP MVC II\\Random Passcode\\wwwroot\\",
+      "BasePath": "_content/Random Passcode",
+      "RelativePath": "js/script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\script.js"
+    }
+  ]
+}
