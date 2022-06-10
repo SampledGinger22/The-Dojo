@@ -67,7 +67,6 @@
             }
             node = node.next;
         }
-        console.log(this);
 
         if(node.next = minnode){
             node.next = minnode.next;
