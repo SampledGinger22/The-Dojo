@@ -2,7 +2,12 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="body" style="margin-top: 150px;">
+    <h3>Check out some recent dishes!</h3>
+    <hr style="width: 50%;">
+    @* @{
+        foreach(dish in dishes){
+            <p><a href="dish/@Model.id">@Model.Name</a> by @Model.Chef</p>
+        }
+    } *@
 </div>

@@ -18,9 +18,19 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Create()
     {
         return View();
+    }
+
+    public IActionResult Edit()
+    {
+        return View();
+    }
+
+    public IActionResult ViewDish()
+    {
+        return View("view");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
