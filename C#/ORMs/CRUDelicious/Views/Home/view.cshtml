@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<div class="d-flex flex-column w-100">
+<div class="d-flex flex-column" style="width: 100%; margin-left: 200px;">
     <div class="d-flex flex-column justify-content-center">
         <h1>@Model.Name</h1>
         <h4>@Model.Chef</h4>
@@ -14,8 +14,8 @@
         <p style="font-weight: bold;">Tastiness: <p>@Model.Tastiness</p></p>
     </div>
     <br><br>
-    <div class="d-flex flex-row justify-content-evenly" style="width: 50%;">
-        <button class="btn btn-danger" type="button"><a href="/delete/dish/@Model.DishId" style="text-decoration: none; color: black;">Delete</a></button>
-        <button class="btn btn-light" type="button"><a href="/edit/dish/@Model.DishId" style="text-decoration: none; color: black;">Edit</a></button>
+    <div class="d-flex flex-row justify-content-left" style="gap: 50px;">
+        <button class="btn btn-danger shadow-lg mb-5" type="button"><a href="/delete/dish/@Model.DishId" style="text-decoration: none; color: black;">Delete</a></button>
+        <button class="btn btn-secondary shadow-lg mb-5" type="button"><a href="/edit/dish/@Model.DishId" style="text-decoration: none; color: black;">Edit</a></button>
     </div>
 </div>

@@ -7,6 +7,7 @@
 <div class="body">
     <form class="form-group d-flex flex-row gap-5" asp-controller="Home" asp-action="updatedish" method="POST">
         <div class="d-flex flex-column">
+            <input asp-for="@Model.DishId" hidden value="@Model.DishId">
             <span asp-validation-for="Chef" style="color: red;"></span>
             <label asp-for="Chef" >Chef's Name</label>
             <input asp-for="Chef" type="text" class="form-control" value="@Model.Chef">

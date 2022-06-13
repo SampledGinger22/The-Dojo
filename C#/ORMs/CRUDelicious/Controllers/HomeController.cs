@@ -32,21 +32,67 @@ public class HomeController : Controller
     [HttpGet("edit/dish/{DishId}")]
     public IActionResult Edit(int DishId)
     {
-        Dish dish = _context.Dishes.First(d => d.DishId == DishId);
+        Dish? dish = _context.Dishes.FirstOrDefault(d => d.DishId == DishId);
+
         return View("edit", dish);
     }
 
-    public IActionResult updatedish(int DishId)
+    [HttpPost("dish/update")]
+    public IActionResult updatedish(int DishId, Dish plate)
     {
-        Dish update = _context.Dishes.Update(d => d.DishId = DishId)
-        return Redirect("Index");
+        Dish? dish = _context.Dishes.FirstOrDefault(d => d.DishId == DishId);
+        if(ModelState.IsValid) 
+        {
+            if(dish != null)
+            {
+                dish.Name = plate.Name;
+                dish.Chef = plate.Chef;
+                dish.Tastiness = plate.Tastiness;
+                dish.Calories = plate.Calories;
+                dish.Description = plate.Description;
+                dish.UpdatedAt = DateTime.Now;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("ViewDish", dish);
+        }
+        else 
+        {
+            return View("edit", dish);
+        }
     }
+
+    [HttpGet("create")]
     public IActionResult Create()
     {
         return View();
     }
 
-    
+    [HttpPost("dish/new")]
+    public IActionResult SaveNew(Dish plate)
+    {
+        if(ModelState.IsValid)
+        {
+            _context.Add(plate);
+            _context.SaveChanges();
+            return RedirectToAction("ViewDish", plate);
+        }
+        else
+        {
+            return View("Create");
+        }
+    }
+
+    [HttpGet("delete/dish/{DishId}")]
+    public IActionResult Delete(int DishId)
+    {
+        Dish? dish = _context.Dishes.FirstOrDefault(d => d.DishId == DishId);
+        if(dish != null)
+        {
+            _context.Dishes.Remove(dish);
+            _context.SaveChanges();
+        }
+        return RedirectToAction("Index");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
