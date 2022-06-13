@@ -1,13 +1,22 @@
-﻿@{
+﻿@model List<Dish>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="body" style="margin-top: 150px;">
     <h3>Check out some recent dishes!</h3>
     <hr style="width: 50%;">
-    @* @{
-        foreach(dish in dishes){
-            <p><a href="dish/@Model.id">@Model.Name</a> by @Model.Chef</p>
+    @{
+        if(Model.Count() != 0){
+            @foreach(var dish in Model)
+            {
+                <p><a href="dish/@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+            }
         }
-    } *@
+        else 
+        {
+            <p>Dishes coming soon...</p>
+        }
+    }
 </div>

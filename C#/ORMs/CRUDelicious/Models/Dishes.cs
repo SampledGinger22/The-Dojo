@@ -1,9 +1,9 @@
 #pragma warning disable CS8618
 using System.ComponentModel.DataAnnotations;
 
-namespace CRUDelicious.Models 
-{
-    public class Dishes 
+namespace CRUDelicious.Models;
+
+    public class Dish 
     {
         [Key]
         public int DishId { get;set; }
@@ -15,4 +15,3 @@ namespace CRUDelicious.Models
         public DateTime CreatedAt { get;set; } = DateTime.Now;
         public DateTime UpdatedAt { get;set; } = DateTime.Now;
     }
-}

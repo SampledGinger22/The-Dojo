@@ -6,18 +6,21 @@ namespace CRUDelicious.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private MyContext _context;
+
+    public HomeController(MyContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
+    [HttpGet("")]
     public IActionResult Index()
     {
-        return View();
-    }
+        List<Dish> AllDishes  =_context.Dishes.OrderBy(c => c.CreatedAt).ToList();
 
+        return View(AllDishes);
+    }
     public IActionResult Create()
     {
         return View();
