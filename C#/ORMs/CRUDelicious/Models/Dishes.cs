@@ -11,7 +11,7 @@ namespace CRUDelicious.Models;
         public string Chef { get;set; }
         public int Tastiness { get;set; }
         public int Calories { get;set; }
-        public string Description { get;set; }
+        public string? Description { get;set; }
         public DateTime CreatedAt { get;set; } = DateTime.Now;
         public DateTime UpdatedAt { get;set; } = DateTime.Now;
     }

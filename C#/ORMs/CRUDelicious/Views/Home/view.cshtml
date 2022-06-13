@@ -1,3 +1,21 @@
+@model Dish
 @{
     ViewData["Title"] = "Home Page";
 }
+<div class="d-flex flex-column w-100">
+    <div class="d-flex flex-column justify-content-center">
+        <h1>@Model.Name</h1>
+        <h4>@Model.Chef</h4>
+        <hr style="width: 50%;">
+    </div>
+    <div class="d-flex flex-column justify-content-left">
+        <p>@Model.Description</p>
+        <p style="font-weight: bold;">Calories: <p>@Model.Calories</p></p>
+        <p style="font-weight: bold;">Tastiness: <p>@Model.Tastiness</p></p>
+    </div>
+    <br><br>
+    <div class="d-flex flex-row justify-content-evenly" style="width: 50%;">
+        <button class="btn btn-danger" type="button"><a href="/delete/dish/@Model.DishId" style="text-decoration: none; color: black;">Delete</a></button>
+        <button class="btn btn-light" type="button"><a href="/edit/dish/@Model.DishId" style="text-decoration: none; color: black;">Edit</a></button>
+    </div>
+</div>

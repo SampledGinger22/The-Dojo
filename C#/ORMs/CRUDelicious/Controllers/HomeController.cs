@@ -21,20 +21,32 @@ public class HomeController : Controller
 
         return View(AllDishes);
     }
+
+    [HttpGet("view/dish/{DishId}")]
+    public IActionResult ViewDish(int DishId)
+    {
+        Dish dish = _context.Dishes.First(d => d.DishId == DishId);
+        return View("view", dish);
+    }
+
+    [HttpGet("edit/dish/{DishId}")]
+    public IActionResult Edit(int DishId)
+    {
+        Dish dish = _context.Dishes.First(d => d.DishId == DishId);
+        return View("edit", dish);
+    }
+
+    public IActionResult updatedish(int DishId)
+    {
+        Dish update = _context.Dishes.Update(d => d.DishId = DishId)
+        return Redirect("Index");
+    }
     public IActionResult Create()
     {
         return View();
     }
 
-    public IActionResult Edit()
-    {
-        return View();
-    }
-
-    public IActionResult ViewDish()
-    {
-        return View("view");
-    }
+    
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
