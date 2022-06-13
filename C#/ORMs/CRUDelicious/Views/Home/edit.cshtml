@@ -5,6 +5,7 @@
 }
 
 <div class="body">
+    <h1>Edit: @Model.Name</h1>
     <form class="form-group d-flex flex-row gap-5" asp-controller="Home" asp-action="updatedish" method="POST">
         <div class="d-flex flex-column">
             <input asp-for="@Model.DishId" hidden value="@Model.DishId">
