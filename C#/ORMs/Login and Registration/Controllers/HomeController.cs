@@ -28,7 +28,7 @@ public class HomeController : Controller
     }
 
     [HttpPost("access")]
-    public IActionResult Access(User userSubmission)
+    public IActionResult Access(LoginUser userSubmission)
     {
         if(HttpContext.Session.GetInt32("userid") != null){
             return RedirectToAction("Index");
@@ -44,7 +44,7 @@ public class HomeController : Controller
             else 
             {
                 var hasher = new PasswordHasher<User>();
-                var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
+                var result = hasher.VerifyHashedPassword(userInDb, userInDb.Password, userSubmission.Password);
                 if(result == 0)
                 {
                     ModelState.AddModelError("Email", "Invalid Email/Password");
@@ -53,7 +53,7 @@ public class HomeController : Controller
                 else {
                     if(HttpContext.Session.GetInt32("userid") == null)
                     {
-                        HttpContext.Session.SetInt32("userid", userSubmission.id);
+                        HttpContext.Session.SetInt32("userid", userInDb.id);
                     }
                     return View("Index");
                 }
