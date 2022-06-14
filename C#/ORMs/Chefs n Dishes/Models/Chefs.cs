@@ -18,4 +18,5 @@ public class Chef
     public DateTime? Age { get;set; }
     public DateTime CreatedAt { get;set; } = DateTime.Now;
     public DateTime UpdatedAt { get;set; } = DateTime.Now;
+    public List<Dish> newDishes { get;set; } = new List<Dish>();
 }
