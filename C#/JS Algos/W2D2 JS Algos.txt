@@ -1,0 +1,68 @@
+    /**
+     * Determines if this tree contains the given searchVal.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {number} searchVal The number to search for in the node's data.
+     * @returns {boolean} Indicates if the searchVal was found.
+     */
+    contains(searchVal) {
+        if(this.isEmpty()){
+            return false;
+        }
+        var current = this.root;
+        while(current !== null){
+            if(current.data === searchVal){
+                return true;
+            }
+            else if (searchVal < current.data){
+                current = current.left;
+            }
+            else {
+                current = current.right;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Determines if this tree contains the given searchVal.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {number} searchVal The number to search for in the node's data.
+     * @returns {boolean} Indicates if the searchVal was found.
+     */
+    containsRecursive(searchVal, current = this.root) {
+        if(this.isEmpty()){
+            return false;
+        }
+        if(current.data === searchVal){
+            return true;
+        }
+        else if (searchVal < current.data && current.left != null){
+            current = current.left;
+            return this.containsRecursive(searchVal, current);
+        }
+        else if (searchVal > current.data && current.right != null){
+            current = current.right;
+            return this.containsRecursive(searchVal, current);
+        }
+        else return false;
+    }
+
+    /**
+     * Calculates the range (max - min) from the given startNode.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {Node} startNode The node to start from to calculate the range.
+     * @returns {number|null} The range of this tree or a sub tree depending on if the
+     *    startNode is the root or not.
+     */
+    range() {
+        if(this.isEmpty()){
+            return null;
+        }
+        var minVal = this.min();
+        var maxVal = this.max();
+        var range = maxVal - minVal;
+        return range;
+    }
