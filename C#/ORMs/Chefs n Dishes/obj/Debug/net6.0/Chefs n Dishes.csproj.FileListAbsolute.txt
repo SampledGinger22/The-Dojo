@@ -1,0 +1,35 @@
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\appsettings.json
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Chefs n Dishes.staticwebassets.runtime.json
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Chefs n Dishes.exe
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Chefs n Dishes.deps.json
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Chefs n Dishes.runtimeconfig.json
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Chefs n Dishes.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Chefs n Dishes.pdb
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Humanizer.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.csproj.AssemblyReference.cache
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.AssemblyInfoInputs.cache
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.AssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.csproj.CoreCompileInputs.cache
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.RazorAssemblyInfo.cache
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.RazorAssemblyInfo.cs
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\scopedcss\bundle\Chefs n Dishes.styles.css
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\scopedcss\projectbundle\Chefs n Dishes.bundle.scp.css
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.csproj.CopyComplete
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\refint\Chefs n Dishes.dll
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.pdb
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\Chefs n Dishes.genruntimeconfig.cache
+C:\Users\admin\THE DOJO\C#\ORMs\Chefs n Dishes\obj\Debug\net6.0\ref\Chefs n Dishes.dll

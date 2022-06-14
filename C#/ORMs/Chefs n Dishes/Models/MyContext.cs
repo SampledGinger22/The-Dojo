@@ -5,6 +5,6 @@ namespace Chefs_n_Dishes.Models;
 public class MyContext : DbContext 
 { 
     public MyContext(DbContextOptions options) : base(options) { }
-    public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Chef> Chefs { get; set; } = null!;
 
 }
