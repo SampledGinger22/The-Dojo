@@ -6,19 +6,15 @@ namespace Login_and_Registration.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private MyContext _context;
+
+    public HomeController(MyContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
     {
         return View();
     }
