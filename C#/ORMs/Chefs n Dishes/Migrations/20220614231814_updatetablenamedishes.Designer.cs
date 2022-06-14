@@ -3,6 +3,7 @@ using System;
 using Chefs_n_Dishes.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chefs_n_Dishes.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20220614231814_updatetablenamedishes")]
+    partial class updatetablenamedishes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,11 +59,11 @@ namespace Chefs_n_Dishes.Migrations
                     b.Property<int>("Calories")
                         .HasColumnType("int");
 
+                    b.Property<int>("ChefId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<int>("CreatorChefId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -79,20 +81,18 @@ namespace Chefs_n_Dishes.Migrations
 
                     b.HasKey("DishId");
 
-                    b.HasIndex("CreatorChefId");
+                    b.HasIndex("ChefId");
 
                     b.ToTable("Dishes");
                 });
 
             modelBuilder.Entity("Chefs_n_Dishes.Models.Dish", b =>
                 {
-                    b.HasOne("Chefs_n_Dishes.Models.Chef", "Creator")
+                    b.HasOne("Chefs_n_Dishes.Models.Chef", null)
                         .WithMany("newDishes")
-                        .HasForeignKey("CreatorChefId")
+                        .HasForeignKey("ChefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Creator");
                 });
 
             modelBuilder.Entity("Chefs_n_Dishes.Models.Chef", b =>

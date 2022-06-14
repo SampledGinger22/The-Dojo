@@ -1,21 +1,33 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Chefs_n_Dishes.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chefs_n_Dishes.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private MyContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(MyContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
+    [HttpGet("")]
     public IActionResult Index()
     {
-        return View();
+        List<Dish> userDishes = _context.Dishes.Include(d => d.Creator).ToList();
+
+        return View("Index", userDishes);
+    }
+
+    [HttpGet("dishes")]
+    public IActionResult Dishes()
+    {
+        List<Dish> userDishes = _context.Dishes.Include(d => d.Creator).ToList(); 
+
+        return View("dishes", userDishes);
     }
 
 
