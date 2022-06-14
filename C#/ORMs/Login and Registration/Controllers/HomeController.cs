@@ -30,6 +30,9 @@ public class HomeController : Controller
     [HttpPost("access")]
     public IActionResult Access(User userSubmission)
     {
+        if(HttpContext.Session.GetInt32("userid") != null){
+            return RedirectToAction("Index");
+        }
         if(ModelState.IsValid)
         {
             var userInDb = _context.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
@@ -38,26 +41,27 @@ public class HomeController : Controller
                 ModelState.AddModelError("Email", "Invalid Email/Password");
                 return View("login");
             }
-
-            var hasher = new PasswordHasher<User>();
-
-            var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
-
-            if(result == 0)
+            else 
             {
-                ModelState.AddModelError("Email", "Invalid Email/Password");
-                return View("login");
-            }
-            else {
-                if(HttpContext.Session.GetInt32("userid") == null)
+                var hasher = new PasswordHasher<User>();
+                var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
+                if(result == 0)
                 {
-                    HttpContext.Session.SetInt32("userid", userSubmission.id);
+                    ModelState.AddModelError("Email", "Invalid Email/Password");
+                    return View("login");
                 }
-                return RedirectToAction("index");
+                else {
+                    if(HttpContext.Session.GetInt32("userid") == null)
+                    {
+                        HttpContext.Session.SetInt32("userid", userSubmission.id);
+                    }
+                    return View("Index");
+                }
             }
         }
         else
         {
+            ModelState.AddModelError("Email", "Something went wrong");
             return View("login");
         }
     }
@@ -65,6 +69,7 @@ public class HomeController : Controller
     [HttpPost("register")]
     public IActionResult Register(User user)
     {
+        HttpContext.Session.Clear();
         if(ModelState.IsValid)
         {
             if(_context.Users.Any(u => u.Email == user.Email))
@@ -98,7 +103,14 @@ public class HomeController : Controller
         {
             return RedirectToAction("login");
         }
-        else return View("index");
+        else return View("Index");
+    }
+
+    [HttpGet("logout")]
+    public IActionResult logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("login");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

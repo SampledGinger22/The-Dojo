@@ -8,19 +8,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="body">
+    <div class="d-flex flex-column justify-content-center">
         <div class="d-flex flex-row justify-content-between">
             <h1>Login to this Cool Site!</h1>
             <a href="/registration">Register</a>
         </div>
-        <form class="form-group" asp-controller="Home" asp-action="Access">
-            <span asp-validation-for="Email"></span>
+        <form class="form-group" asp-controller="Home" asp-action="Access" style="width: 30%;">
+            <br><span asp-validation-for="Email" style="color: red;"></span><br><br>
             <label asp-for="Email">Email</label>
             <input class="form-control" type="email" asp-for="Email">
             <span asp-validation-for="Password"></span>
             <label asp-for="Password">Password</label>
             <input class="form-control" type="password" asp-for="Password">
-            <button type="submit" class="btn btn-success">Sign in Now</button>
+            <button type="submit" class="btn btn-success mt-3">Sign in Now</button>
         </form>
     </div>
 </body>
