@@ -21,6 +21,12 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet("/registration")]
+    public IActionResult Registration()
+    {
+        return View();
+    }
+
     [HttpPost("access")]
     public IActionResult Access(User userSubmission)
     {
@@ -71,11 +77,12 @@ public class HomeController : Controller
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 user.Password = Hasher.HashPassword(user, user.Password);
                 _context.Add(user);
-                if(HttpContext.Session.GetInt32("userid") == null)
-                {
-                    HttpContext.Session.SetInt32("userid", user.id);
-                }
                 _context.SaveChanges();
+                var newuser = _context.Users.FirstOrDefault(u => u.Email == user.Email);
+                if(HttpContext.Session.GetInt32("userid") == null && newuser != null)
+                {
+                    HttpContext.Session.SetInt32("userid", newuser.id);
+                }
                 return RedirectToAction("index");
             }
         }
