@@ -1,8 +1,7 @@
-using Chefs_n_Dishes.Models;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
-
+using Products_and_Categories.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
