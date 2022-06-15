@@ -16323,6 +16323,21 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Products and Categories\\Views\\Home\\Categories.cshtml",
+      "TargetPath": "Views\\Home\\Categories.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Products and Categories\\Views\\Home\\ViewProd.cshtml",
+      "TargetPath": "Views\\Home\\ViewProd.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Products and Categories\\Views\\Home\\Products.cshtml",
+      "TargetPath": "Views\\Home\\Products.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Products and Categories\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

@@ -15,8 +15,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\admin\THE DOJO\C#\ORMs\Products and Categories
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/admin/THE DOJO/C\#/ORMs/Products and Categories/Views/Home/Categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/admin/THE DOJO/C\#/ORMs/Products and Categories/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/THE DOJO/C\#/ORMs/Products and Categories/Views/Home/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/admin/THE DOJO/C\#/ORMs/Products and Categories/Views/Home/ViewProd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3UHJvZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/admin/THE DOJO/C\#/ORMs/Products and Categories/Views/Shared/Error.cshtml]

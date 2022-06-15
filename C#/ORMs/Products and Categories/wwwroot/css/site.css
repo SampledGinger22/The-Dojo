@@ -16,3 +16,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.vl {
+  border-left: 6px black solid;
+  height: fit-content;
+  position: absolute;
+  margin-left: -3px;
+}
