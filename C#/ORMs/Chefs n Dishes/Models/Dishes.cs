@@ -11,7 +11,7 @@ public class Dish
     [Required]
     public string Name { get;set; }
     [Required]
-    [Range(1, int.MaxValue, ErrorMessage = "Calories must be greater than 0")]
+    [Range(1, Int32.MaxValue, ErrorMessage = "Calories must be greater than 0")]
     public int Calories { get;set; }
     [Required]
     public string Description { get;set; }
@@ -19,7 +19,8 @@ public class Dish
     [Range(0,6)]
     public int Tastiness { get;set; }
     [Required]
-    public Chef Creator { get;set; }
+    public int ChefId { get;set; }
+    public Chef? Creator { get;set; }
     public DateTime CreatedAt { get;set; } = DateTime.Now;
     public DateTime UpdatedAt { get;set; } = DateTime.Now;
 }

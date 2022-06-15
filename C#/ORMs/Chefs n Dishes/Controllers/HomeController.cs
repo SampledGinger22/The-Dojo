@@ -49,16 +49,31 @@ public class HomeController : Controller
         }
         else 
         {
-            List<Chef> allchefs = _context.Chefs.ToList();
-            ModelState.AddModelError("FirstName", "Error with Model State");
-            return View("NewChef", allchefs);
+            return View("NewChef");
         }
     }
 
     [HttpGet("newdish")]
     public IActionResult NewDish()
     {
-        return View();
+        List<Chef> allChefs = _context.Chefs.ToList();
+        ViewBag.Chefs = allChefs;
+        return View("NewDish");
+    }
+
+    [HttpPost("newdish/save")]
+    public IActionResult SaveDish(Dish newDish)
+    {
+        if(ModelState.IsValid)
+        {
+            _context.Add(newDish);
+            _context.SaveChanges();
+            return RedirectToAction("Dishes");
+        }
+        else 
+        {
+            return View("NewDish");
+        } 
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

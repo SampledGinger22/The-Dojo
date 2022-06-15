@@ -3,6 +3,7 @@ using System;
 using Chefs_n_Dishes.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chefs_n_Dishes.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20220615030415_changedagetodob")]
+    partial class changedagetodob
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,11 +58,11 @@ namespace Chefs_n_Dishes.Migrations
                     b.Property<int>("Calories")
                         .HasColumnType("int");
 
-                    b.Property<int>("ChefId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<int>("CreatorChefId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -78,7 +80,7 @@ namespace Chefs_n_Dishes.Migrations
 
                     b.HasKey("DishId");
 
-                    b.HasIndex("ChefId");
+                    b.HasIndex("CreatorChefId");
 
                     b.ToTable("Dishes");
                 });
@@ -87,7 +89,7 @@ namespace Chefs_n_Dishes.Migrations
                 {
                     b.HasOne("Chefs_n_Dishes.Models.Chef", "Creator")
                         .WithMany("newDishes")
-                        .HasForeignKey("ChefId")
+                        .HasForeignKey("CreatorChefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
