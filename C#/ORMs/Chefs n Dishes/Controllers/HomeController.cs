@@ -17,9 +17,11 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        List<Dish> userDishes = _context.Dishes.Include(d => d.Creator).ToList();
+        List<Chef> chefList = _context.Chefs
+            .Include(d => d.newDishes)
+            .ToList();
 
-        return View("Index", userDishes);
+        return View("Index", chefList);
     }
 
     [HttpGet("dishes")]
@@ -34,6 +36,23 @@ public class HomeController : Controller
     public IActionResult NewChef()
     {
         return View();
+    }
+
+    [HttpPost("newchef/save")]
+    public IActionResult SaveChef(Chef newChef)
+    {
+        if(ModelState.IsValid)
+        {
+            _context.Add(newChef);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        else 
+        {
+            List<Chef> allchefs = _context.Chefs.ToList();
+            ModelState.AddModelError("FirstName", "Error with Model State");
+            return View("NewChef", allchefs);
+        }
     }
 
     [HttpGet("newdish")]

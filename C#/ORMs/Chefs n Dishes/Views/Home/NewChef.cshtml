@@ -1,3 +1,33 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @model Chef;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Chef</title>
+</head>
+<body>
+    <div class="body">
+        <form class="form-group d-flex flex-row gap-5" asp-controller="Home" asp-action="SaveChef">
+            <div class="d-flex flex-column">
+                <span asp-validation-for="FirstName" style="color: red;"></span>
+                <label asp-for="FirstName">First Name</label>
+                <input asp-for="FirstName" type="text" class="form-control">
+                <span asp-validation-for="LastName" style="color: red;"></span>
+                <label asp-for="LastName">Last Name</label>
+                <input asp-for="LastName" class="form-control">
+            </div>
+            <div class="d-flex flex-column">
+                <span asp-validation-for="DateOfBirth" style="color: red;"></span>
+                <label asp-for="DateOfBirth">Date of Birth</label>
+                <input type="date" asp-for="DateOfBirth" class="form-control">
+                <button class="btn btn-success mt-3" type="submit">Add Dish</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

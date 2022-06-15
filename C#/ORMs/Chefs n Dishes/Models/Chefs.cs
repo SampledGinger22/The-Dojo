@@ -15,7 +15,7 @@ public class Chef
     [Required]
     [DataType(DataType.Date)]
     [MinimumAge(18, ErrorMessage = "Chef must be at least 18 years of age")]
-    public DateTime? Age { get;set; }
+    public DateTime DateOfBirth { get;set; }
     public DateTime CreatedAt { get;set; } = DateTime.Now;
     public DateTime UpdatedAt { get;set; } = DateTime.Now;
     public List<Dish> newDishes { get;set; } = new List<Dish>();
