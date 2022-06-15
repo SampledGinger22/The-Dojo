@@ -30,6 +30,17 @@ public class HomeController : Controller
         return View("dishes", userDishes);
     }
 
+    [HttpGet("newchef")]
+    public IActionResult NewChef()
+    {
+        return View();
+    }
+
+    [HttpGet("newdish")]
+    public IActionResult NewDish()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
