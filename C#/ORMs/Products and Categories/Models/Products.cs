@@ -12,9 +12,8 @@ public class Product
     [Required]
     public string Description { get;set; }
     [Required]
-    [Range(0, 999999999999999999.99)]
-    public decimal Price { get;set; }
+    public string Price { get;set; }
     public DateTime CreatedAt { get;set; } = DateTime.Now;
     public DateTime UpdatedAt { get;set; } = DateTime.Now;
-    List<Association> ProdAssociations = new List<Association>();
+    public List<Association> ProdCategories { get;set; } = new List<Association>();
 }

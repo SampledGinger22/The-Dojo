@@ -8,9 +8,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@Model.Name</title>
+    <title>View @Model.Name</title>
 </head>
 <body>
-    
+    <h1 style="text-align: center;">@Model.Name</h1>
+    <div class="d-flex flex-row justify-content-center" style="gap: 100px; margin-top: 75px;">
+        <div class="d-flex flex-column">
+            <h3 style="text-align: center;">Categories</h3>
+            <ul>
+            @foreach(var one in Model.ProdCategories)
+            {
+                <li>@one.category.Name</li>
+            }
+            </ul>
+        </div>
+        @{
+            Association Assoc = new Association();
+            Assoc.ProductId = @Model.ProductId;
+        }
+        <partial name="_addcatASSOC" model="@Assoc"/>
+    </div>
 </body>
 </html>

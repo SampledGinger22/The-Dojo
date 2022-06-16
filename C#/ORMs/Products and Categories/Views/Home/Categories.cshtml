@@ -24,7 +24,7 @@
         <div class="vr"></div>
         <div class="d-flex flex-column justify-content-top">
             <h1 style="margin-bottom: 50px">Existing Categories</h1>
-            @if(ViewBag.categories != null)
+            @if(ViewBag.categories.Count != 0)
             {
                 @foreach(var category in ViewBag.categories)
                 {

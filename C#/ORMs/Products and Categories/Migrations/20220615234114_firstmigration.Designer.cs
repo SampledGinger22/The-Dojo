@@ -11,8 +11,8 @@ using Products_and_Categories.Models;
 namespace Products_and_Categories.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20220615203522_initialdbconnect")]
-    partial class initialdbconnect
+    [Migration("20220615234114_firstmigration")]
+    partial class firstmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,8 +80,9 @@ namespace Products_and_Categories.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(65,30)");
+                    b.Property<string>("Price")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
@@ -94,13 +95,13 @@ namespace Products_and_Categories.Migrations
             modelBuilder.Entity("Products_and_Categories.Models.Association", b =>
                 {
                     b.HasOne("Products_and_Categories.Models.Category", "category")
-                        .WithMany()
+                        .WithMany("CategoryProds")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Products_and_Categories.Models.Product", "product")
-                        .WithMany()
+                        .WithMany("ProdCategories")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -108,6 +109,16 @@ namespace Products_and_Categories.Migrations
                     b.Navigation("category");
 
                     b.Navigation("product");
+                });
+
+            modelBuilder.Entity("Products_and_Categories.Models.Category", b =>
+                {
+                    b.Navigation("CategoryProds");
+                });
+
+            modelBuilder.Entity("Products_and_Categories.Models.Product", b =>
+                {
+                    b.Navigation("ProdCategories");
                 });
 #pragma warning restore 612, 618
         }

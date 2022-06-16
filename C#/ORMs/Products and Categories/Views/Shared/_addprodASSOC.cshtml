@@ -1,0 +1,15 @@
+@model Association
+
+        <div class="d-flex flex-column">
+            <form asp-route-id="@ViewBag.CatId" class="form-group" asp-controller="Home" asp-action="UpdateProdAssociation" method="POST">
+            <label asp-for="ProductId">Add Product</label>
+            <select class="form-select" asp-for="ProductId">
+                <option default hidden value="">Select a Product</option>
+                @foreach(var unassproduct in ViewBag.unallocatedprods)
+                {
+                    <option value="@unassproduct.ProductId">@unassproduct.Name</option>
+                }
+            </select>
+            <button type="submit" class="btn btn-success mt-3">Add</button>
+            </form>
+        </div>
