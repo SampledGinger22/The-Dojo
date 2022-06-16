@@ -7,7 +7,7 @@ namespace Wedding_Planner.Models;
 public class User 
 {
     [Key]
-    public int id { get;set; }
+    public int UserId { get;set; }
     [Required]
     [MinLength(2, ErrorMessage = "First name must be at least two characters in length")]
     public string FirstName { get;set; }
@@ -26,4 +26,6 @@ public class User
     [Compare("Password")]
     [DataType(DataType.Password)]
     public string Confirm { get;set; }
+
+    public List<RSVP> EventAttendance = new List<RSVP>();
 }

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Login_and_Registration.Models;
+namespace Wedding_Planner.Models;
 
 [NotMapped]
 public class UserInLogin

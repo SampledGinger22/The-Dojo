@@ -1,24 +1,17 @@
+
 @model UserInLogin
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="d-flex flex-column justify-content-center">
+
+    <div class="d-flex flex-column justify-content-top">
         <h1>Login</h1>
-        <form class="form-group" asp-controller="Home" asp-action="Access" style="width: 30%;">
-            <span asp-validation-for="Email" style="color: red;"></span><br><br>
-            <label asp-for="Email">Email</label>
-            <input class="form-control" type="email" asp-for="Email">
-            <span asp-validation-for="Password"></span>
-            <label asp-for="Password">Password</label>
-            <input class="form-control" type="password" asp-for="Password">
-            <button type="submit" class="btn btn-success mt-3">Sign in Now</button>
-        </form>
+        <div class="d-flex flex-column">
+            <form class="form-group" asp-controller="Home" asp-action="Access">
+                <span asp-validation-for="Email" style="color: red;"></span>
+                <label asp-for="Email">Email</label>
+                <input class="form-control" type="email" asp-for="Email">
+                <span asp-validation-for="Password"></span>
+                <label asp-for="Password">Password</label>
+                <input class="form-control" type="password" asp-for="Password">
+                <button type="submit" class="btn btn-success mt-3">Sign In</button>
+            </form>
+        </div>
     </div>
-</body>
-</html>

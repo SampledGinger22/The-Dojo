@@ -16298,11 +16298,6 @@
   "RootNamespace": "Wedding_Planner",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Wedding Planner\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Wedding Planner\\Views\\Shared\\_registration.cshtml",
       "TargetPath": "Views\\Shared\\_registration.cshtml",
       "FileKind": "mvc"
@@ -16328,8 +16323,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Wedding Planner\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Wedding Planner\\Views\\Login\\LoginandReg.cshtml",
+      "TargetPath": "Views\\Login\\LoginandReg.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16340,11 +16335,6 @@
     {
       "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Wedding Planner\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\admin\\THE DOJO\\C#\\ORMs\\Wedding Planner\\Views\\Home\\LoginandReg.cshtml",
-      "TargetPath": "Views\\Home\\LoginandReg.cshtml",
       "FileKind": "mvc"
     }
   ],
