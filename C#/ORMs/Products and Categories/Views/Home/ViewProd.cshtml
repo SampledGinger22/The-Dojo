@@ -23,10 +23,10 @@
             </ul>
         </div>
         @{
-            Association Assoc = new Association();
-            Assoc.ProductId = @Model.ProductId;
+            Association Assoc1 = new Association();
+            Assoc1.ProductId = @Model.ProductId;
         }
-        <partial name="_addcatASSOC" model="@Assoc"/>
+        <partial name="_addcatASSOC" model="@Assoc1"/>
     </div>
 </body>
 </html>

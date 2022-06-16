@@ -50,27 +50,27 @@ public class HomeController : Controller
         return RedirectToAction("Categories");
     }
 
-    [HttpGet("products/view/{ProjId}")]
-    public IActionResult ProjectView(int ProjId)
+    [HttpGet("products/view/{ProdId}")]
+    public IActionResult ProductView(int ProdId)
     {
-        var projectMain = _context.Products
+        var productMain = _context.Products
             .Include(t => t.ProdCategories)
                 .ThenInclude(sub => sub.category)
-            .FirstOrDefault(c => c.ProductId == ProjId);
+            .FirstOrDefault(c => c.ProductId == ProdId);
 
         ViewBag.unallocatedcats = _context.Categories
             .Include(a => a.CategoryProds)
-            .Where(c => !c.CategoryProds.Any(c => c.ProductId == ProjId));
+            .Where(c => !c.CategoryProds.Any(c => c.ProductId == ProdId));
 
-        ViewBag.CatId = ProjId;
-        return View("Index", projectMain);
+        ViewBag.ProdId = ProdId;
+        return View("ViewProd", productMain);
     }
 
     [HttpPost("projects/update/{Id}")]
-    public IActionResult UpdateCatAssociation(Association newAssoc, int Id)
+    public IActionResult UpdateCatAssociation(Association newAssoc1, int Id)
     {
-        newAssoc.ProductId = Id;
-        _context.Associations.Add(newAssoc);
+        newAssoc1.ProductId = Id;
+        _context.Associations.Add(newAssoc1);
         _context.SaveChanges();
         return RedirectToAction("Products");
     }
@@ -116,14 +116,6 @@ public class HomeController : Controller
         }
         return View("Categories");
     }
-
-    [HttpGet("products/view/{ProductId}")]
-    public IActionResult ViewProd(int ProdId)
-    {
-        return View("ViewProd");
-    }
-
-
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

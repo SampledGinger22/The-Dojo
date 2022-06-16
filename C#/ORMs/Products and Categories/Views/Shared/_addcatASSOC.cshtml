@@ -1,13 +1,13 @@
 @model Association
 
         <div class="d-flex flex-column">
-            <form asp-route-id="@ViewBag.ProjId" class="form-group" asp-controller="Home" asp-action="UpdateCatAssociation" method="POST">
+            <form asp-route-id="@ViewBag.ProdId" class="form-group" asp-controller="Home" asp-action="UpdateCatAssociation" method="POST">
             <label asp-for="CategoryId">Add Category</label>
             <select class="form-select" asp-for="CategoryId">
                 <option default hidden value="">Select a Category</option>
-                @foreach(var unasscat in ViewBag.unallocatedprods)
+                @foreach(var unasscat in ViewBag.unallocatedcats)
                 {
-                    <option value="@unasscat.ProductId">@unasscat.Name</option>
+                    <option value="@unasscat.CategoryId">@unasscat.Name</option>
                 }
             </select>
             <button type="submit" class="btn btn-success mt-3">Add</button>
