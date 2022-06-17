@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Wedding_Planner.Models;
+using System.Linq;
 
 namespace Wedding_Planner.Controllers;
 
@@ -21,7 +22,7 @@ public class HomeController : Controller
     {
         if(HttpContext.Session.GetInt32("userid") == null)
         {
-            return RedirectToAction("LoginandReg");
+            return RedirectToAction("LoginandReg", "Login");
         }
         ViewBag.seshid = HttpContext.Session.GetInt32("userid");
         List<Wedding> weddings = _context.Weddings
@@ -53,9 +54,53 @@ public class HomeController : Controller
         return RedirectToAction("Dashboard");
     }
 
-    public IActionResult Privacy()
+    [HttpGet("weddings/new")]
+    public IActionResult NewWedding()
     {
-        return View();
+        var userid = HttpContext.Session.GetInt32("userid");
+        ViewBag.userid = (int)userid;
+        return View("NewWedding");
+    }
+
+    [HttpPost("weddings/new/save")]
+    public IActionResult SaveWedding(Wedding wedding)
+    {
+        if(ModelState.IsValid)
+        {
+            _context.Weddings.Add(wedding);
+            _context.SaveChanges();
+            List<Wedding> weddings = _context.Weddings
+                .Include(r => r.Users)
+                    .ThenInclude(r => r.User)
+                .ToList();
+            var newWed = weddings.LastOrDefault();
+            return View("ViewWedding", newWed);
+        }
+        else return View("NewWedding");
+    }
+
+    [HttpGet("weddings/view/{weddingid}")]
+    public IActionResult ViewWedding(int weddingid)
+    {
+        var wedding = _context.Weddings
+            .Include(r => r.Users)
+                .ThenInclude(r => r.User)
+            .FirstOrDefault(w => w.WeddingId == weddingid);
+        return RedirectToAction("ViewWedding", wedding);
+    }
+
+    [HttpPost("weddings/delete/{weddingid}")]
+    public IActionResult Delete(int weddingid)
+    {
+        var wedding = _context.Weddings.FirstOrDefault(w => w.WeddingId == weddingid);
+        if(wedding != null)
+        {
+            _context.Weddings.Remove((Wedding)wedding);
+            _context.SaveChanges();
+            return View("Dashboard");
+        }
+        return View("Dashboard");
+       
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -52,7 +52,7 @@ public class LoginController : Controller
                     {
                         HttpContext.Session.SetInt32("userid", userInDb.UserId);
                     }
-                    return View("LoginandReg");
+                    return RedirectToAction("Dashboard", "Home");
                 }
             }
         }
