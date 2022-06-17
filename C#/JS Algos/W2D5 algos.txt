@@ -1,0 +1,96 @@
+    /**
+     * BFS order: horizontal rows top-down left-to-right.
+     * Converts this BST into an array following Breadth First Search order.
+     * Example on the fullTree var:
+     * [25, 15, 50, 10, 22, 35, 70, 4, 12, 18, 24, 31, 44, 66, 90]
+     * @param {Node} current The current node during the traversal of this tree.
+     * @returns {Array<number>} The data of all nodes in BFS order.
+     */
+    toArrLevelorder(current = this.root) {
+        let array = [];
+        let queue = [this.root];
+
+        if(this.isEmpty()){
+            return array;
+        }
+
+        if(current.right == null && current.left == null){
+            if(current.data != undefined){
+                array.push(current.data);
+            }
+            return array;
+        }
+
+        while(queue.length > 0){
+            current = queue.shift();
+            if(current != null){
+                if(current.data != undefined){
+                    array.push(current.data);
+                }   
+                for(const child in current){
+                    // console.log(current[child].data);
+                    queue.push(current[child]);
+                }
+            }
+        }
+        return array;
+    }
+
+    /**
+     * Recursively counts the total number of nodes in this tree.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {Node} node The current node during the traversal of this tree.
+     * @returns {number} The total number of nodes.
+     */
+    size() {
+        if(this.isEmpty()){
+            return 0;
+        }
+        let count = this.toArrLevelorder().length;
+        return count;
+    }
+
+    /**
+     * Calculates the height of the tree which is based on how many nodes from
+     * top to bottom (whichever side is taller).
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {Node} node The current node during traversal of this tree.
+     * @returns {number} The height of the tree.
+     */
+    height(node = this.root) {
+        var array1 = [];
+        var array2 = [];
+        array1.push(node.data);
+        array2.push(node.data);
+        while(node.left != null){
+            array1.push(node.left.data);
+            node = node.left;
+        }
+        node = this.root;
+        while(node.right != null){
+            array2.push(node.right)
+            node = node.right;
+        }
+        if(array1.length > array2.length){
+            return array1.length;
+        }
+        else return array2.length;
+    }
+
+    /**
+     * Determines if this tree is a full tree. A full tree is a tree where every
+     * node has both a left and a right except for the leaf nodes (last nodes)
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {Node} node The current node during traversal of this tree.
+     * @returns {boolean} Indicates if this tree is full.
+     */
+    isFull() {
+        let count = this.size;
+        if(count%2 === 0){
+            return false;
+        }
+        else return true;
+    }
