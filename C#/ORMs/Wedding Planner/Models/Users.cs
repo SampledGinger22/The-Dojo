@@ -26,6 +26,7 @@ public class User
     [Compare("Password")]
     [DataType(DataType.Password)]
     public string Confirm { get;set; }
+    public List<Wedding> UserWeddings { get;set; } = new List<Wedding>();
 
-    public List<RSVP> EventAttendance = new List<RSVP>();
+    public List<RSVP> Weddings { get;set; } = new List<RSVP>();
 }

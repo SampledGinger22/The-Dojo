@@ -18,6 +18,9 @@ public class LoginController : Controller
     [HttpGet("")]
     public IActionResult LoginandReg()
     {
+        if(HttpContext.Session.GetInt32("userid") != null){
+            return RedirectToAction("Dashboard", "Home");
+        }
         return View();
     }
 
@@ -25,7 +28,7 @@ public class LoginController : Controller
     public IActionResult Access(UserInLogin userSubmission)
     {
         if(HttpContext.Session.GetInt32("userid") != null){
-            return RedirectToAction("Dashboard");
+            return RedirectToAction("Dashboard", "Home");
         }
         if(ModelState.IsValid)
         {

@@ -1,0 +1,55 @@
+@model List<Wedding>
+
+<div class="d-flex flex-column">
+    <div class="d-flex flex-row justify-content-around">
+        <h1>Welcome to the Wedding Planner</h1>
+        <a href="logout">Log Out</a>
+    </div>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <th>Wedding</th>
+            <th>Date</th>
+            <th>Guest</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            @{
+                bool inlist = false;
+                @if(Model.Count != 0)
+                {
+                    @foreach(var wedding in Model){
+                        <tr>
+                            <td>@wedding.Wedder_1 & @wedding.Wedder_2</td>
+                            <td>@wedding.Date.ToString()</td>
+                            <td>@wedding.Users.Count()</td>
+                            <td>
+                                @if(@wedding.UserId == ViewBag.seshid)
+                                {
+                                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@wedding.WeddingId">Delete</a>
+                                }
+                                else
+                                {
+                                    foreach(var user in wedding.Users)
+                                        {
+                                            if(user.UserId == ViewBag.seshid)
+                                            {
+                                                inlist = true;
+                                            }
+                                        }
+                                    if(inlist)
+                                    {
+                                        <a asp-controller="Home" asp-action="RSVP" asp-route-id="@wedding.WeddingId">Un-RSVP</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-controller="Home" asp-action="RSVP" asp-route-id="@wedding.WeddingId">RSVP</a>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

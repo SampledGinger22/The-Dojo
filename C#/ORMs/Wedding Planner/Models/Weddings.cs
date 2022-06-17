@@ -22,6 +22,6 @@ public class Wedding
 
     [Required]
     public string Address { get;set; }
-
-    public List<RSVP> RSVPs = new List<RSVP>();
+    public int UserId { get;set; }
+    public List<RSVP> Users { get;set; } = new List<RSVP>();
 }

@@ -80,6 +80,9 @@ namespace Wedding_Planner.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Wedder_1")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -90,26 +93,49 @@ namespace Wedding_Planner.Migrations
 
                     b.HasKey("WeddingId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Weddings");
                 });
 
             modelBuilder.Entity("Wedding_Planner.Models.RSVP", b =>
                 {
-                    b.HasOne("Wedding_Planner.Models.User", "Attendee")
-                        .WithMany()
+                    b.HasOne("Wedding_Planner.Models.User", "User")
+                        .WithMany("Weddings")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Wedding_Planner.Models.Wedding", "Event")
-                        .WithMany()
+                    b.HasOne("Wedding_Planner.Models.Wedding", "Wedding")
+                        .WithMany("Users")
                         .HasForeignKey("WeddingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Attendee");
+                    b.Navigation("User");
 
-                    b.Navigation("Event");
+                    b.Navigation("Wedding");
+                });
+
+            modelBuilder.Entity("Wedding_Planner.Models.Wedding", b =>
+                {
+                    b.HasOne("Wedding_Planner.Models.User", null)
+                        .WithMany("UserWeddings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Wedding_Planner.Models.User", b =>
+                {
+                    b.Navigation("UserWeddings");
+
+                    b.Navigation("Weddings");
+                });
+
+            modelBuilder.Entity("Wedding_Planner.Models.Wedding", b =>
+                {
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
