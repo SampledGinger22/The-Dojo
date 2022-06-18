@@ -15,17 +15,17 @@
         <tbody>
             @{
                 bool inlist = false;
-                @if(Model.Count != 0)
+                @if(Model != null)
                 {
                     @foreach(var wedding in Model){
                         <tr>
-                            <td><a asp-controller="/Home" asp-action="ViewWedding" asp-route-id="@wedding.WeddingId">@wedding.Wedder_1 & @wedding.Wedder_2</a></td>
+                            <td><a asp-controller="Home" asp-action="ViewWedding" asp-route-weddingid="@wedding.WeddingId">@wedding.Wedder_1 & @wedding.Wedder_2</a></td>
                             <td>@wedding.Date.ToString("MMMM dd, yyyy")</td>
                             <td>@wedding.Users.Count()</td>
                             <td>
                                 @if(wedding.UserId == ViewBag.seshid)
                                 {
-                                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@wedding.WeddingId" method="POST">Delete</a>
+                                    <a asp-controller="Home" asp-action="Delete" asp-route-weddingid="@wedding.WeddingId">Delete</a>
                                 }
                                 else
                                 {
@@ -38,11 +38,11 @@
                                         }
                                     @if(inlist)
                                     {
-                                        <a asp-controller="Home" asp-action="RSVP" asp-route-id="@wedding.WeddingId">Un-RSVP</a>
+                                        <a asp-controller="Home" asp-action="RSVP" asp-route-weddingid="@wedding.WeddingId">Un-RSVP</a>
                                     }
                                     else
                                     {
-                                        <a asp-controller="Home" asp-action="RSVP" asp-route-id="@wedding.WeddingId">RSVP</a>
+                                        <a asp-controller="Home" asp-action="RSVP" asp-route-weddingid="@wedding.WeddingId">RSVP</a>
                                     }
                                 }
                             </td>

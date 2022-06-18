@@ -34,22 +34,33 @@ public class HomeController : Controller
     }
     
 
-    [HttpPost("weddings/RSVP/{weddingid}")]
+    [HttpGet("weddings/RSVP/{weddingid}")]
     public IActionResult RSVP(int weddingid)
     {
-        var userid = HttpContext.Session.GetInt32("userid");
+        int? userid = HttpContext.Session.GetInt32("userid");
+        int userID = Convert.ToInt32(userid);
         RSVP newRsvp = new RSVP();
-        newRsvp.UserId = (int)userid;
+        newRsvp.UserId = userID;
         newRsvp.WeddingId = weddingid;
-        var rsvpcheck = _context.RSVPs.Where(c => c.WeddingId == weddingid).Where(d => d.UserId == userid);
-        if(rsvpcheck != null){
-            _context.RSVPs.Remove((RSVP)rsvpcheck);
+
+        List<RSVP> rsvpcheck = _context.RSVPs.Where(c => c.WeddingId == weddingid && c.UserId == userid).ToList();
+
+        bool itemcheck = true;
+        if(rsvpcheck.Count() == 0){
+            itemcheck = false;
+        }
+
+        if(itemcheck == false){
+            _context.RSVPs.Add(newRsvp);
             _context.SaveChanges();
         }
         else
         {
-            _context.RSVPs.Add(newRsvp);
-            _context.SaveChanges();
+            if(rsvpcheck.Count() != 0)
+            {
+                _context.RSVPs.Remove(rsvpcheck[0]);
+                _context.SaveChanges();
+            }
         }
         return RedirectToAction("Dashboard");
     }
@@ -58,7 +69,7 @@ public class HomeController : Controller
     public IActionResult NewWedding()
     {
         var userid = HttpContext.Session.GetInt32("userid");
-        ViewBag.userid = (int)userid;
+        ViewBag.userid = Convert.ToInt32(userid);
         return View("NewWedding");
     }
 
@@ -86,10 +97,10 @@ public class HomeController : Controller
             .Include(r => r.Users)
                 .ThenInclude(r => r.User)
             .FirstOrDefault(w => w.WeddingId == weddingid);
-        return RedirectToAction("ViewWedding", wedding);
+        return View("ViewWedding", wedding);
     }
 
-    [HttpPost("weddings/delete/{weddingid}")]
+    [HttpGet("weddings/delete/{weddingid}")]
     public IActionResult Delete(int weddingid)
     {
         var wedding = _context.Weddings.FirstOrDefault(w => w.WeddingId == weddingid);
@@ -100,7 +111,6 @@ public class HomeController : Controller
             return View("Dashboard");
         }
         return View("Dashboard");
-       
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
