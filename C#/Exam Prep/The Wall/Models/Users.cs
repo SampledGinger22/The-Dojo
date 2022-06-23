@@ -4,18 +4,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace The_Wall.Models;
 
-class User {
+public class User {
 
     [Key]
     public int UserId { get;set; }
 
     [Required]
     [MinLength(2, ErrorMessage = "First name must be at least two characters")]
-    public string First_Name { get;set; }
+    public string FirstName { get;set; }
 
     [Required]
     [MinLength(2, ErrorMessage = "Last name must be at least two characters")]
-    public string Last_Name { get;set; }
+    public string LastName { get;set; }
 
     [Required]
     [EmailAddress]
@@ -32,6 +32,7 @@ class User {
     public string Confirm { get;set; }
 
     public DateTime Created_At { get;set; } = DateTime.Now;
+
     public DateTime Updated_At { get;set; } = DateTime.Now;
 
     public List<Message> Messages { get;set; } = new List<Message>();

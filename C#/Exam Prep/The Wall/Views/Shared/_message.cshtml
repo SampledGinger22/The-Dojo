@@ -1,0 +1,8 @@
+@model Message
+<div>
+    <form class="form-group" asp-controller="Home" asp-action="SaveComment">
+        <input hidden asp-for="UserId" value="@ViewBag.userid">
+        <label asp-for="Content">Post a Message</label>
+        <textarea class="form-control" rows="3" asp-for="Content"></textarea>
+    </form>
+</div>

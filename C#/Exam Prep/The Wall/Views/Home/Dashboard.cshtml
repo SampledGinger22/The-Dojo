@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Message Board";
+}
+
+@model List<Message> 
+
+<div class="body">
+    <partial name="_message"/>
+    @foreach(var Message in Model){
+        <div>
+            <h5>@Message.User.FirstName @Message.User.LastName - @Message.Created_At.ToString("MMMM dd, yyyy")</h5>
+            <p>@Message.Content</p>
+            foreach(var comment in @Message){
+                <div>
+                    <h5></h5>
+                </div>
+            }
+        </div>
+    }
+</div>
+

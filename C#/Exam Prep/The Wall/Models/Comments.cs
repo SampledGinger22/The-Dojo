@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace The_Wall.Models;
 
-class Comment {
+public class Comment {
 
     [Key]
     public int CommentId { get;set; }

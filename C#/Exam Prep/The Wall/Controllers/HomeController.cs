@@ -1,27 +1,26 @@
 ﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using The_Wall.Models;
 
 namespace The_Wall.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private MyContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(MyContext context)
     {
-        _logger = logger;
+        _context = context;
     }
 
-    public IActionResult Index()
+    public IActionResult Dashboard()
     {
-        return View();
+        ViewBag.userid = HttpContext.Session.GetInt32("userid");
+        return View("Dashboard");
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
