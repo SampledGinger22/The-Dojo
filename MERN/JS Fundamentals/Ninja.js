@@ -15,3 +15,16 @@ class Ninja {
         this.health += 10;
     }
 }
+
+class Sensei extends Ninja {
+    constructor(){
+        super("Master Splinter", 200);
+        this.speed = 10;
+        this.strength = 10;
+        this.wisdom = 10;
+    }
+    speakWisdom(){
+        this.drinkSake();
+        console.log("Even a mighty eagle must rest its wings from the chaos of the wind,")
+    }
+}
