@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import displayBox from './components/DisplayBox';
+import boxForm from './components/BoxForm';
 
 function App() {
+    const boxes = [];
+
+    const newBoxCreated = ( newBox ) => {
+      boxes.push(newBox);
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <boxForm onCreateBox={ newBoxCreated }/>
+        { boxes.map( (item, i) => 
+            <displayBox boxColor={ item } key={i}/>
+            )}
     </div>
   );
 }
