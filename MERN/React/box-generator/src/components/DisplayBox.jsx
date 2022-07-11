@@ -1,9 +1,9 @@
 import React from 'react';
 import './Style.css'
 
-const DisplayBox = (color) => {
+const DisplayBox = (props) => {
     return (
-        <div className="styledbox" style={{background: color}} ></div>
+        <div className="styledbox" style={{background: props.color}} ></div>
     );
 }
 
