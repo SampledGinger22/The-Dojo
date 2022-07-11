@@ -11,11 +11,9 @@ const BoxForm = props => {
 
     return (
         <form onSubmit={createBox}>
-            <div>
-                <label>Color:</label>
-                <input type="text" onChange={(e) => setboxColor(e.target.value)}></input>
-                <button type="submit">Add</button>
-            </div>
+            <label>Color:</label>
+            <input type="text" onChange={(e) => setboxColor(e.target.value)}></input>
+            <button type="submit">Add</button>
         </form>
     );
 }

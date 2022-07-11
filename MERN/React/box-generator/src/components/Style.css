@@ -1,0 +1,25 @@
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.styledbox {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    border: red solid 1px;
+}
+
+.gap{
+    gap: 5px;
+}
+
+

@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
-import StyledBox from './Style';
-import Flex from './Flex';
+import React from 'react';
+import './Style.css'
 
-const DisplayBox = (props) => {
+const DisplayBox = (color) => {
     return (
-        <Flex>
-            <StyledBox background={ props.boxColor }/>
-        </Flex>
+        <div className="styledbox" style={{background: color}} ></div>
     );
 }
 
