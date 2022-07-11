@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import StyledBox from './Style';
 import Flex from './Flex';
 
-const displayBox = (props) => {
+const DisplayBox = (props) => {
     return (
         <Flex>
-            <StyledBox bgColor={ props.boxColor }/>
+            <StyledBox background={ props.boxColor }/>
         </Flex>
     );
 }
 
-export default displayBox;
+export default DisplayBox;

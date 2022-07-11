@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const boxForm = props => {
+const BoxForm = props => {
 
     const [boxColor, setboxColor] = useState("");
 
     const createBox = (e) => {
         e.preventDefault();
-        props.onNewBox( boxColor );
+        props.onCreateBox( boxColor );
     }
 
     return (
@@ -20,4 +20,4 @@ const boxForm = props => {
     );
 }
 
-export default boxForm;
+export default BoxForm;
