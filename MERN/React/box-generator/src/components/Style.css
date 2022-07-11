@@ -3,19 +3,21 @@
     flex-direction: row;
     justify-content: center;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .flexcolumn {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .styledbox {
     width: 100px;
     height: 100px;
     margin-left: 20px;
-    border: red solid 1px;
+    border: black solid 1px;
 }
 
 .gap{

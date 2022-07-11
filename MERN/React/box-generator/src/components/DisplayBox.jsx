@@ -3,7 +3,7 @@ import './Style.css'
 
 const DisplayBox = (props) => {
     return (
-        <div className="styledbox" style={{background: props.color}} ></div>
+        <div className="styledbox" style={{backgroundColor: props.boxColor}}></div>
     );
 }
 
