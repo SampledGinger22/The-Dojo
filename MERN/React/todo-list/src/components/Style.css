@@ -1,0 +1,11 @@
+input[type=checkbox]:checked + label.strikethrough{
+    text-decoration: line-through;
+}
+
+.flexrow {
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
