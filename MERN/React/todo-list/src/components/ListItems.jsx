@@ -1,16 +1,20 @@
 import React from 'react';
-import handleCompleteChange from '../App';
-import Delete from '../App';
+import './Style.css';
 
 const DisplayToDos = (props) => {
 
-    const { todoItem } = props;
+    const { todoItem, idx } = props;
+
+    const handleDelete = () => {
+        console.log(idx);
+        props.onDeletion(idx);
+    }
 
     return (
         <div className='flexrow'>
-            <input onChange={handleCompleteChange(props.i)} checked={props.complete} name="newItem" type="checkbox"></input>
-            <label htmlFor="newItem" className='strikethrough'>{ props.text }</label>
-            <button onClick={ Delete(props.i) }>Delete</button>
+            <input name="newItem" type="checkbox"></input>
+            <label htmlFor="newItem" className='strikethrough'>{ todoItem }</label>
+            <button onClick={ handleDelete }>Delete</button>
         </div>
     )
 }

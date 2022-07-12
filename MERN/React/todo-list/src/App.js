@@ -8,33 +8,9 @@ function App() {
 
   const [ListItem, setListItem] = useState([]);
 
-  const handleSubmit = (e, Item) => {
-    e.preventDefault();
-
-    if(Item.length !== 0){
-      const todoItem = {
-        text: Item,
-        complete: false
-      }
-      console.log(todoItem);
-      setListItem([...ListItem, todoItem]);
-      console.log(ListItem);
-      e.target.reset();
-    }
-    e.target.reset();
-    return;
+  const pushItem = (todoItem) => {
+    setListItem([...ListItem, todoItem]);
   }
-
-  const handleCompleteChange = (index) => {
-    const updatedItem = ListItem.map((todo, i) => {
-      if(index == i){
-        todo.complete = !todo.complete;
-      }
-      
-      return todo;
-    });
-  }
-
 
   const Delete = (index) => {
     const filteredList = ListItem.filter((todo, i) => {
@@ -45,11 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      <ListForm handleSubmit={ handleSubmit }/>
+      <ListForm onNewItem={ pushItem }/>
       { ListItem.map( (todoItem, i) =>
-        <div className='flexrow'> 
-          <DisplayToDos todoItem={ todoItem } key={i}/> 
-        </div>
+          <DisplayToDos todoItem={ todoItem } onDeletion={ Delete } idx={ i } key={i}/> 
         ) }
     </div>
   );
