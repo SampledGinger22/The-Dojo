@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './style.css';
 
 const SearchBar = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(Id != null){
-            props.onNewSearch(Id, Param);
-            e.target.reset();
-        }
+        props.onNewSearch(Id, Param);
+        e.target.reset();
     }
 
-    const [Id, setId] = useState(1);
-    const [Param, setParam] = useState('people');
+    const [Id, setId] = useState('');
+    const [Param, setParam] = useState('');
 
     return (
         <div className='flexrow spacefromtop'>
@@ -21,8 +20,9 @@ const SearchBar = (props) => {
                     <div className='field'>
                         <label>Search for: </label>
                         <select className='us fluid dropdown' onChange={(e) => setParam(e.target.value)}>
-                            <option value={'people'} defaultValue>People</option>
-                            <option value={'planet'}>Planet</option>
+                            <option value='' defaultValue hidden></option>
+                            <option value={'people'}>People</option>
+                            <option value={'planets'}>Planets</option>
                         </select>
                     </div>
                     <div className='field'>
