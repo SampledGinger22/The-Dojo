@@ -15,6 +15,8 @@ const User = () => {
   return newUser;
 }
 
+const newUser = User();
+
 const Company = () => {
   const newCompany = {
     _id: faker.datatype.uuid(),
@@ -29,6 +31,8 @@ const Company = () => {
   }
   return newCompany;
 }
+
+const newCompany = Company();
 
 
 // req is short for request
@@ -45,6 +49,6 @@ app.get("/api/user/company", (req, res) => {
   res.send(newUser, newCompany);
 });
 
-// const server = app.listen(8000, () =>
-//   console.log(`Server is locked and loaded on port ${server.address().port}!`)
-// );
+const server = app.listen(8000, () =>
+  console.log(`Server is locked and loaded on port ${server.address().port}!`)
+);
