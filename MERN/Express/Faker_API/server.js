@@ -46,7 +46,7 @@ app.get("/api/companies/new", (req, res) => {
 });
 
 app.get("/api/user/company", (req, res) => {
-  res.send(newUser, newCompany);
+  res.json({newUser, newCompany});
 });
 
 const server = app.listen(8000, () =>
