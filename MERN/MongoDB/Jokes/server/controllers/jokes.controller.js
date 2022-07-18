@@ -7,13 +7,13 @@ module.exports.findAllJokes = (req, res) => {
 }
  
 module.exports.findOneSingleJoke = (req, res) => {
-    Joke.findOne({ _id: req.params.id })
+    Joke.findOne({ _id: req.params._id })
         .then(oneSingleJoke => res.json({ joke: oneSingleJoke }))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
 module.exports.findRandomJoke = (req, res) => {
-    Joke.findOne()
+    Joke.aggregate([{$sample: { size: 1 }}])
         .then(oneRandomJoke => res.json({ joke: oneRandomJoke}))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
@@ -26,7 +26,7 @@ module.exports.createNewJoke = (req, res) => {
  
 module.exports.updateExistingJoke = (req, res) => {
     Joke.findOneAndUpdate(
-        { _id: req.params.id },
+        { _id: req.params._id },
         req.body,
         { new: true, runValidators: true }
     )
@@ -35,7 +35,8 @@ module.exports.updateExistingJoke = (req, res) => {
 }
  
 module.exports.deleteAnExistingJoke = (req, res) => {
-    Joke.deleteOne({ _id: req.params.id })
+    Joke.deleteOne({ _id: req.params._id })
         .then(result => res.json({ result: result }))
         .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
+
