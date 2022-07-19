@@ -11,6 +11,8 @@ export default () => {
 
         e.preventDefault();
 
+        console.log('this is a test');
+
         axios.post('http://localhost:8000/api/products', {
             Title,
             Price,
