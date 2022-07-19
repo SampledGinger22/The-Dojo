@@ -13,6 +13,8 @@ export default () => {
 
         console.log('this is a test');
 
+        
+
         axios.post('http://localhost:8000/api/products', {
             Title,
             Price,
@@ -23,7 +25,7 @@ export default () => {
     }
 
     return (
-        <div>
+        <div className='bodycenter'>
             <div className='flexcolumn'>
                 <h1>Product Manager</h1>
                 <form onSubmit={onSubmitHandler}>
@@ -43,7 +45,6 @@ export default () => {
                 </form>
             </div>
             <br/><br/><br/>
-            <hr/>
         </div>
     )
 }
