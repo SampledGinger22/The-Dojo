@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import './style.css';
+import { useNavigate } from 'react-router-dom';
 export default () => {
 
     const [Title, setTitle] = useState(""); 
     const [Price, setPrice] = useState("");
     const [Description, setDescription] = useState("");
+    const navigate = useNavigate();
 
     const onSubmitHandler = e => {
 
@@ -22,6 +24,8 @@ export default () => {
         })
             .then(res=>console.log(res))
             .catch(err=>console.log(err))
+
+        navigate(0);
     }
 
     return (
