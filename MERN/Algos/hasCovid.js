@@ -66,26 +66,20 @@ const people = [
 
 const expected = ["Person One", "Person Three"];
 
-// function coronaVirusAtRisk(persons) {
-//     let final = [];
-//     for(let key in persons){
-//         if(persons[key].isSocialDistancing === false){
-//             for(let one in persons[key].friends){
-//                 if(persons[key].friends[one].hasCovid === true){
-//                     let infected = persons[key].firstName + " " + persons[key].lastName;
-//                     final.push(infected);
-//                     break;
-//                 }
-//             }
-//         }
-//     }
-//     return final;
-// }
-
-// console.log(coronaVirusAtRisk(people));
-
-function coronaVirusAtRiskFunctional(persons) {
-
+function coronaVirusAtRisk(persons) {
+    let final = [];
+    for(let key in persons){
+        if(persons[key].isSocialDistancing === false){
+            for(let one in persons[key].friends){
+                if(persons[key].friends[one].hasCovid === true){
+                    let infected = persons[key].firstName + " " + persons[key].lastName;
+                    final.push(infected);
+                    break;
+                }
+            }
+        }
+    }
+    return final;
 }
 
-console.log(coronaVirusAtRiskFunctional(people));
+console.log(coronaVirusAtRisk(people));
